@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,6 +9,8 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --navbarHeight: 4rem;
+  --sectionHeight: calc(100vh - var(--navbarHeight));
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,6 +21,14 @@
   }
 }
 
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -24,4 +37,50 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+@layer components {
+  /* $ ========================================== Home Page Styles ========================================== */
+
+  .socialIconStyles {
+    @apply text-[1.7rem] flex content-center items-center absolute p-1 rounded w-[2.5rem] h-[2.5rem] opacity-0 outline-[2.5px] outline-primaryColor;
+    @apply before:absolute before:content-[''] before:w-full before:h-full before:rounded before:z-[-1] p-1 filter blur-[1.5px];
+  }
+
+  .facebookColor {
+    @apply bg-[#3b5998];
+    @apply before:bg-[#3b5998];
+  }
+
+  .gitHubColor {
+    @apply bg-[#333];
+    @apply before:bg-[#333];
+  }
+
+  .twitterColor {
+    @apply bg-[#1DA1F2];
+    @apply before:bg-[#1DA1F2];
+  }
+
+  .linkedInColor {
+    @apply bg-[#0077B5];
+    @apply before:bg-[#0077B5];
+  }
+
+  .pageLinkIcons {
+    @apply relative flex justify-center items-center w-[1.8rem] h-[1.8rem] md:w-[2.1rem] md:h-[2.1rem] rounded-[50%] border-2 border-bgDark dark:border-white  hover:border-2 hover:border-yellow-500 text-gray-700 dark:text-white hover:cursor-pointer;
+    @apply before:absolute before:content-[''] before:top-0 before:left-0 before:bottom-0 before:right-0 before:w-full before:h-full before:rounded-[50%] before:z-[-1];
+  }
+
+  .pageLinkIcons:has(.isActive) {
+    @apply border-[2px] border-yellow-400 before:bg-primaryColor text-white;
+  }
+
+  .pageLinkIcons:has(.isActive) a {
+    @apply dark:text-white text-white;
+  }
+
+  .iconSize {
+    @apply text-[0.8rem] md:text-[1rem] lg:text-[1.05rem];
+  }
 }
