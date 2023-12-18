@@ -20,13 +20,13 @@ const PageLinkIcons: React.FC = () => {
         const { id, href, icon, tooltip_content } = link;
         return (
           <Tooltip
-            className="uppercase"
+            className="capitalize tracking-wide"
             key={id}
             content={tooltip_content}
             placement="left"
           >
             <li
-              className="pageLinkIcons"
+              className="pageLinkIcons dark:text-white text-gray-600"
               data-tooltip-target="tooltip-animation"
             >
               <Link href={href}>

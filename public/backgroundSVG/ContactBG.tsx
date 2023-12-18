@@ -1,24 +1,29 @@
-import * as React from "react";
+"use client";
+
+import { useThemeContext } from "@/app/ContextAPI_Hooks/usethemeContext";
 
 const ContactSVG = () => {
+  const { theme } = useThemeContext();
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
+      // xmlns="http://www.w3.org/2000/svg"
       version="1.1"
       //   xmlns:xlink="http://www.w3.org/1999/xlink"
       //   xmlns:svgjs="http://svgjs.dev/svgjs"
-      width="3840"
-      height="2160"
+      width="100%"
+      height="100%"
       preserveAspectRatio="none"
       viewBox="0 0 3840 2160"
     >
       <g mask='url("#SvgjsMask1027")' fill="none">
         <rect
-          width="3840"
-          height="2160"
+          width="100%"
+          height="100%"
           x="0"
           y="0"
-          fill="rgba(239, 245, 245, 1)"
+          fill={
+            theme === "dark" ? "rgba(5, 15, 26, 1)" : "rgba(239, 245, 245, 1)"
+          }
         ></rect>
         <path
           d="M233 2160L2393 0L4086.5 0L1926.5 2160z"
@@ -47,7 +52,7 @@ const ContactSVG = () => {
       </g>
       <defs>
         <mask id="SvgjsMask1027">
-          <rect width="3840" height="2160" fill="#ffffff"></rect>
+          <rect width="100%" height="100%" fill="#ffffff"></rect>
         </mask>
         <linearGradient
           x1="0%"
@@ -56,7 +61,12 @@ const ContactSVG = () => {
           y2="0%"
           id="SvgjsLinearGradient1028"
         >
-          <stop stopColor="rgba(15, 70, 185, 0.1)" offset="0"></stop>
+          <stop
+            stopColor={
+              theme === "dark" ? "rgba(5, 15, 26, 1)" : "rgba(239, 245, 245, 1)"
+            }
+            offset="0"
+          ></stop>
           <stop
             stopOpacity="0"
             stopColor="rgba(15, 70, 185, 0.1)"
@@ -70,10 +80,17 @@ const ContactSVG = () => {
           y2="0%"
           id="SvgjsLinearGradient1029"
         >
-          <stop stopColor="rgba(15, 70, 185, 0.1)" offset="0"></stop>
+          <stop
+            stopColor={
+              theme === "dark" ? "rgba(5, 15, 26, 1)" : "rgba(239, 245, 245, 1)"
+            }
+            offset="0"
+          ></stop>
           <stop
             stopOpacity="0"
-            stopColor="rgba(15, 70, 185, 0.1)"
+            stopColor={
+              theme === "dark" ? "rgba(5, 15, 26, 1)" : "rgba(239, 245, 245, 1)"
+            }
             offset="0.66"
           ></stop>
         </linearGradient>

@@ -1,14 +1,15 @@
-// import useGlobalContext from "../../../customHooks/useGlobalContext";
+"use client";
+
+import { useThemeContext } from "@/app/ContextAPI_Hooks/usethemeContext";
 
 const HomeBG = () => {
-  // const { theme } = useGlobalContext();
-  const theme = "dark";
+  const { theme } = useThemeContext();
   return (
     <svg
-      xmlns="http://www.w3.org.1500/svg"
+      // xmlns="http://www.w3.org.1500/svg"
       version="1.1"
-      xlinkHref="http://www.w3.org/1999/xlink"
-      data-svgjs="http://svgjs.dev/svgjs"
+      // xlinkHref="http://www.w3.org/1999/xlink"
+      // data-svgjs="http://svgjs.dev/svgjs"
       width="100%"
       height="100%"
       preserveAspectRatio="none"

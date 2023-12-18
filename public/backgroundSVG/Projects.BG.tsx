@@ -1,8 +1,9 @@
-import * as React from "react";
+"use client";
+
+import { useThemeContext } from "@/app/ContextAPI_Hooks/usethemeContext";
 
 const ProjectsBG = () => {
-  // const { theme } = useGlobalContext();
-  const theme = "dark";
+  const { theme } = useThemeContext();
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -62,14 +63,14 @@ const ProjectsBG = () => {
           id="SvgjsLinearGradient1043"
         >
           <stop
-            stop-color={
+            stopColor={
               theme === "dark" ? "rgba(5, 15, 26, 1)" : "rgba(239, 245, 245, 1)"
             }
             offset="0"
           ></stop>
           <stop
-            stop-opacity="0"
-            stop-color={
+            stopOpacity="0"
+            stopColor={
               theme === "dark"
                 ? "rgba(15, 70, 185, 0.15)"
                 : "rgba(228, 63, 90, 0.20)"
@@ -85,7 +86,7 @@ const ProjectsBG = () => {
           id="SvgjsLinearGradient1044"
         >
           <stop
-            stop-color={
+            stopColor={
               theme === "dark"
                 ? "rgba(15, 70, 185, 0.15)"
                 : "rgba(228, 63, 90, 0.20)"
@@ -93,8 +94,8 @@ const ProjectsBG = () => {
             offset="0"
           ></stop>
           <stop
-            stop-opacity="0"
-            stop-color={
+            stopOpacity="0"
+            stopColor={
               theme === "dark"
                 ? "rgba(15, 70, 185, 0.15)"
                 : "rgba(228, 63, 90, 0.20)"

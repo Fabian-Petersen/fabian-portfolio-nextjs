@@ -5,11 +5,10 @@ import AboutBG from "@/public/backgroundSVG/AboutBG";
 export default function AboutPage() {
   return (
     <main>
-      <AboutBG />
-      <PageHeading title="About Page" />
-      <div className="w-full h-full border border-red-500 text-white">
-        <p>Main Content</p>
+      <div className="bg-cover bg-center absolute top-0 left-0 z-[-100] h-full w-full">
+        <AboutBG />
       </div>
+      <PageHeading title="About Me" />
     </main>
   );
 }

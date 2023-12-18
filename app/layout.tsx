@@ -6,8 +6,11 @@ import "./globals.css";
 import Navbar from "@/components/features/navbar/Navbar";
 import MobileNavbar from "@/components/features/mobileNavbar/MobileNavbar";
 import PageLinkIcons from "@/components/features/PageLinkIcons";
+import SocialsLinkIcons from "@/components/features/SocialsLinkIcons";
+import MobileMenuFullWidth from "@/components/features/mobileNavbar/MobileMenuFullWidth";
 
 import ThemeContextProvider from "./ContextAPI_Hooks/usethemeContext";
+import MobileNavContextProvider from "./ContextAPI_Hooks/useMobileNavbarContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,15 +33,18 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en">
       <body className={inter.className}>
         <ThemeContextProvider>
-          <div className="sm:hidden">
-            <MobileNavbar />
-          </div>
+          <MobileNavContextProvider>
+            <div className="overflow-hidden">
+              {/* <MobileNavbar /> */}
+              <MobileMenuFullWidth />
+            </div>
+          </MobileNavContextProvider>
           <div className="hidden sm:block">
             <Navbar />
           </div>
-          <main className="relative flex flex-col sm:grid sm:grid-cols-[10%_80%_10%] xl:grid-cols-[5%_90%_5%] xxl:w-[80%] xl:mx-auto min-h-[var(--sectionHeight)] w-screen font-montserrat">
-            <div className="hidden sm:block w-full h-[2rem] sm:h-full border border-red-500 text-white">
-              <p>Social Icons</p>
+          <main className="h-[var(--sectionHeight)] grid w-screen sm:grid sm:grid-cols-[10%_80%_10%] xl:grid-cols-[5%_90%_5%] xxl:w-[80%] xl:mx-auto font-montserrat">
+            <div className="hidden sm:block w-full h-[2rem] sm:h-full">
+              <SocialsLinkIcons />
             </div>
             {children}
             <div className="hidden sm:block w-full h-[2rem] sm:h-full">

@@ -68,8 +68,8 @@ body {
   }
 
   .pageLinkIcons {
-    @apply relative flex justify-center items-center w-[1.8rem] h-[1.8rem] md:w-[2.1rem] md:h-[2.1rem] rounded-[50%] border-2 border-bgDark dark:border-white  hover:border-2 hover:border-yellow-500 text-gray-700 dark:text-white hover:cursor-pointer;
-    @apply before:absolute before:content-[''] before:top-0 before:left-0 before:bottom-0 before:right-0 before:w-full before:h-full before:rounded-[50%] before:z-[-1];
+    @apply relative flex justify-center items-center w-[1.8rem] h-[1.8rem] md:w-[2.1rem] md:h-[2.1rem] rounded-[50%] border-2 border-bgDark dark:border-white hover:border-2 hover:cursor-pointer;
+    @apply before:absolute before:content-[''] before:inset-0 before:w-full before:h-full before:rounded-full before:z-[-1];
   }
 
   .pageLinkIcons:has(.isActive) {

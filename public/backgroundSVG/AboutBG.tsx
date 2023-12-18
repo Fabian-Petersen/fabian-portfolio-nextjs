@@ -1,8 +1,10 @@
-import * as React from "react";
+"use client";
+
+import { useThemeContext } from "@/app/ContextAPI_Hooks/usethemeContext";
 
 const AboutBG = () => {
-  // const { theme } = useGlobalContext();
-  const theme = "dark";
+  const { theme } = useThemeContext();
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +72,7 @@ const AboutBG = () => {
             offset="0"
           ></stop>
           <stop
-            stop-opacity="0"
+            stopOpacity="0"
             stopColor={
               theme === "dark"
                 ? "rgba(15, 70, 185, 0.15)"

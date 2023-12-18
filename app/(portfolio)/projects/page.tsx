@@ -6,11 +6,11 @@ import ProjectsBG from "@/public/backgroundSVG/Projects.BG";
 
 const ProjectsPage: React.FC = () => {
   return (
-    <main className="">
+    <main>
       <div className="bg-cover bg-center absolute top-0 left-0 z-[-100] h-full w-full">
         <ProjectsBG />
       </div>
-      <PageHeading title="Projects Page" />
+      <PageHeading title="My Projects" />
     </main>
   );
 };

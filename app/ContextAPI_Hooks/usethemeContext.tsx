@@ -11,13 +11,14 @@ import React, {
 
 type Theme = "light" | "dark";
 
-// $ Step 0: Define the types and specify the theme to only take the values 'light' or 'dark' aka Theme
+// $ Step 0: Define the types and specify the theme to only take the values 'light' or 'dark' via the Theme type
 type ThemeContext = {
   theme: Theme;
   setTheme: Dispatch<SetStateAction<Theme>>;
 };
 
 // $ Step 1: Create the context
+// % The ThemeContext type takes in the ThemeContext type or null 
 const ThemeContext = createContext<ThemeContext | null>(null);
 
 type ThemeContextProviderProps = {
@@ -28,7 +29,7 @@ type ThemeContextProviderProps = {
 export default function ThemeContextProvider({
   children,
 }: ThemeContextProviderProps) {
-  // $ Typescript will throw an error if the theme is not set to light or dark, use <'light'|'dark'>
+  // Typescript will throw an error if the theme is not set to light or dark, use <'light'|'dark'>
   const [theme, setTheme] = useState<Theme>("light");
 
   return (
