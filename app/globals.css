@@ -39,7 +39,7 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-@layer components {
+@layer base {
   /* $ ========================================== Home Page Styles ========================================== */
 
   .socialIconStyles {
@@ -73,7 +73,7 @@ body {
   }
 
   .pageLinkIcons:has(.isActive) {
-    @apply border-[2px] border-yellow-400 before:bg-primaryColor text-white;
+    @apply border-[2px] border-yellow-400 before:bg-primaryColor dark:text-white;
   }
 
   .pageLinkIcons:has(.isActive) a {

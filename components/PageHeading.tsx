@@ -1,6 +1,10 @@
 import * as React from "react";
 
-const PageHeading = ({ title }: { title: string }) => {
+interface PageHeadingProps {
+  title: string;
+}
+
+const PageHeading = ({ title }: PageHeadingProps) => {
   return (
     <h1 className="text-2xl md:text-4xl font-bold border text-blue-600 text-center">
       {title}

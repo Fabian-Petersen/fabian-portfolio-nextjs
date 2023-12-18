@@ -17,7 +17,7 @@ const HomeMainContent = () => {
         Welcome to my official portfolio website showcasing my work as a
         <span className="text-primaryColor"> Front End Developer.</span>
       </p>
-      <CTAButton />
+      <CTAButton title="My Projects" />
     </article>
   );
 };
