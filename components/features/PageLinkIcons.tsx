@@ -15,7 +15,7 @@ interface PageLink {
 
 const PageLinkIcons: React.FC = () => {
   return (
-    <ul className="sm:fixed sm:flex sm:flex-col hidden md:visible gap-[2rem] z-50 top-[50%] right-[3%] transform -translate-y-[50%]">
+    <ul className="flex flex-col justify-center items-center xxl:items-start h-full sm:flex-col md:visible gap-[2rem] z-50">
       {links.map((link: PageLink) => {
         const { id, href, icon, tooltip_content } = link;
         return (

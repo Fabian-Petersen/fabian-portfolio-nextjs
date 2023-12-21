@@ -10,7 +10,7 @@ const CTAButton = ({ title }: CTAButtonProps) => {
   return (
     <div>
       <Link href="/projects">
-        <button className="text-sm py-3 px-4 md:py-2.5 md:px-4 bg-blue-500 hover:bg-blue-600 hover:shadow-lg hover:translate-y-[1px] rounded-full text-gray-200 uppercase tracking-widest">
+        <button className="text-[0.7rem] p-2 md:p-3 bg-blue-500 hover:bg-blue-600 hover:shadow-lg hover:translate-y-[1px] rounded-full text-gray-200 uppercase tracking-widest">
           {title}
         </button>
       </Link>

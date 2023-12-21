@@ -6,7 +6,7 @@ interface PageHeadingProps {
 
 const PageHeading = ({ title }: PageHeadingProps) => {
   return (
-    <h1 className="text-2xl md:text-4xl font-bold dark:text-white text-blue-600 text-center">
+    <h1 className="text-2xl md:text-4xl mb-4 font-bold dark:text-white text-blue-600 text-center">
       {title}
     </h1>
   );

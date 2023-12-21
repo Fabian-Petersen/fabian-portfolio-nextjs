@@ -24,10 +24,10 @@ const MobileNavMenu = () => {
             <li key={id} className="w-full">
               <a
                 href={href}
-                className="relative capitalize block py-2 text-gray-900 overflow-hidden group left-[50%] -translate-x-[25%]"
+                className="relative capitalize text-[1.3rem] sm:text-[1.6rem] block py-2 text-gray-900 overflow-hidden group left-[50%] -translate-x-[25%]"
               >
                 {name}
-                <span className="absolute p-2 z-[-1] top-0 left-0 w-full h-full border-b-4 border-green-500 transform -translate-x-full transition-transform duration-1000 group-hover:translate-x-0"></span>
+                <span className="absolute p-2 z-[-1] top-0 left-0 w-[70%] md:w-full h-full border-b-4 border-green-500 transform -translate-x-full transition-transform duration-1000 group-hover:translate-x-0"></span>
               </a>
             </li>
           );

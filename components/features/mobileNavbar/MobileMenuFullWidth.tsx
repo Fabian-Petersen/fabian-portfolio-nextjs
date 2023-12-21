@@ -21,7 +21,7 @@ const MobileMenuFullWidth = () => {
   }, []);
 
   return (
-    <nav className="sm:hidden border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700 w-full">
+    <nav className="md:hidden dark:bg-gray-800 dark:border-gray-700 w-full">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Logo />
         {navOpen ? <MenuCloseButton /> : <MenuOpenButton />}

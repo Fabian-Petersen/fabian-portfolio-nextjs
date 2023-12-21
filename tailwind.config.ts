@@ -26,6 +26,7 @@ const config: Config = {
         primaryColor: "#e43f5a",
         bgDark: "#050f1a",
         bgLight: "#eff5f5",
+        facebookGray: "#eff2f5",
         fontLight: "#ededed",
         //bgDark:#050f1a,
       },

@@ -18,7 +18,7 @@ const SocialsLinkIcons = () => {
       // variants={parentContainer}
       // initial="initialState"
       // animate="animateState"
-      className="sm:fixed sm:flex sm:flex-col hidden md:visible gap-[2rem] z-50 top-[50%] left-[3%] transform -translate-y-[50%]"
+      className="flex flex-col justify-center items-center xxl:items-end h-full sm:flex-col md:visible gap-[2rem] z-50"
     >
       {socialLinks.map((link) => {
         const { id, iconImage, href, tooltip, colorClass } = link;

@@ -10,7 +10,7 @@ const HomeMainContent = () => {
       <h3 className="text-[1rem] md:text-[1.2rem] lg:text-[1.25rem] tracking-wide">
         Hi, my name is
       </h3>
-      <h1 className="tracking-[0.095em] text-[2.3rem] md:text-[3.5rem] lg:text-[4.5rem] font-bold mb-6">
+      <h1 className="tracking-[0.095em] text-[1.8rem] md:text-[3rem] lg:text-[4rem] font-bold mb-6">
         <span className="text-primaryColor">Fabian </span>Petersen
       </h1>
       <p className="text-[1rem] tracking-wider md:text-[1.2rem] lg:text-[1.25rem] leading-2 normal-case mb-8">
