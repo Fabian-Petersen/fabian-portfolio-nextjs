@@ -13,13 +13,8 @@ import { useThemeContext } from "@/app/ContextAPI_Hooks/usethemeContext";
 import MenuButton from "./MenuButton";
 
 const MobileNavbar = () => {
-  const { theme } = useThemeContext();
   return (
-    <nav
-      className={`
-        ${theme === "dark" ? "bg-bgDark" : "bg-bgLight"}
-      } h-[var(--navbarHeight)] sticky w-full z-20 top-0 start-0 border border-red-500 dark:border-gray-600`}
-    >
+    <nav className="h-[var(--navbarHeight)] sticky w-full z-20 top-0 start-0 dark:border-gray-600">
       <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
         <Logo />
         <MenuToggleButton />

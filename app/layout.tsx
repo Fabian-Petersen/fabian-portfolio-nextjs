@@ -7,14 +7,18 @@ import * as React from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/features/navbar/Navbar";
 
-import PageLinkIcons from "@/components/features/PageLinkIcons";
+// $ Components
+import Navbar from "@/components/features/navbar/Navbar";
+import PageLinkIconsMenu from "@/components/features/PageLinkIconsMenu";
 import SocialsLinkIcons from "@/components/features/SocialsLinkIcons";
 import MobileMenuFullWidth from "@/components/features/mobileNavbar/MobileMenuFullWidth";
 
+// $ Context Providers
 import ThemeContextProvider from "./ContextAPI_Hooks/usethemeContext";
 import MobileNavContextProvider from "./ContextAPI_Hooks/useMobileNavbarContext";
+
+// $ Custom Hooks and Functions
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,12 +29,13 @@ export const metadata: Metadata = {
 
 interface RootLayoutProps {
   children: React.ReactNode;
+  withRouter: React.ComponentType;
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`inter.className bg-white dark:bg-bgDark`}>
         <ThemeContextProvider>
           <MobileNavContextProvider>
             <div className="md:hidden">
@@ -47,7 +52,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             </div>
             {children}
             <div className="hidden md:block w-full h-[2rem] sm:h-full">
-              <PageLinkIcons />
+              <PageLinkIconsMenu />
             </div>
           </main>
         </ThemeContextProvider>

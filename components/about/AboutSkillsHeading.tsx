@@ -1,4 +1,4 @@
-// $ This component renders the headings for the skills section from the skillsdata.ts file
+// $ This component renders the headings (UI/UX Design, FrontEnd etc) for the skills section from the skillsdata.ts file
 
 import * as React from "react";
 
@@ -10,7 +10,7 @@ const AboutSkillsHeading = (props: AboutSkillsHeadingProps) => {
   const { category } = props;
 
   return (
-    <div>
+    <div className="py-4">
       <h3
         className="uppercase"
         // custom={id}

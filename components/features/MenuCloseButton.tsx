@@ -1,23 +1,23 @@
 import React from "react";
 
 import { useMobileNavContext } from "@/app/ContextAPI_Hooks/useMobileNavbarContext";
+import useMobileMenuColorHook from "@/components/features/mobileNavbar/useMobileMenuColorHook";
 
 const MenuCloseButton = () => {
   const { setNavOpen } = useMobileNavContext()!;
+  const { menuColor } = useMobileMenuColorHook();
   return (
     <button
       data-collapse-toggle="navbar-solid-bg"
       type="button"
       className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-      // aria-controls="navbar-solid-bg"
-      // aria-expanded="true"
       onClick={() => {
         setNavOpen(false);
       }}
     >
       <svg viewBox="0,0,256,256" width="128px" height="128px">
         <g
-          fill="#000000"
+          fill={menuColor}
           fillRule="nonzero"
           stroke="none"
           strokeWidth="1"

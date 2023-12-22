@@ -9,6 +9,7 @@ import MenuOpenButton from "../MenuOpenButton";
 import MobileNavMenu from "./MobileNavMenu";
 
 import { useMobileNavContext } from "@/app/ContextAPI_Hooks/useMobileNavbarContext";
+import ThemeToggleButton from "../navbar/ThemeToggleButton";
 
 // $ The mobile navbar context provider passes the navOpen state to the components that need it to handle the closing and opening of the mobile navbar
 
@@ -21,10 +22,13 @@ const MobileMenuFullWidth = () => {
   }, []);
 
   return (
-    <nav className="md:hidden dark:bg-gray-800 dark:border-gray-700 w-full">
+    <nav className="md:hidden bg-transparent w-full">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Logo />
-        {navOpen ? <MenuCloseButton /> : <MenuOpenButton />}
+        <div className="flex items-center">
+          <ThemeToggleButton />
+          {navOpen ? <MenuCloseButton /> : <MenuOpenButton />}
+        </div>
         <MobileNavMenu />
       </div>
     </nav>

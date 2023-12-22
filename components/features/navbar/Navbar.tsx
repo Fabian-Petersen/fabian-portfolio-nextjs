@@ -7,13 +7,8 @@ import Button from "@/components/features/Button";
 import Logo from "./Logo";
 
 const Navbar = () => {
-  const { theme } = useThemeContext();
   return (
-    <div
-      className={`${
-        theme === "dark" ? "bg-bgDark" : "bg-bgLight"
-      } flex items-center navbarHeight h-[var(--navbarHeight)] top-0 left-0 w-[100%] border-opacity-50 dark:border-opacity-5`}
-    >
+    <div className="bg-transparent flex items-center navbarHeight h-[var(--navbarHeight)] top-0 left-0 w-[100%] border-opacity-50 dark:border-opacity-5">
       <Logo />
       <div className="flex ml-auto gap-[2rem] mr-[1.5rem] items-center">
         <Button

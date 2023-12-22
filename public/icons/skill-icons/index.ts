@@ -1,16 +1,21 @@
-import figma from "./figma.png";
-import html from "./html.png";
-import css from "./css.png";
-import github from "./github.png";
-import bootstrap from "./bootstrap.png";
-import javascript from "./javascript.png";
-import react from "./react.png";
+const html = "https://img.icons8.com/color/96/null/html-5--v1.png";
+const figma = "https://img.icons8.com/color/96/000000/figma--v1.png";
+const css = "https://img.icons8.com/color/96/null/css3.png";
+const javascript = "https://img.icons8.com/color/96/null/javascript.png";
+const react = "https://img.icons8.com/color/96/null/react-native.png";
+const sass = "https://img.icons8.com/color/96/null/sass.png";
+const redux = "https://img.icons8.com/color/96/null/redux.png";
+const github = "https://img.icons8.com/color/96/null/github.png";
+const bootstrap = "https://img.icons8.com/color/96/null/bootstrap.png";
+const visualstudiocode =
+  "https://img.icons8.com/color/96/null/visual-studio-code-2019.png";
+const wordpress = "https://img.icons8.com/color/96/null/wordpress.png";
+const typescript =
+  "https://img.icons8.com/external-tal-revivo-color-tal-revivo/96/external-typescript-an-open-source-programming-language-developed-and-maintained-by-microsoft-logo-color-tal-revivo.png";
+const nextjs = "https://img.icons8.com/fluency/96/nextjs.png";
+const tailwind = "https://img.icons8.com/fluency/96/tailwind_css.png";
+
 import supabase from "./supabase.png";
-import visualstudiocode from "./visual-studio-code.png";
-import wordpress from "./wordpress.png";
-import typescript from "./typescript.png";
-import tailwind from "./tailwind.svg";
-import nextjs from "./nextjs.png";
 
 const skillsIconImages = {
   figma,
@@ -24,8 +29,8 @@ const skillsIconImages = {
   visualstudiocode,
   wordpress,
   typescript,
-  tailwind,
   nextjs,
+  tailwind,
 };
 
 export default skillsIconImages;
