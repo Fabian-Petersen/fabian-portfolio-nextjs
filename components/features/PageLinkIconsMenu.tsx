@@ -21,32 +21,34 @@ interface PageLink {
 const PageLinkIconsMenu: React.FC = () => {
   const pathname = usePathname();
   return (
-    <ul className="flex flex-col justify-center items-center xxl:items-start h-full sm:flex-col md:visible gap-[2rem] z-50">
-      {links.map((link: PageLink) => {
-        const { id, href, icon, tooltip_content } = link;
-        return (
-          <Tooltip
-            className="capitalize tracking-wide"
-            key={id}
-            content={tooltip_content}
-            placement="left"
-          >
-            <li
-              className={`pageLinkIcons ${
-                pathname === href
-                  ? "border-2 border-blue-500 hover:cursor-pointer bg-black dark:text-blue-500 text-blue-500"
-                  : "border-2 border-gray-400 bg-slate-300 hover:cursor-pointer text-gray-400"
-              } `}
-              data-tooltip-target="tooltip-animation"
+    <div className="fixed md:right-[5%] xl:right-[5%] top-[50%] -translate-y-[25%] z-[1000] hidden md:block">
+      <ul className="flex flex-col sm:flex-col gap-[2rem]">
+        {links.map((link: PageLink) => {
+          const { id, href, icon, tooltip_content } = link;
+          return (
+            <Tooltip
+              className="capitalize tracking-wide"
+              key={id}
+              content={tooltip_content}
+              placement="left"
             >
-              <Link href={href}>
-                <FontAwesomeIcon className="iconSize" icon={icon} />
-              </Link>
-            </li>
-          </Tooltip>
-        );
-      })}
-    </ul>
+              <li
+                className={`pageLinkIcons ${
+                  pathname === href
+                    ? "border-2 border-blue-500 hover:cursor-pointer bg-black dark:bg-white dark:text-blue-500 text-blue-500"
+                    : "border-2 border-gray-400 bg-slate-300 hover:cursor-pointer text-gray-400"
+                } `}
+                data-tooltip-target="tooltip-animation"
+              >
+                <Link href={href}>
+                  <FontAwesomeIcon className="iconSize" icon={icon} />
+                </Link>
+              </li>
+            </Tooltip>
+          );
+        })}
+      </ul>
+    </div>
   );
 };
 export default PageLinkIconsMenu;

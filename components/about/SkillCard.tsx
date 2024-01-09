@@ -10,7 +10,11 @@ const SkillCard: React.FC<SkillCardProps> = ({ image, name }) => {
   return (
     <div className="flex gap-8">
       <div className="flex flex-col gap-4 items-center justify-center">
-        <img className="w-16 h-16 hover:scale-105" src={image} alt="html" />
+        <img
+          className="w-16 h-16 hover:scale-105 hover:cursor-pointer"
+          src={image}
+          alt="html"
+        />
         <p className="capitalize">{name}</p>
       </div>
     </div>

@@ -5,22 +5,16 @@
 
 import * as React from "react";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 
 // $ Components
 import Navbar from "@/components/features/navbar/Navbar";
 import PageLinkIconsMenu from "@/components/features/PageLinkIconsMenu";
-import SocialsLinkIcons from "@/components/features/SocialsLinkIcons";
 import MobileMenuFullWidth from "@/components/features/mobileNavbar/MobileMenuFullWidth";
 
 // $ Context Providers
 import ThemeContextProvider from "./ContextAPI_Hooks/usethemeContext";
 import MobileNavContextProvider from "./ContextAPI_Hooks/useMobileNavbarContext";
-
-// $ Custom Hooks and Functions
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Fabian Portfolio",
@@ -34,27 +28,17 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
-      <body className={`inter.className bg-white dark:bg-bgDark`}>
+    <html lang="en" className="font-poppins">
+      <body className="bg-white dark:bg-bgDark min-h-full">
         <ThemeContextProvider>
           <MobileNavContextProvider>
-            <div className="md:hidden">
-              {/* <MobileNavbar /> */}
-              <MobileMenuFullWidth />
-            </div>
+            <MobileMenuFullWidth />
           </MobileNavContextProvider>
-          <div className="hidden md:block">
-            <Navbar />
-          </div>
-          <main className="h-[var(--sectionHeight)] grid md:grid-cols-[10%_80%_10%] xxl:grid-cols-[15%_70%_15%] mx-auto font-montserrat">
-            <div className="relative hidden md:block w-full h-[2rem] sm:h-full">
-              <SocialsLinkIcons />
-            </div>
+          <Navbar />
+          <main className="md:px-40 2xl:px-96 grid grid-cols-1fr border-2 border-red-500">
             {children}
-            <div className="hidden md:block w-full h-[2rem] sm:h-full">
-              <PageLinkIconsMenu />
-            </div>
           </main>
+          <PageLinkIconsMenu />
         </ThemeContextProvider>
       </body>
     </html>

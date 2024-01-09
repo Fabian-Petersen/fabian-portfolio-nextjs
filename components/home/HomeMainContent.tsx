@@ -1,12 +1,13 @@
+import SocialsLinkIcons from "@/components/features/SocialsLinkIcons";
 import CTAButton from "./CTAButton";
 
 const HomeMainContent = () => {
   return (
-    <article className="grid h-full place-content-center w-full px-[1.5rem] sm:px-[2.5rem] text-gray-600 dark:text-white tracking-wider col-start-2 col-end-3 ">
-      <div
-        className="text-primaryColor w-20 h-4 border-b-4 mb-4 border-primaryColor"
+    <article className="grid gap-6 place-content-center max-w-[50rem] px-[1.5rem] sm:px-[2.5rem] text-gray-600 dark:text-white tracking-wider">
+      <span
+        className="text-primaryColor w-20 h-4 border-b-4 border-primaryColor"
         // variants={animateLine}
-      ></div>
+      ></span>
       <h3 className="text-[1rem] md:text-[1.2rem] lg:text-[1.25rem] tracking-wide">
         Hi, my name is
       </h3>
@@ -18,6 +19,7 @@ const HomeMainContent = () => {
         <span className="text-primaryColor"> Front End Developer.</span>
       </p>
       <CTAButton title="My Projects" />
+      <SocialsLinkIcons />
     </article>
   );
 };

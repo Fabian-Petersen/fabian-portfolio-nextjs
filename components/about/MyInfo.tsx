@@ -5,24 +5,35 @@
 
 const MyInfo = () => {
   return (
-    <div>
+    <div className="text-gray-600 font-medium dark:text-white text-[0.8rem] md:text-[1rem] leading-[1.7rem] tracking-wide py-4">
       <p
-        className="text-gray-600 font-medium dark:text-white text-[0.8rem] md:text-[1rem] leading-[1.7rem] tracking-wide py-4"
-        // variants={aboutInfo}
-        // initial="initialState"
-        // animate="animateState"
+      // variants={aboutInfo}
+      // initial="initialState"
+      // animate="animateState"
       >
-        My journey began as a chemical engineer, during which I was involved in
-        several software implementation projects with TotalEnergies. This
-        experience sparked my interest in app development, and I eventually
-        transitioned into a dedicated React Developer, a role I am incredibly
-        passionate about today.
+        My background is in chemical engineering and like many engineers we are
+        driven by continuous learning, design and solving complex problems.
         <br />
         <br />
         As a developer, I am enthusiastic about learning new technologies and
-        working on thrilling projects. Here is a list of technologies I have had
-        the opportunity to work with so far, and I am continuously expanding my
-        skill set.
+        working on exciting projects. I follow the learn while you do approach
+        instead of following prepared online projects, thus my projects are
+        build with technologies I currently learn. This approach have helped me
+        tremendoulsy to learn the fundamentals while at the same time I
+        experienced problems where the answer is not in the course material.
+      </p>
+      <br />
+      <p>
+        My earlier projects were build with vanillas javascript and later with
+        react however I'm currently using Nextjs with TypeScript to build my
+        projects. The structure of the projects follow the SOLID design
+        patterns, the styling Tailwindcss and the animations with Framer Motion.
+      </p>
+
+      <br />
+      <p>
+        Visit my project section to see my work with more detail on the build, I
+        hope you like it!...
       </p>
     </div>
   );

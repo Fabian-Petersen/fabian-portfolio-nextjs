@@ -45,7 +45,7 @@ const ThemeToggleButton = () => {
         <Tooltip
           className="text-white capitalize tracking-wider"
           content="Light Theme"
-          placement="left"
+          placement="bottom"
         >
           <FontAwesomeIcon
             icon={faSun}
@@ -57,7 +57,7 @@ const ThemeToggleButton = () => {
         <Tooltip
           className="capitalize tracking-wider"
           content="Dark Theme"
-          placement="left"
+          placement="bottom"
         >
           <FontAwesomeIcon
             className="dark:text-white text-gray-600"

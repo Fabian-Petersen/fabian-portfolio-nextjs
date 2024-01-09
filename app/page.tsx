@@ -5,8 +5,7 @@ import HomeMainContent from "@/components/home/HomeMainContent";
 
 export default function HomePage() {
   return (
-    <main className="">
-      <HomeBGHex />
+    <main className="place-content-center">
       <HomeMainContent />
     </main>
   );

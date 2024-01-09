@@ -6,14 +6,11 @@ const ContactSVG = () => {
   const { theme } = useThemeContext();
   return (
     <svg
-      // xmlns="http://www.w3.org/2000/svg"
       version="1.1"
-      //   xmlns:xlink="http://www.w3.org/1999/xlink"
-      //   xmlns:svgjs="http://svgjs.dev/svgjs"
       width="100%"
       height="100%"
       preserveAspectRatio="none"
-      viewBox="0 0 3840 2160"
+      viewBox="0 0 100% 100%"
     >
       <g mask='url("#SvgjsMask1027")' fill="none">
         <rect

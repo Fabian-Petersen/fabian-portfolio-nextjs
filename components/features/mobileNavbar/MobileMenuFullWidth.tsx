@@ -1,6 +1,5 @@
 "use client";
 
-import React, { useState } from "react";
 import { useEffect } from "react";
 import { initFlowbite } from "flowbite";
 import Logo from "@/components/features/navbar/Logo";

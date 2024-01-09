@@ -6,16 +6,10 @@ import * as React from "react";
 
 interface layoutProps {
   children: React.ReactNode;
-  title: string;
 }
 
-const layout = ({ children, title }: layoutProps) => {
-  return (
-    <main className="px-16 sm:px-8">
-      <PageHeading title={title} />
-      {children}
-    </main>
-  );
+const layout = ({ children }: layoutProps) => {
+  return <main className="">{children}</main>;
 };
 
 export default layout;

@@ -1,13 +1,13 @@
 import * as React from "react";
 
-interface PageHeadingProps {
+type PageHeadingProps = {
   title: string;
-}
+};
 
 const PageHeading = ({ title }: PageHeadingProps) => {
   return (
-    <h1 className="text-2xl md:text-4xl mb-4 font-bold dark:text-white text-blue-600 text-center">
-      {title}
+    <h1 className="relative text-headingClamp headingLine tracking-wider font-semibold dark:text-white text-blue-600 text-center border border-red-300">
+      <span>{title}</span>
     </h1>
   );
 };

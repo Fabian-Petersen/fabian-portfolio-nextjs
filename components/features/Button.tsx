@@ -1,15 +1,18 @@
 // The component is used to create buttons in the app by passing in the various props to create the button
 
+import { type } from "os";
+
 interface ButtonProps {
   className: string;
-  onClick: () => void;
-  label: string;
+  onClick?: () => void;
+  buttonLabel: string;
+  type?: "submit" | "button" | "reset";
 }
 
-const Button = ({ className, onClick, label }: ButtonProps) => {
+const Button = ({ className, onClick, buttonLabel, type }: ButtonProps) => {
   return (
-    <button className={className} onClick={onClick}>
-      {label}
+    <button className={className} onClick={onClick} type={type}>
+      {buttonLabel}
     </button>
   );
 };

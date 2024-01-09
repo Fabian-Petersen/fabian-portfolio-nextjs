@@ -10,15 +10,6 @@ import useCategoriesHeadingsHook from "./useCategoriesHeadingsHook";
 // $ The uniqueCategories array is destructured from the returned object for the headings
 const { uniqueCategories } = useCategoriesHeadingsHook();
 // $ The uniqueLanguages array is destructured from the returned object for the languages
-// const { uniqueLanguages } = useCategoriesHeadingsHook();
-// console.log(uniqueCategories);
-
-type MySkillTypes = {
-  id: number;
-  category: string;
-  language: string;
-  iconImage: string;
-};
 
 const MySkills = () => {
   return (
@@ -26,7 +17,7 @@ const MySkills = () => {
       <PageSubHeading title="my skills" size="h3" />
       <div className="flex flex-col flex-wrap gap-12">
         {uniqueCategories.map((category, index) => (
-          <div className="border border-green-500" key={index}>
+          <div className="" key={index}>
             <AboutSkillsHeading category={category} />
             <div className="flex gap-8">
               {mySkillsData

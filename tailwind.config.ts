@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-import { homepageImageURL } from "./public/backgroundImageURL/urlData";
+import aboutURL from "./public/useBackgroundURLHook";
 
 const config: Config = {
   content: [
@@ -11,7 +11,9 @@ const config: Config = {
   theme: {
     extend: {
       darkMode: "class",
-
+      fontSize: {
+        headingClamp: "clamp(1.5rem, 5vw + 1rem, 3rem)",
+      },
       keyframes: {
         openNavBar: {
           "0%": { transform: "translate-x-[-100%]" },
@@ -23,6 +25,11 @@ const config: Config = {
         },
       },
 
+      gridTemplateColumns: {
+        gallery: "repeat(auto-fill, minmax(250px, 1fr))",
+        contact: "10rem, 1fr",
+      },
+
       colors: {
         primaryColor: "#e43f5a",
         bgDark: "#050f1a",
@@ -31,13 +38,14 @@ const config: Config = {
         fontLight: "#ededed",
         //bgDark:#050f1a,
       },
-      // backgroundImage: {
-      //   homepage: homepageImageURL,
-      // },
+      backgroundImage: {
+        aboutURL: "url(`${abourtURL}`)",
+      },
     },
     fontFamily: {
       montserrat: ["Montserrat", "sans-serif"],
       greatvibes: ["Great Vibes", "cursive"],
+      poppins: ["Poppins", "sans-serif"],
     },
   },
   plugins: [require("flowbite/plugin")],

@@ -14,39 +14,41 @@ import Image from "next/image";
 const SocialsLinkIcons = () => {
   // const [parentContainer, childContainer] = iconSocialLinksVariants;
   return (
-    <ul
-      // variants={parentContainer}
-      // initial="initialState"
-      // animate="animateState"
-      className="flex flex-col justify-center items-center xxl:items-end h-full sm:flex-col md:visible gap-[2rem] z-50"
-    >
-      {socialLinks.map((link) => {
-        const { id, iconImage, href, tooltip, colorClass } = link;
+    <div className="hidden md:block">
+      <ul
+        className="flex gap-4"
+        // variants={parentContainer}
+        // initial="initialState"
+        // animate="animateState"
+      >
+        {socialLinks.map((link) => {
+          const { id, iconImage, href, tooltip, colorClass } = link;
 
-        return (
-          <Tooltip
-            key={id}
-            content={tooltip}
-            placement="right"
-            className={`capitalize ${colorClass}`}
-          >
-            <Link href={href} className="dark:text-white">
-              <li
-              // variants={childContainer}
-              // 'Old Styles similart to the pagelinks ' className={`pageLinkIcons ${iconColor}`}
-              // className={`bg-${iconColor} socialIconStyles`}
-              >
-                <Image
-                  className={`w-[1.8rem] h-[1.8rem] md:w-[2.1rem] md:h-[2.1rem]`}
-                  src={iconImage}
-                  alt="icon"
-                />
-              </li>
-            </Link>
-          </Tooltip>
-        );
-      })}
-    </ul>
+          return (
+            <Tooltip
+              key={id}
+              content={tooltip}
+              placement="bottom"
+              className={`capitalize ${colorClass}`}
+            >
+              <Link href={href} className="dark:text-white">
+                <li
+                  // variants={childContainer}
+                  // 'Old Styles similart to the pagelinks ' className={`pageLinkIcons ${iconColor}`}
+                  className="pageLinkIcons"
+                >
+                  <Image
+                    className={`w-[1.8rem] h-[1.8rem] md:w-[2.1rem] md:h-[2.1rem]`}
+                    src={iconImage}
+                    alt="icon"
+                  />
+                </li>
+              </Link>
+            </Tooltip>
+          );
+        })}
+      </ul>
+    </div>
   );
 };
 

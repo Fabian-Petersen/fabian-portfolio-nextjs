@@ -32,6 +32,7 @@ const mySkillsData = [
     iconImage: html,
     category: "frontEnd",
     className: "html",
+    link: "about/html",
   },
   {
     id: 3,
@@ -39,6 +40,7 @@ const mySkillsData = [
     iconImage: css,
     category: "frontEnd",
     className: "css",
+    link: "about/css",
   },
   {
     id: 4,
@@ -46,6 +48,7 @@ const mySkillsData = [
     iconImage: javascript,
     category: "frontEnd",
     className: "javascript",
+    link: "about/javascript",
   },
   {
     id: 5,
@@ -53,6 +56,7 @@ const mySkillsData = [
     iconImage: react,
     category: "frontEnd",
     className: "react",
+    link: "about/react",
   },
   {
     id: 6,
@@ -60,6 +64,7 @@ const mySkillsData = [
     iconImage: supabase,
     category: "backend",
     className: "api",
+    link: "about/supabase",
   },
   {
     id: 7,
@@ -74,6 +79,7 @@ const mySkillsData = [
     iconImage: tailwind,
     category: "frontEnd",
     className: "api",
+    link: "about/tailwind",
   },
   {
     id: 9,
@@ -81,6 +87,7 @@ const mySkillsData = [
     iconImage: github,
     category: "other",
     className: "github",
+    link: "about/github",
   },
   {
     id: 10,
@@ -88,6 +95,7 @@ const mySkillsData = [
     iconImage: bootstrap,
     category: "other",
     className: "bootstrap",
+    link: "about/bootstrap",
   },
   {
     id: 11,
@@ -95,6 +103,7 @@ const mySkillsData = [
     iconImage: visualstudiocode,
     category: "other",
     className: "vsc",
+    link: "about/vsc",
   },
   {
     id: 12,
@@ -102,6 +111,7 @@ const mySkillsData = [
     iconImage: typescript,
     category: "frontEnd",
     className: "typescript",
+    link: "about/typescript",
   },
 ];
 

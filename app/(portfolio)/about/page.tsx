@@ -10,13 +10,10 @@ import MySkills from "@/components/about/MySkills";
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen">
-      <AboutBGHex />
-      <div className="mx-auto">
-        <PageHeading title="About Me" />
-        <MyInfo />
-        <MySkills />
-      </div>
+    <main>
+      <PageHeading title="About Me" />
+      <MyInfo />
+      <MySkills />
     </main>
   );
 }
