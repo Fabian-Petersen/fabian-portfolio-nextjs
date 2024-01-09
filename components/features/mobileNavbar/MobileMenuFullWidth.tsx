@@ -8,7 +8,7 @@ import MenuOpenButton from "../MenuOpenButton";
 import MobileNavMenu from "./MobileNavMenu";
 
 import { useMobileNavContext } from "@/app/ContextAPI_Hooks/useMobileNavbarContext";
-import ThemeToggleButton from "../navbar/ThemeToggleButton";
+import ThemeToggleButton from "../navbar/ThemeToggleMenu";
 
 // $ The mobile navbar context provider passes the navOpen state to the components that need it to handle the closing and opening of the mobile navbar
 

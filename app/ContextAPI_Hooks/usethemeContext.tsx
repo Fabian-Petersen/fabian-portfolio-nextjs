@@ -9,16 +9,18 @@ import React, {
   SetStateAction,
 } from "react";
 
-type Theme = "light" | "dark";
+export type Theme = "dark" | "";
 
 // $ Step 0: Define the types and specify the theme to only take the values 'light' or 'dark' via the Theme type
-type ThemeContext = {
+export type ThemeContext = {
   theme: Theme;
   setTheme: Dispatch<SetStateAction<Theme>>;
+  isDarkTheme: boolean;
+  setIsDarkTheme: Dispatch<SetStateAction<boolean>>;
 };
 
 // $ Step 1: Create the context
-// % The ThemeContext type takes in the ThemeContext type or null 
+// % The ThemeContext type takes in the ThemeContext type or null
 const ThemeContext = createContext<ThemeContext | null>(null);
 
 type ThemeContextProviderProps = {
@@ -30,10 +32,13 @@ export default function ThemeContextProvider({
   children,
 }: ThemeContextProviderProps) {
   // Typescript will throw an error if the theme is not set to light or dark, use <'light'|'dark'>
-  const [theme, setTheme] = useState<Theme>("light");
+  const [theme, setTheme] = useState<Theme>("");
+  const [isDarkTheme, setIsDarkTheme] = useState<boolean>(false);
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
+    <ThemeContext.Provider
+      value={{ theme, setTheme, isDarkTheme, setIsDarkTheme }}
+    >
       {children}
     </ThemeContext.Provider>
   );

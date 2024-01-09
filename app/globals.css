@@ -14,6 +14,17 @@
   --sectionHeight: calc(100vh - var(--navbarHeight));
 }
 
+/* 
+$ ========================================== Dark Mode Styles as per user preference ==========================================
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+} 
+*/
+
 html {
   margin: 0;
   padding: 0;
@@ -65,23 +76,5 @@ html {
 
   .iconSize {
     @apply text-[0.8rem] md:text-[1rem] lg:text-[1.05rem];
-  }
-
-  /* $ ========================================== Page Heading Styles ========================================== */
-
-  .headingLine:before,
-  .headingLine:after {
-    content: "";
-    position: absolute;
-    left: 0%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 2rem;
-    height: 2px;
-    background-color: #f9ca24;
-  }
-
-  .headilineLine:after {
-    right: 0%;
   }
 }

@@ -35,7 +35,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <MobileMenuFullWidth />
           </MobileNavContextProvider>
           <Navbar />
-          <main className="md:px-40 2xl:px-96 grid grid-cols-1fr border-2 border-red-500">
+          <main className="md:px-40 2xl:px-96 grid grid-cols-1fr">
             {children}
           </main>
           <PageLinkIconsMenu />
