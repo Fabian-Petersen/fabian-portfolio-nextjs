@@ -2,11 +2,11 @@
 // $ The props are destructured from the "MySkills.tsx" file
 
 interface SkillCardProps {
-  image: string;
-  name: string;
+  image: string | undefined;
+  name: string | undefined;
 }
 
-const SkillCard: React.FC<SkillCardProps> = ({ image, name }) => {
+const SkillCard = ({ image, name }: SkillCardProps) => {
   return (
     <div className="flex gap-8">
       <div className="flex flex-col gap-4 items-center justify-center">

@@ -70,10 +70,6 @@ html {
     @apply border-[2px] border-yellow-400 sm:before:bg-primaryColor dark:text-white;
   }
 
-  .pageLinkIcons:has(.isActive) a {
-    /* @apply dark:text-white text-white; */
-  }
-
   .iconSize {
     @apply text-[0.8rem] md:text-[1rem] lg:text-[1.05rem];
   }
@@ -81,8 +77,8 @@ html {
 
 @layer components {
   .pageHeadingLines {
-    @apply sm:before:absolute sm:before:content-[''] sm:before:top-[50%] sm:before:left-[0] sm:sm:before:w-[25rem] sm:before:h-[2px] sm:before:z-[-1] sm:before:bg-blue-500;
-    @apply sm:after:absolute sm:after:content-[''] sm:after:top-[50%] sm:after:right-[0] sm:after:w-[25rem] sm:after:h-[2px] sm:after:z-[-1] sm:after:bg-blue-500;
+    @apply sm:before:absolute sm:before:content-[''] sm:before:top-[50%] sm:before:left-[0] sm:sm:before:w-[15rem] sm:before:h-[2px] sm:before:z-[-1] sm:before:bg-blue-500;
+    @apply sm:after:absolute sm:after:content-[''] sm:after:top-[50%] sm:after:right-[0] sm:after:w-[15rem] sm:after:h-[2px] sm:after:z-[-1] sm:after:bg-blue-500;
   }
 }
 

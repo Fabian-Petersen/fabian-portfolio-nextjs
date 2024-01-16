@@ -26,7 +26,7 @@ const MySkills = () => {
                   <SkillCard
                     key={id}
                     name={language}
-                    image={iconImage.toString()}
+                    image={iconImage?.toString() ?? ""}
                   />
                 ))}
             </div>

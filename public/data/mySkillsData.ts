@@ -1,7 +1,17 @@
+import { StaticImageData } from "next/image";
 import skillsIconImages from "../icons/skill-icons/index";
 
 // $ The Skills Icons Images comes from the index.ts file in the skill-icons folder
 // $ The image links are imported from the index.ts file in the skill-icons folder and then used in the mySkillsData.ts file
+
+type MySkillsDataType = {
+  id?: number;
+  language?: string;
+  iconImage?: string | undefined;
+  category?: string;
+  className?: string;
+  link?: string;
+};
 
 const {
   html,
@@ -18,7 +28,7 @@ const {
   tailwind,
 } = skillsIconImages;
 
-const mySkillsData = [
+const mySkillsData: MySkillsDataType[] = [
   {
     id: 1,
     language: "figma",
@@ -61,7 +71,7 @@ const mySkillsData = [
   {
     id: 6,
     language: "Supabase",
-    iconImage: supabase,
+    iconImage: "",
     category: "backend",
     className: "api",
     link: "about/supabase",

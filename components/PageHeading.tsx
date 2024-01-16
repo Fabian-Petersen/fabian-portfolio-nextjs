@@ -1,7 +1,7 @@
 import * as React from "react";
 
 type PageHeadingProps = {
-  title: string;
+  title: string | undefined;
 };
 
 const PageHeading = ({ title }: PageHeadingProps) => {

@@ -7,18 +7,10 @@ import ProjectsCard from "./ProjectsCard";
 
 const Gallery = () => {
   return (
-    <section className="grid gap-4 grid-cols-gallery p-6">
-      {projectsCardData.map(
-        ({ title, description, image, githubLink, websiteLink }) => (
-          <ProjectsCard
-            title={title}
-            description={description}
-            image={image}
-            githubLink={githubLink}
-            websiteLink={websiteLink}
-          />
-        )
-      )}
+    <section className="grid gap-6 grid-cols-gallery p-6">
+      {projectsCardData.map((projectProps) => (
+        <ProjectsCard key={projectProps.id} {...projectProps} />
+      ))}
     </section>
   );
 };

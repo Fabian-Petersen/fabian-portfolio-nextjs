@@ -3,7 +3,7 @@
 import * as React from "react";
 
 type AboutSkillsHeadingProps = {
-  category: string;
+  category: string | undefined;
 };
 
 const AboutSkillsHeading = (props: AboutSkillsHeadingProps) => {

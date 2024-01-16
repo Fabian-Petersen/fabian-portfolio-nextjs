@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-// import HomeBGHex from "./public/backgroundHexSVG/HomeBGHex.tsx";
 
 const config: Config = {
   content: [
@@ -15,6 +14,12 @@ const config: Config = {
         clamp: "clamp(1rem, 8vw + 0.5rem, 3rem)",
       },
       keyframes: {
+        customPing: {
+          "75%, 100%": {
+            transform: "scale(2)",
+            opacity: "0",
+          },
+        },
         openNavBar: {
           "0%": { transform: "translate-x-[-100%]" },
           "100%": { transform: "translate-x-0" },
@@ -28,7 +33,7 @@ const config: Config = {
         dvh: "100dvh",
       },
       gridTemplateColumns: {
-        gallery: "repeat(auto-fill, minmax(350px, 1fr))",
+        gallery: "repeat(auto-fill, minmax(250px, 1fr))",
         contact: "10rem, 1fr",
       },
       colors: {

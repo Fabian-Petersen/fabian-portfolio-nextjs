@@ -5,8 +5,8 @@ import Gallery from "@/components/projects/Gallery";
 
 const ProjectsPage = () => {
   return (
-    <main className="w-full px-6 md:max-w-6xl mx-auto min-h-screen">
-      <PageHeading title="My Projects" />
+    <main className="w-full flex flex-col gap-8 px-6 md:max-w-6xl mx-auto min-h-screen">
+      <PageHeading title="Projects Gallery" />
       <Gallery />
     </main>
   );
