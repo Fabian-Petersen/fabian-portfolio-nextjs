@@ -1,6 +1,4 @@
-// The component is used to create buttons in the app by passing in the various props to create the button
-
-import { type } from "os";
+// $ The component is used to create buttons in the app by passing in the various props to create the button
 
 interface ButtonProps {
   className: string;

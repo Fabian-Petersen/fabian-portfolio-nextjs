@@ -9,7 +9,7 @@ import React, {
   SetStateAction,
 } from "react";
 
-export type Theme = "dark" | "";
+export type Theme = "dark" | "light";
 
 // $ Step 0: Define the types and specify the theme to only take the values 'light' or 'dark' via the Theme type
 export type ThemeContext = {
@@ -32,7 +32,7 @@ export default function ThemeContextProvider({
   children,
 }: ThemeContextProviderProps) {
   // Typescript will throw an error if the theme is not set to light or dark, use <'light'|'dark'>
-  const [theme, setTheme] = useState<Theme>("");
+  const [theme, setTheme] = useState<Theme>("light");
   const [isDarkTheme, setIsDarkTheme] = useState<boolean>(false);
 
   return (

@@ -18,7 +18,7 @@ const ThemeToggleIcon = ({
 }: ThemeToggleIconProps) => {
   return (
     <Tooltip
-      className="text-white capitalize tracking-wider"
+      className="text-blue-500 capitalize tracking-wider"
       content={content}
       placement={placement}
       id="tooltip-animation"
@@ -26,7 +26,7 @@ const ThemeToggleIcon = ({
       <FontAwesomeIcon
         data-tooltip-target="tooltip-animation"
         icon={icon}
-        className="dark:text-white text-fontLightTheme"
+        className="text-blue-500"
         onClick={handleClick}
       />
     </Tooltip>

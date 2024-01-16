@@ -14,7 +14,7 @@ import Image from "next/image";
 const SocialsLinkIcons = () => {
   // const [parentContainer, childContainer] = iconSocialLinksVariants;
   return (
-    <div className="hidden md:block">
+    <div className="hidden md:block mt-6">
       <ul
         className="flex gap-4"
         // variants={parentContainer}

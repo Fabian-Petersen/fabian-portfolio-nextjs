@@ -1,7 +1,7 @@
 import React from "react";
 import pageLinkData from "@/data/pageLinkData";
-import { useMobileNavContext } from "@/app/ContextAPI_Hooks/useMobileNavbarContext";
 import { usePathname } from "next/navigation";
+import { useGlobalContext } from "@/app/useGlobalContext";
 
 type PageLink = {
   id: number;
@@ -10,12 +10,12 @@ type PageLink = {
   name: string;
 };
 
-const MobileNavMenu = () => {
-  const { navOpen } = useMobileNavContext()!;
+const MobileNavMenuLinks = () => {
+  const { navOpen } = useGlobalContext()!;
   const pathname = usePathname();
   return (
     <div
-      className={`grid place-content-center absolute z-[100] mt-[var(--navbarHeight)] top-0 right-0 overflow-x-hidden transition-transform duration-1000 h-[var(--sectionHeight)] w-full bg-gray-200 ${
+      className={`grid place-content-center absolute top-20 right-0 overflow-x-hidden transition-transform duration-1000 h-[var(--sectionHeight)] w-full bg-bgDark ${
         navOpen ? "transform translate-x-0" : "transform translate-x-full"
       }`}
     >
@@ -42,4 +42,4 @@ const MobileNavMenu = () => {
   );
 };
 
-export default MobileNavMenu;
+export default MobileNavMenuLinks;

@@ -13,6 +13,7 @@ const socialLinks = [
     colorClass: "facebookColor",
     animationClass: "animate-facebookOpenAnimation",
     animationCloseClass: "animate-facebookCloseAnimation socialIconStyles",
+    className: "",
   },
   {
     id: 2,
@@ -23,6 +24,7 @@ const socialLinks = [
     colorClass: "twitterColor",
     animationClass: "animate-twitterOpenAnimation",
     animationCloseClass: "animate-twitterCloseAnimation socialIconStyles",
+    className: "",
   },
   {
     id: 3,
@@ -33,6 +35,7 @@ const socialLinks = [
     colorClass: "linkedinColor",
     animationClass: "animate-linkedInOpenAnimation",
     animationCloseClass: "animate-linkedInCloseAnimation socialIconStyles",
+    className: "",
   },
   {
     id: 4,
@@ -43,6 +46,8 @@ const socialLinks = [
     colorClass: "githubColor",
     animationClass: "animate-gitHubOpenAnimation",
     animationCloseClass: "animate-gitHubCloseAnimation socialIconStyles",
+    className:
+      "before:content-[''] absolute top-0 left-0 w-full h-full bg-white z-10",
   },
 ];
 

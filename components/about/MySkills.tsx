@@ -13,13 +13,13 @@ const { uniqueCategories } = useCategoriesHeadingsHook();
 
 const MySkills = () => {
   return (
-    <article className="px-8 text-gray-600 dark:text-white">
+    <article className="px-8 border border-green-500 text-gray-600 dark:text-white">
       <PageSubHeading title="my skills" size="h3" />
-      <div className="flex flex-col flex-wrap gap-12">
+      <div className="flex flex-col flex-wrap gap-6 lg:gap-12">
         {uniqueCategories.map((category, index) => (
           <div className="" key={index}>
             <AboutSkillsHeading category={category} />
-            <div className="flex gap-8">
+            <div className="flex gap-4">
               {mySkillsData
                 .filter((item) => item.category === category)
                 .map(({ id, language, iconImage }) => (

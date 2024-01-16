@@ -1,11 +1,10 @@
 import * as React from "react";
-// import HomeBG from "@/public/backgroundSVG/HomeBG";
-import HomeBGHex from "@/public/backgroundHexSVG/HomeBGHex";
 import HomeMainContent from "@/components/home/HomeMainContent";
 
 export default function HomePage() {
   return (
-    <main className="place-content-center">
+    <main className="border-4 border-blue-500 relative flex flex-col max-w-6xl items-center justify-center h-dvh mx-auto">
+      <span className="absolute w-full h-full clip-path-home z-[-100] dark:bg-gray-900"></span>
       <HomeMainContent />
     </main>
   );

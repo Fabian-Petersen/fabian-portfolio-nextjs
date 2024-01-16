@@ -6,9 +6,11 @@
 import Icons from "@/public/icons/icons";
 import useSetTheme from "@/app/customHooks/useSetDarkTheme";
 import ThemeToggleIcon from "./ThemeToggleIcon";
+import { useGlobalContext } from "@/app/useGlobalContext";
 
 const ThemeToggleMenu = () => {
-  const { toggleDarkTheme, isDarkTheme } = useSetTheme();
+  const { toggleDarkTheme } = useSetTheme();
+  const { isDarkTheme } = useGlobalContext()!;
   const { faMoon, faSun } = Icons;
 
   const handleClick = () => {
@@ -17,8 +19,8 @@ const ThemeToggleMenu = () => {
 
   return (
     <div
-      className="mr-[1.6rem] w-[1rem] h-[1rem] md:w-[1.3rem] md:h-[1.3rem] text-[1.2rem]
-        flex items-center justify-center rounded-full outline-2 outline-white hover:cursor-pointer"
+      className="mr-[1.6rem] text-blue-500 w-[2rem] h-[2rem]
+        flex items-center justify-center rounded-full border-2 border-blue-500 bg-black dark:bg-white hover:cursor-pointer"
     >
       {isDarkTheme ? (
         <ThemeToggleIcon

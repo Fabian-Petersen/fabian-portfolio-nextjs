@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-import aboutURL from "./public/useBackgroundURLHook";
+// import HomeBGHex from "./public/backgroundHexSVG/HomeBGHex.tsx";
 
 const config: Config = {
   content: [
@@ -12,7 +12,7 @@ const config: Config = {
     extend: {
       darkMode: "class",
       fontSize: {
-        headingClamp: "clamp(1.5rem, 5vw + 1rem, 3rem)",
+        clamp: "clamp(1rem, 8vw + 0.5rem, 3rem)",
       },
       keyframes: {
         openNavBar: {
@@ -24,12 +24,13 @@ const config: Config = {
           "100%": { transform: "translate-x-[-100%]" },
         },
       },
-
+      height: {
+        dvh: "100dvh",
+      },
       gridTemplateColumns: {
-        gallery: "repeat(auto-fill, minmax(250px, 1fr))",
+        gallery: "repeat(auto-fill, minmax(350px, 1fr))",
         contact: "10rem, 1fr",
       },
-
       colors: {
         primaryColor: "#e43f5a",
         bgDark: "#050f1a",
@@ -39,7 +40,18 @@ const config: Config = {
         //bgDark:#050f1a,
       },
       backgroundImage: {
-        aboutURL: "url(`${abourtURL}`)",
+        // aboutURL: "url(`${abourtURL}`)",
+        // homeBGImage: `url('${HomeBGHex}')`,
+      },
+    },
+    before: {
+      beforeDefault: {
+        content: "",
+        position: "absolute",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
       },
     },
     fontFamily: {

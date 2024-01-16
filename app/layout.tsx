@@ -8,38 +8,35 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 // $ Components
-import Navbar from "@/components/features/navbar/Navbar";
-import PageLinkIconsMenu from "@/components/features/PageLinkIconsMenu";
-import MobileMenuFullWidth from "@/components/features/mobileNavbar/MobileMenuFullWidth";
+// import Navbar from "@/components/features/navbar/Navbar";
+// import PageLinkIconsMenu from "@/components/features/PageLinkIconsMenu";
+// import MobileMenuFullWidth from "@/components/features/mobileNavbar/MobileMenuFullWidth";
 
 // $ Context Providers
-import ThemeContextProvider from "./ContextAPI_Hooks/usethemeContext";
-import MobileNavContextProvider from "./ContextAPI_Hooks/useMobileNavbarContext";
+import Providers from "./providers";
 
 export const metadata: Metadata = {
   title: "Fabian Portfolio",
   description: "Developer, Designer, and Creator",
 };
 
-interface RootLayoutProps {
+type Props = {
   children: React.ReactNode;
-  withRouter: React.ComponentType;
-}
+};
 
-export default function RootLayout({ children }: RootLayoutProps) {
+// ? Add props to the children without explicitly defining them
+// import { PropsWithChildren } from "react";
+
+export default function RootLayout({ children }: Props) {
   return (
     <html lang="en" className="font-poppins">
-      <body className="bg-white dark:bg-bgDark min-h-full">
-        <ThemeContextProvider>
-          <MobileNavContextProvider>
-            <MobileMenuFullWidth />
-          </MobileNavContextProvider>
-          <Navbar />
-          <main className="md:px-40 2xl:px-96 grid grid-cols-1fr">
-            {children}
-          </main>
-          <PageLinkIconsMenu />
-        </ThemeContextProvider>
+      <body className="bg-white dark:bg-bgDark">
+        <Providers>
+          {/* <Navbar /> */}
+          {/* <MobileMenuFullWidth /> */}
+          {children}
+          {/* <PageLinkIconsMenu /> */}
+        </Providers>
       </body>
     </html>
   );

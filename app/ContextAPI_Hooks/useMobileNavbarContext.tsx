@@ -19,9 +19,7 @@ type MobileNavContextType = {
 
 // $ Step 1: Create the context
 // % The ThemeContext type takes in the ThemeContext type or null
-const MobileNavContext = createContext<MobileNavContextType | undefined>(
-  undefined
-);
+const MobileNavContext = createContext<MobileNavContextType | null>(null);
 
 type MobileNavContextProviderProps = {
   children: ReactNode;

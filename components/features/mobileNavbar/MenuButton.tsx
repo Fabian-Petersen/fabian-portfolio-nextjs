@@ -20,18 +20,18 @@ const MenuButton = () => {
   }, []);
 
   // $ Define the interface for the pageLinkData array.
-  interface PageLink {
+  type PageLink = {
     id: number;
     href: string;
     icon: any;
     name: string;
-  }
+  };
 
   return (
     <div
-      className={`${
-        theme === "light" ? "text-gray-600" : "text-white"
-      } flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse`}
+    // className={`${
+    //   theme === "light" ? "text-bgDark" : "text-white"
+    // } flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse`}
     >
       <button
         data-collapse-toggle="navbar-sticky"
