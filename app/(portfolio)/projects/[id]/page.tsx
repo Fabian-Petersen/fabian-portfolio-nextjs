@@ -11,8 +11,6 @@ const SingleProject = () => {
     (project) => project.singlePage?.title === id
   );
 
-  console.log(project);
-
   return (
     <main className="w-full flex flex-col gap-8 px-6 md:max-w-6xl mx-auto min-h-screen capitalize">
       <PageHeading title={project?.singlePage?.title} />

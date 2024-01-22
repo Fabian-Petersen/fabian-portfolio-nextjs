@@ -14,6 +14,7 @@ const typescript =
   "https://img.icons8.com/external-tal-revivo-color-tal-revivo/96/external-typescript-an-open-source-programming-language-developed-and-maintained-by-microsoft-logo-color-tal-revivo.png";
 const nextjs = "https://img.icons8.com/fluency/96/nextjs.png";
 const tailwind = "https://img.icons8.com/fluency/96/tailwind_css.png";
+const aws = "https://img.icons8.com/color/96/000000/amazon-web-services.png";
 
 import supabase from "./supabase.png";
 
@@ -31,6 +32,7 @@ const skillsIconImages = {
   typescript,
   nextjs,
   tailwind,
+  aws,
 };
 
 export default skillsIconImages;

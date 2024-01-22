@@ -10,7 +10,7 @@ const AboutSkillsHeading = (props: AboutSkillsHeadingProps) => {
   const { category } = props;
 
   return (
-    <div className="py-4">
+    <div className="py-4 tracking-wider">
       <h3
         className="uppercase"
         // custom={id}

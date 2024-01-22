@@ -3,7 +3,7 @@ import CTAButton from "./CTAButton";
 
 const HomeMainContent = () => {
   return (
-    <article className="flex flex-col gap-4 items-start w-[90%] sm:px-2 px-6 text-gray-600 dark:text-white tracking-wider">
+    <article className="flex flex-col gap-4 items-start px-4 text-gray-600 dark:text-white tracking-wider">
       <span
         className="text-primaryColor w-20 h-4 border-b-4 border-primaryColor"
         // variants={animateLine}

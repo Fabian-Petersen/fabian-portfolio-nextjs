@@ -12,8 +12,22 @@ const config: Config = {
       darkMode: "class",
       fontSize: {
         clamp: "clamp(1rem, 8vw + 0.5rem, 3rem)",
+        clamp_h2: "clamp(1rem, 5vw + 0.5rem, 1.5rem)",
       },
+
       keyframes: {
+        buttonPing: {
+          "0%, 100": {
+            opacity: "1",
+            scale: "1",
+          },
+
+          "50%": {
+            opacity: "0.5",
+            scale: "0.5",
+          },
+        },
+
         customPing: {
           "75%, 100%": {
             transform: "scale(2)",

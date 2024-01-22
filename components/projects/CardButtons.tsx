@@ -16,7 +16,7 @@ const CardButtons = ({ websiteLink, githubLink }: ProjectCardDataType) => {
           {githubLink && (
             <button
               type="button"
-              className="hover:cursor-pointer p-2 text-white bg-[#3676c4]/40 hover:bg-[#3676c4]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-full text-sm text-center flex justify-center items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 me-2 mb-2"
+              className="hover:animation-buttonPing hover:cursor-pointer p-2 text-white bg-[#3676c4]/40 hover:bg-[#3676c4]/90 focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-full text-sm text-center flex justify-center items-center dark:focus:ring-gray-500 dark:hover:bg-[#050708]/30 me-2 mb-2"
             >
               <svg
                 className="w-4 h-4"

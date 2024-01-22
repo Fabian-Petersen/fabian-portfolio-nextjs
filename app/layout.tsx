@@ -9,7 +9,7 @@ import "./globals.css";
 
 // $ Components
 // import Navbar from "@/components/features/navbar/Navbar";
-// import PageLinkIconsMenu from "@/components/features/PageLinkIconsMenu";
+import PageLinkIconsMenu from "@/components/features/PageLinkIconsMenu";
 // import MobileMenuFullWidth from "@/components/features/mobileNavbar/MobileMenuFullWidth";
 
 // $ Context Providers
@@ -35,7 +35,7 @@ export default function RootLayout({ children }: Props) {
           {/* <Navbar /> */}
           {/* <MobileMenuFullWidth /> */}
           {children}
-          {/* <PageLinkIconsMenu /> */}
+          <PageLinkIconsMenu />
         </Providers>
       </body>
     </html>

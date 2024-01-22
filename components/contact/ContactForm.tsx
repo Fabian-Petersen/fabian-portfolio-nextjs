@@ -7,9 +7,9 @@ import Button from "../features/Button";
 
 const ContactForm = () => {
   return (
-    <form className="max-w-[30rem] flex flex-col p-4 gap-6 mx-auto border-none outline-none rounded-md shadow-lg shadow-gray-400 dark:shadow-gray-800 bg-gray-100 dark:bg-gray-800">
-      <h2 className="text-2xl py-2 font-semibold text-gray-400 dark:text-white">
-        Contact Me
+    <form className="max-w-[35rem] w-[25rem] flex flex-col mx-auto p-4 gap-6 outline-none rounded-md shadow-lg shadow-gray-400 dark:shadow-gray-800 bg-gray-100 dark:bg-gray-800">
+      <h2 className="py-2 font-semibold text-gray-600 dark:text-white tracking-wider capitalize text-clamp_h2">
+        Send Message...
       </h2>
       <FormRowInput
         id="name"
@@ -41,7 +41,7 @@ const ContactForm = () => {
       <Button
         type="submit"
         className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded tracking-wider uppercase"
-        buttonLabel="Send Message"
+        buttonLabel="Submit Message"
       />
     </form>
   );

@@ -77,20 +77,41 @@ html {
 
 @layer components {
   .pageHeadingLines {
-    @apply sm:before:absolute sm:before:content-[''] sm:before:top-[50%] sm:before:left-[0] sm:sm:before:w-[15rem] sm:before:h-[2px] sm:before:z-[-1] sm:before:bg-blue-500;
-    @apply sm:after:absolute sm:after:content-[''] sm:after:top-[50%] sm:after:right-[0] sm:after:w-[15rem] sm:after:h-[2px] sm:after:z-[-1] sm:after:bg-blue-500;
+    @apply sm:before:absolute sm:before:content-[''] sm:before:top-[50%] sm:before:left-[0] sm:sm:before:w-[70%] sm:before:h-[2px] sm:before:z-[-1] sm:before:bg-blue-500;
+    @apply sm:after:absolute sm:after:content-[''] sm:after:top-[50%] sm:after:right-[0] sm:after:w-[70%] sm:after:h-[2px] sm:after:z-[-1] sm:after:bg-blue-500;
   }
 }
 
 @layer utilities {
-  /* .clip-path-home {
-    clip-path: circle(65% at 17% 46%);
+  .clip-path-home {
+    clip-path: circle(90% at 0% 50%);
     background-color: #eff2f5;
     background-size: cover;
     position: absolute;
-  } */
+  }
 
-  /* .clip-path-about {
-    clip-path: polygon(0 0, 100% 74%, 100% 100%, 0 100%);
-  } */
+  .clip-path-about {
+    clip-path: polygon(0 0, 100% 74%, 100% 100%, 0 150%);
+    background-color: #eff2f5;
+    background-size: cover;
+  }
+
+  .clip-path-projects {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 74%);
+  }
+
+  .clip-path-contact {
+    clip-path: polygon(100% 0%, 100% 50%, 50% 100%, 0% 100%, 0% 50%);
+    background-color: #eff2f5;
+    background-size: cover;
+  }
+
+  /* Clipped Part Patterns  */
+  .bg-pattern-contact {
+    background-image: radial-gradient(#1b64f1 2.5px, transparent 2.5px),
+      radial-gradient(#1b64f1 2.5px, transparent 2.5px);
+    background-size: 35px 35px;
+    background-position: 0 0, 17.5px 17.5px;
+    background-color: #ffffff;
+  }
 }
