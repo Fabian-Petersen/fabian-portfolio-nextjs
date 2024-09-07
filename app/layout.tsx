@@ -8,7 +8,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 // $ Components
-// import Navbar from "@/components/features/navbar/Navbar";
+import Navbar from "@/components/features/navbar/Navbar";
 import PageLinkIconsMenu from "@/components/features/PageLinkIconsMenu";
 // import MobileMenuFullWidth from "@/components/features/mobileNavbar/MobileMenuFullWidth";
 
@@ -32,7 +32,7 @@ export default function RootLayout({ children }: Props) {
     <html lang="en" className="font-poppins">
       <body className="bg-white dark:bg-bgDark">
         <Providers>
-          {/* <Navbar /> */}
+          <Navbar />
           {/* <MobileMenuFullWidth /> */}
           {children}
           <PageLinkIconsMenu />

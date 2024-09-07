@@ -11,8 +11,8 @@ const config: Config = {
     extend: {
       darkMode: "class",
       fontSize: {
-        clamp: "clamp(1rem, 8vw + 0.5rem, 3rem)",
-        clamp_h2: "clamp(1rem, 5vw + 0.5rem, 1.5rem)",
+        clamp: "clamp(1rem, 5vw + 0.5rem, 3rem)",
+        clamp_h2: "clamp(0.8rem, 5vw + 0.5rem, 1.5rem)",
       },
 
       keyframes: {

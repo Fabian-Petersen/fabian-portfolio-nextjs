@@ -7,7 +7,7 @@ import Button from "../features/Button";
 
 const ContactForm = () => {
   return (
-    <form className="max-w-[35rem] w-[25rem] flex flex-col mx-auto p-4 gap-6 outline-none rounded-md shadow-lg shadow-gray-400 dark:shadow-gray-800 bg-gray-100 dark:bg-gray-800">
+    <form className="max-w-[35rem] w-[20rem] flex flex-col mx-auto p-4 gap-6 outline-none rounded-md shadow-lg shadow-gray-400 dark:shadow-gray-800 bg-gray-100 dark:bg-gray-800">
       <h2 className="py-2 font-semibold text-gray-600 dark:text-white tracking-wider capitalize text-clamp_h2">
         Send Message...
       </h2>
@@ -17,7 +17,7 @@ const ContactForm = () => {
         name="name"
         type="text"
         placeholderText="name"
-        className=""
+        className="bg-gray-200"
         onChange={() => {}}
       />
       <FormRowInput
@@ -26,7 +26,7 @@ const ContactForm = () => {
         name="email"
         type="email"
         placeholderText="email"
-        className=""
+        className="bg-gray-200"
         onChange={() => {}}
       />
       <FormRowTextArea
@@ -35,7 +35,7 @@ const ContactForm = () => {
         row={4}
         name="message"
         placeholderText="message"
-        className=""
+        className="bg-gray-200"
         onChange={() => {}}
       />
       <Button
