@@ -32,7 +32,10 @@ const MySkills = () => {
                   />
                 ))}
             </div>
-            <hr className="mt-8 border-gray-700 opacity-20 w-[80%] shadow-lg" />
+            {/* Conditionally render the <hr> based on the index */}
+            {index !== uniqueCategories.length - 1 && (
+              <hr className="mt-8 border-gray-700 opacity-20 w-[80%] shadow-lg" />
+            )}
           </div>
         ))}
       </div>

@@ -2,9 +2,10 @@
 // $ It returns the id of the section that is in view.
 
 import { useState, useEffect } from "react";
+import PageLinkData from "@/data/pageLinkData";
 
 const useInViewSections = (sectionIds: string[]) => {
-  const [inViewSectionId, setInViewSectionId] = useState<string | null>(null);
+  const [inViewSectionId, setInViewSectionId] = useState<string>("");
 
   // $ Initialize the IntersectionObserver API
   useEffect(() => {

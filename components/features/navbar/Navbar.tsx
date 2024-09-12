@@ -2,21 +2,32 @@
 
 // import BurgerMenuButton from "../features/BurgerMenuButton";
 import ThemeToggleButton from "@/components/features/navbar/ThemeToggleMenu";
-import Button from "@/components/features/Button";
+import { useState, useEffect } from "react";
 import Logo from "./Logo";
 
 const Navbar = () => {
+  // Change the Navbar bg to white when scrolled
+  const [isScrolled, setIsScrolled] = useState(false);
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 20) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    });
+  }, []);
+
   return (
-    <div className="hidden mb-[5rem] bg-transparent fixed top-0 left-0 w-full z-[100] py-2 md:flex md:items-center border-opacity-50 dark:border-opacity-5">
+    <div
+      className={`${
+        isScrolled
+          ? "fixed top-0 left-0 w-full z-[100] py-2 md:flex md:items-center border-opacity-50 dark:border-opacity-5 bg-white dark:bg-gray-900 shadow-md bg-opacity-100 transition-all duration-300 ease-in"
+          : "fixed bg-opacity-0 top-0 left-0 w-full z-[100] py-2 md:flex md:items-center hidden transition-all"
+      }`}
+    >
       <Logo />
       <div className="flex ml-auto gap-[2rem] mr-[0.5rem] md:mr-[3.5rem] items-center">
-        <Button
-          className="rounded-full text-[0.8rem] p-3 tracking-[1.2px] text-white bg-blue-500
-           hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 
-           font-medium text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          buttonLabel="Download CV"
-          onClick={() => {}}
-        />
         {/* <ThemeToggleButton /> */}
       </div>
     </div>

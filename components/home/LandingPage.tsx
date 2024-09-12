@@ -1,9 +1,13 @@
 import SocialsLinkIcons from "@/components/features/SocialsLinkIcons";
-import CTAButton from "./CTAButton";
+import CTAButtonsContainer from "./cta_buttons/CTAButtonsContainer";
 
-const HomeMainContent = () => {
+const LandingPage = () => {
   return (
-    <article className="flex flex-col gap-4 items-start px-4 text-gray-600 dark:text-white tracking-wider">
+    <main
+      id="landing"
+      className="flex flex-col gap-4 items-start justify-center px-4 text-gray-600 dark:text-white tracking-wider h-screen"
+    >
+      <span className="absolute inset-0 w-full h-full clip-path-home z-[-100] dark:bg-gray-900"></span>
       <span
         className="text-primaryColor w-20 h-4 border-b-4 border-primaryColor"
         // variants={animateLine}
@@ -18,10 +22,10 @@ const HomeMainContent = () => {
         Welcome to my official portfolio website showcasing my work as a
         <span className="text-primaryColor"> Front End Developer.</span>
       </p>
-      <CTAButton title="My Projects" />
+      <CTAButtonsContainer />
       <SocialsLinkIcons />
-    </article>
+    </main>
   );
 };
 
-export default HomeMainContent;
+export default LandingPage;
