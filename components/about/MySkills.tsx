@@ -1,13 +1,11 @@
 // import { } from "framer-motion;
 import PageSubHeading from "../PageSubHeading";
 import AboutSkillsHeading from "./AboutSkillsHeading";
-import LanguageListRow from "./LanguageListRow";
 import mySkillsData from "@/public/data/mySkillsData";
 import SkillCard from "./SkillCard";
 
 // $ Hook which returns the unique list of categories in the mySkillsData array
 import useCategoriesHeadingsHook from "./useCategoriesHeadingsHook";
-import { link } from "fs";
 // $ The uniqueCategories array is destructured from the returned object for the headings
 const { uniqueCategories } = useCategoriesHeadingsHook();
 // $ The uniqueLanguages array is destructured from the returned object for the languages
@@ -23,11 +21,10 @@ const MySkills = () => {
             <div className="flex gap-[4rem]">
               {mySkillsData
                 .filter((item) => item.category === category)
-                .map(({ id, language, iconImage, link }) => (
+                .map(({ id, language, iconImage }) => (
                   <SkillCard
                     key={id}
                     name={language}
-                    link={link}
                     image={iconImage?.toString() ?? ""}
                   />
                 ))}

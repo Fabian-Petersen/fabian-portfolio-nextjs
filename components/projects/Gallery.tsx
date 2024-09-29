@@ -4,8 +4,12 @@
 
 import projectsCardData from "@/public/data/projectData";
 import ProjectsCard from "./ProjectsCard";
+import { useGlobalContext } from "@/useGlobalContext";
 
 const Gallery = () => {
+  const { projectType } = useGlobalContext();
+  console.log("projectType", projectType);
+
   return (
     <section className="grid gap-6 grid-cols-gallery p-6">
       {projectsCardData.map((projectProps) => (

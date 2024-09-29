@@ -1,16 +1,16 @@
-import { StaticImageData } from "next/image";
 import skillsIconImages from "../icons/skill-icons/index";
+import { v4 as uuidv4 } from "uuid";
 
 // $ The Skills Icons Images comes from the index.ts file in the skill-icons folder
 // $ The image links are imported from the index.ts file in the skill-icons folder and then used in the mySkillsData.ts file
 
 type MySkillsDataType = {
-  id?: number;
+  id: string;
   language?: string;
   iconImage?: string | undefined;
   category?: string;
   className?: string;
-  link?: string;
+  uuid?: string;
 };
 
 const {
@@ -21,7 +21,6 @@ const {
   bootstrap,
   figma,
   visualstudiocode,
-  supabase,
   nextjs,
   github,
   typescript,
@@ -31,107 +30,95 @@ const {
 
 const mySkillsData: MySkillsDataType[] = [
   {
-    id: 1,
+    id: uuidv4(),
     language: "figma",
     iconImage: figma,
     category: "UI/UX Design",
     className: "figma",
-    link: "/figma",
   },
   {
-    id: 2,
+    id: uuidv4(),
     language: "html",
     iconImage: html,
     category: "frontEnd",
     className: "html",
-    link: "/html",
   },
   {
-    id: 3,
+    id: uuidv4(),
     language: "CSS",
     iconImage: css,
     category: "frontEnd",
     className: "css",
-    link: "/css",
   },
   {
-    id: 4,
+    id: uuidv4(),
     language: "javascript",
     iconImage: javascript,
     category: "frontEnd",
     className: "javascript",
-    link: "/javascript",
   },
   {
-    id: 5,
+    id: uuidv4(),
     language: "react",
     iconImage: react,
     category: "frontEnd",
     className: "react",
-    link: "/react",
   },
   {
-    id: 6,
+    id: uuidv4(),
     language: "Supabase",
     iconImage: "",
     category: "backend",
     className: "api",
-    link: "/supabase",
   },
   {
-    id: 7,
+    id: uuidv4(),
     language: "next",
     iconImage: nextjs,
     category: "frontEnd",
     className: "api",
   },
   {
-    id: 8,
+    id: uuidv4(),
     language: "AWS",
     iconImage: aws,
     category: "cloud computing",
     className: "aws",
-    link: "/aws",
   },
   {
-    id: 9,
+    id: uuidv4(),
     language: "tailwind",
     iconImage: tailwind,
     category: "frontEnd",
     className: "api",
-    link: "/tailwind",
   },
   {
-    id: 10,
+    id: uuidv4(),
     language: "github",
     iconImage: github,
     category: "other",
     className: "github",
-    link: "/github",
   },
   {
-    id: 11,
+    id: uuidv4(),
     language: "bootstrap",
     iconImage: bootstrap,
     category: "other",
     className: "bootstrap",
-    link: "/bootstrap",
   },
   {
-    id: 12,
+    id: uuidv4(),
     language: "visual studio code",
     iconImage: visualstudiocode,
     category: "other",
     className: "vsc",
-    link: "/vsc",
   },
   {
-    id: 13,
+    id: uuidv4(),
     language: "typescript",
     iconImage: typescript,
     category: "frontEnd",
     className: "typescript",
-    link: "/typescript",
   },
 ];
 

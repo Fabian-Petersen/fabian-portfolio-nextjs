@@ -22,6 +22,8 @@ export type T = {
   setTheme: Dispatch<SetStateAction<Theme>>;
   isDarkTheme: boolean;
   setIsDarkTheme: Dispatch<SetStateAction<boolean>>;
+  projectType: string;
+  setProjectType: Dispatch<SetStateAction<string>>;
 };
 
 const initialState: T = {
@@ -31,6 +33,8 @@ const initialState: T = {
   setTheme: () => {},
   isDarkTheme: false,
   setIsDarkTheme: () => {},
+  projectType: "",
+  setProjectType: () => {},
 };
 
 // $ Step 1: Create the context
@@ -51,6 +55,9 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
   // ? The isDarkTheme is used to set the theme in the 'useSetDarkTheme' hook.
   const [isDarkTheme, setIsDarkTheme] = useState<boolean>(false);
 
+  const [projectType, setProjectType] = useState<string>("");
+  // $ State to filter the projects by projectType to display the different projects in the gallery component.
+
   return (
     <AppContext.Provider
       value={{
@@ -60,6 +67,8 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
         setTheme,
         isDarkTheme,
         setIsDarkTheme,
+        projectType,
+        setProjectType,
       }}
     >
       {children}
@@ -75,6 +84,8 @@ export const useGlobalContext = () => {
   if (!context) {
     throw new Error("useAppContext must be used within the AppContextProvider");
   }
+  // $ Return the context so it can be used in the components
+  return context;
 };
 
 export default AppProvider;

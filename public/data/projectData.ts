@@ -1,11 +1,13 @@
 import projectImages from "@/public/images/projectImages";
 import { StaticImageData } from "next/image";
 import skillsIconImages from "../icons/skill-icons";
+import { v4 as uuidv4 } from "uuid";
 
 export type ProjectCardDataType = {
-  id?: number;
+  id?: string;
   projectTitle?: string;
   language?: string;
+  projectType?: string;
   description?: string;
   image?: StaticImageData;
   websiteLink?: string;
@@ -30,9 +32,10 @@ const {
 
 const projectsCardData: ProjectCardDataType[] = [
   {
-    id: 1,
+    id: uuidv4(),
     projectTitle: "cocktail library",
     language: "react",
+    projectType: "front-end",
     description: "Everything you need to know about your favourite cocktail",
     image: cocktailsProject,
     websiteLink: "https://fabian-portfolio-cocktail-project.netlify.app",
@@ -42,18 +45,14 @@ const projectsCardData: ProjectCardDataType[] = [
       description:
         "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
       images: "",
-      skills: [
-        { html: html },
-        { css: css },
-        { javascript: javascript },
-        { react: react },
-      ],
+      skills: ["html", "css", "javascript", "react"],
     },
   },
   {
-    id: 2,
+    id: uuidv4(),
     projectTitle: "githubLink Users",
     language: "react",
+    projectType: "front-end",
     description: "Search for your favoutrite user on the githubLink site",
     image: githubProject,
     websiteLink:
@@ -69,9 +68,10 @@ const projectsCardData: ProjectCardDataType[] = [
     },
   },
   {
-    id: 3,
+    id: uuidv4(),
     projectTitle: "Creative Tours",
     language: "javascript",
+    projectType: "front-end",
     description:
       "Search for your favoutrite destination and book with us for a memorable holiday.",
     image: toursProject,
@@ -86,9 +86,10 @@ const projectsCardData: ProjectCardDataType[] = [
     },
   },
   {
-    id: 4,
+    id: uuidv4(),
     projectTitle: "Tea Brewery",
     language: "react",
+    projectType: "front-end",
     description: "The most exquisite tea range in the world",
     image: teaProject,
     websiteLink: "https://tea-brewery.netlify.app/",
@@ -102,9 +103,10 @@ const projectsCardData: ProjectCardDataType[] = [
     },
   },
   {
-    id: 5,
+    id: uuidv4(),
     projectTitle: "comfy-sloth",
     language: "react",
+    projectType: "front-end",
     description: "Random e-commerce store for your favourite items",
     image: comingSoon,
     websiteLink: "",
@@ -118,9 +120,10 @@ const projectsCardData: ProjectCardDataType[] = [
     },
   },
   {
-    id: 6,
+    id: uuidv4(),
     projectTitle: "Vehicle Booking App",
     language: "react",
+    projectType: "front-end",
     description:
       "Booking App for the department of transport - University of the Western Cape",
     image: comingSoon,
@@ -132,6 +135,40 @@ const projectsCardData: ProjectCardDataType[] = [
         "In this project i used the Supabase Backend API with a PostgresSQL Database",
       images: "",
       skills: ["html", "css", "javascript", "react", "githubLink"],
+    },
+  },
+  {
+    id: uuidv4(),
+    projectTitle: "Web Scraping App",
+    language: "python",
+    projectType: "back-end",
+    description:
+      " - Web Scraping App using AI to get the latest news and updates",
+    image: comingSoon,
+    websiteLink: "",
+    githubLink: "",
+    singlePage: {
+      title: "ai-web-scraping-project",
+      description:
+        "In this project i used the Python with the BeautifulSoup4 and Selenium libraries to scrape the web for the latest news and updates. The app uses a simple AI to get the latest news and updates.",
+      images: "",
+      skills: ["streamlit", "python", "githubLink"],
+    },
+  },
+  {
+    id: uuidv4(),
+    projectTitle: "Burger Fast Food App",
+    language: "python",
+    projectType: "DevOps",
+    description: "",
+    image: comingSoon,
+    websiteLink: "",
+    githubLink: "",
+    singlePage: {
+      title: "Burger Fast Foods",
+      description:
+        "In this project the best practices of devOps were used. The Front-End is build with HTML, CSS and JavaScript. The Back-End is build with Python and the app is deployed on AWS with the use of Terraform. The Front End is the work of a third party front-end developer from Youtube.",
+      skills: ["terraform", "python", "aws", "githubLink"],
     },
   },
 ];
