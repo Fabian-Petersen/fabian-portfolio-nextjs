@@ -33,7 +33,7 @@ const initialState: T = {
   setTheme: () => {},
   isDarkTheme: false,
   setIsDarkTheme: () => {},
-  projectType: "",
+  projectType: "all",
   setProjectType: () => {},
 };
 
@@ -55,7 +55,7 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
   // ? The isDarkTheme is used to set the theme in the 'useSetDarkTheme' hook.
   const [isDarkTheme, setIsDarkTheme] = useState<boolean>(false);
 
-  const [projectType, setProjectType] = useState<string>("");
+  const [projectType, setProjectType] = useState<string>("all");
   // $ State to filter the projects by projectType to display the different projects in the gallery component.
 
   return (

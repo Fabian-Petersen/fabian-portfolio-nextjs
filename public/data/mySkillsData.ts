@@ -26,6 +26,8 @@ const {
   typescript,
   tailwind,
   aws,
+  python,
+  redux,
 } = skillsIconImages;
 
 const mySkillsData: MySkillsDataType[] = [
@@ -66,8 +68,8 @@ const mySkillsData: MySkillsDataType[] = [
   },
   {
     id: uuidv4(),
-    language: "Supabase",
-    iconImage: "",
+    language: "Python",
+    iconImage: python,
     category: "backend",
     className: "api",
   },
@@ -89,6 +91,13 @@ const mySkillsData: MySkillsDataType[] = [
     id: uuidv4(),
     language: "tailwind",
     iconImage: tailwind,
+    category: "frontEnd",
+    className: "api",
+  },
+  {
+    id: uuidv4(),
+    language: "redux",
+    iconImage: redux,
     category: "frontEnd",
     className: "api",
   },

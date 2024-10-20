@@ -28,6 +28,7 @@ const {
   comingSoon,
   cocktailsProject,
   githubProject,
+  pendingProject,
 } = projectImages;
 
 const projectsCardData: ProjectCardDataType[] = [
@@ -108,7 +109,7 @@ const projectsCardData: ProjectCardDataType[] = [
     language: "react",
     projectType: "front-end",
     description: "Random e-commerce store for your favourite items",
-    image: comingSoon,
+    image: pendingProject,
     websiteLink: "",
     githubLink: "",
     singlePage: {
@@ -126,7 +127,7 @@ const projectsCardData: ProjectCardDataType[] = [
     projectType: "front-end",
     description:
       "Booking App for the department of transport - University of the Western Cape",
-    image: comingSoon,
+    image: pendingProject,
     websiteLink: "",
     githubLink: "",
     singlePage: {
@@ -144,7 +145,7 @@ const projectsCardData: ProjectCardDataType[] = [
     projectType: "back-end",
     description:
       " - Web Scraping App using AI to get the latest news and updates",
-    image: comingSoon,
+    image: pendingProject,
     websiteLink: "",
     githubLink: "",
     singlePage: {
@@ -161,7 +162,7 @@ const projectsCardData: ProjectCardDataType[] = [
     language: "python",
     projectType: "DevOps",
     description: "",
-    image: comingSoon,
+    image: pendingProject,
     websiteLink: "",
     githubLink: "",
     singlePage: {

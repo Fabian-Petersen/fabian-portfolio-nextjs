@@ -1,6 +1,7 @@
 import PageHeading from "@/components/PageHeading";
 import Gallery from "@/components/projects/Gallery";
 import ProjectFilterButtons from "./ProjectFilterButtonGroup";
+import projectsCardData from "@/public/data/projectData";
 
 // $ The relative positioning is set on the layout componet to apply to all the pages.
 

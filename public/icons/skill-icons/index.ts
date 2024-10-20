@@ -15,6 +15,7 @@ const typescript =
 const nextjs = "https://img.icons8.com/fluency/96/nextjs.png";
 const tailwind = "https://img.icons8.com/fluency/96/tailwind_css.png";
 const aws = "https://img.icons8.com/color/96/000000/amazon-web-services.png";
+const python = "https://img.icons8.com/color/96/000000/python.png";
 
 import supabase from "./supabase.png";
 
@@ -33,6 +34,8 @@ const skillsIconImages = {
   nextjs,
   tailwind,
   aws,
+  python,
+  redux,
 };
 
 export default skillsIconImages;
