@@ -11,6 +11,13 @@ variable "record_name" {
   type        = string
 }
 
+# Domain name for ACM
+variable "domain_name" {
+  default     = "fabian-portfolio.net"
+  description = "The domain name for the ACM"
+  type        = string
+}
+
 variable "region" {}
 variable "project_name" {}
 variable "vpc_cidr" {}
