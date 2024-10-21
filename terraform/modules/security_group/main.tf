@@ -65,3 +65,33 @@ resource "aws_security_group" "ecs_security_group" {
     Name = "ecs security group"
   }
 }
+
+# Create Security Group for Private Instances
+resource "aws_security_group" "private_instance_sg" {
+  vpc_id        = var.vpc_id
+
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    security_groups = [aws_security_group.alb_security_group.id]
+  }
+
+  ingress {
+    from_port   = 443
+    to_port     = 443
+    protocol    = "tcp"
+    security_groups = [aws_security_group.alb_security_group.id]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name = "${var.project_name}-private-instance-sg"
+  }
+}

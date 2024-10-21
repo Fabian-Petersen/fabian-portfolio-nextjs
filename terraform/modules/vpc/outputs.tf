@@ -19,7 +19,7 @@ output "public_subnet_az2_id" {
 }
 
 output "private_app_subnet_az1_id" {
-  value = var.aws_subnet.private_app_subnet_az1.id
+  value = aws_subnet.private_app_subnet_az1.id
 }
 
 output "private_app_subnet_az2_id" {
@@ -36,4 +36,12 @@ output "private_data_subnet_az2_id" {
 
 output "internet_gateway" {
   value = aws_internet_gateway.internet_gateway
+}
+
+output "private_app_subnet_az1_cidr" {
+  value = var.private_app_subnet_az1_cidr
+}
+
+output "private_app_subnet_az2_cidr" {
+  value = var.private_app_subnet_az2_cidr
 }

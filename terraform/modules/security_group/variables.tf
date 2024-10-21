@@ -1,8 +1,9 @@
-variable "alb_security_group_id" {
-  default     = ""
-  description = "security group for load balances"
+variable "project_name" {
+  description = "The name of the project"
   type        = string
-}
+  }
 
-variable "vpc_id" {}
-
+variable "vpc_id" {
+  description = "The id of the VPC"
+  type        = string
+  }
