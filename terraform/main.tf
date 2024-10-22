@@ -44,15 +44,15 @@ module "application_load_balancer" {
 }
 
 # Create dynamoDB table
-module "dynamoDB" {
-  source = "./modules/dynamoDB"
-  vpc_id = module.vpc.vpc_id
-  route_table_ids = [
-    module.vpc.private_data_subnet_az1_id, module.vpc.private_data_subnet_az2_id
-  ]
-  projects = var.project_name
-  region   = var.region
-}
+# module "dynamoDB" {
+#   source = "./modules/dynamoDB"
+#   vpc_id = module.vpc.vpc_id
+#   route_table_ids = [
+#     module.vpc.private_data_subnet_az1_id, module.vpc.private_data_subnet_az2_id
+#   ]
+#   projects = var.project_name
+#   region   = var.region
+# }
 
 #create private ec2 instances
 # module "private_ec2" {
