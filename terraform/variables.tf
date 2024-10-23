@@ -84,3 +84,9 @@ variable "instance_type" {
   description = "EC2 instance type"
   type        = string
 }
+
+# aws ec2 key pair for EC2 instances
+# variable "tf_key_pair" {
+#   description = "The key pair for the EC2 instances"
+#   type        = string
+# }

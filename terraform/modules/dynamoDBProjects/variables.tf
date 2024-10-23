@@ -22,3 +22,9 @@ variable "private_data_subnet_az2_id" {
   description = "The ID of the private subnet in Availability Zone 2."
   type        = string
 }
+
+variable "projects_dynamodb_table_name" {
+  description = "The name of the DynamoDB table to insert data into."
+  type        = string
+  
+}
