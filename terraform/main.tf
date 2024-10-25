@@ -33,14 +33,15 @@ provider "aws" {
 # }
 
 module "lambdaContacts" {
-  source = "./modules/lambdaContacts"
+  source             = "./modules/lambdaContacts"
   dynamodb_table_arn = module.dynamoDBContactForm.dynamodb_table_arn
 }
 
 module "apigateway" {
-  source = "./modules/apigateway"
+  source               = "./modules/apigateway"
   lambda_function_name = module.lambdaContacts.lambda_function_name
-  lambda_function_uri = module.lambdaContacts.lambda_function_uri
+  lambda_function_uri  = module.lambdaContacts.lambda_function_uri
+  domain_name          = var.domain_name 
 }
 
 module "dynamoDBContactForm" {

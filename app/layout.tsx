@@ -11,10 +11,13 @@ import "./globals.css";
 import Navbar from "@/components/features/navbar/Navbar";
 import PageScrollIconsMenu from "@/components/features/PageScrollIconsMenu";
 import ScrollToTopButton from "@/components/features/ScrollToTopButton";
+import Footer from "@/components/features/footer/Footer";
 // import MobileMenuFullWidth from "@/components/features/mobileNavbar/MobileMenuFullWidth";
 
 // $ Context Providers
 import Providers from "./providers";
+import NavbarProgressBar from "@/components/features/navbar/NavbarProgressBar";
+// import { Footer } from "flowbite-react";
 
 export const metadata: Metadata = {
   title: "Fabian Portfolio",
@@ -34,10 +37,12 @@ export default function RootLayout({ children }: Props) {
       <body className="bg-white dark:bg-bgDark">
         <Providers>
           <Navbar />
+          <NavbarProgressBar />
           {/* <MobileMenuFullWidth /> */}
           {children}
           <PageScrollIconsMenu />
           <ScrollToTopButton />
+          <Footer />
         </Providers>
       </body>
     </html>

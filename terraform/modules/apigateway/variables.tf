@@ -3,5 +3,9 @@ variable "lambda_function_name" {
 }
 
 variable "lambda_function_uri" {
-    type = string
+  type = string
+}
+
+variable "domain_name" {
+  type = string
 }

@@ -14,9 +14,11 @@ export type ProjectCardDataType = {
   githubLink?: string;
   singlePage?: {
     title: string;
+    aim: string;
     description?: string;
-    images?: string;
+    challenges: string;
     skills?: string[];
+    images?: string;
   };
 };
 
@@ -43,10 +45,12 @@ const projectsCardData: ProjectCardDataType[] = [
     githubLink: "https://githubLink.com/fabian-petersen/cocktail-api-project",
     singlePage: {
       title: "cocktail-project",
+      aim: "The aim of this project was to create a single page application that uses the cocktailDB API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
       description:
         "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
-      images: "",
       skills: ["html", "css", "javascript", "react"],
+      images: "",
+      challenges: "",
     },
   },
   {
@@ -62,10 +66,12 @@ const projectsCardData: ProjectCardDataType[] = [
       "https://githubLink.com/fabian-petersen/react-githubLink-users-search-app.git",
     singlePage: {
       title: "github-users",
+      aim: "",
       description:
         "In this project i used the githubLink API to get the information of the users.",
       images: "",
       skills: ["html", "css", "javascript", "react"],
+      challenges: "",
     },
   },
   {
@@ -80,10 +86,12 @@ const projectsCardData: ProjectCardDataType[] = [
     githubLink: "https://githubLink.com/fabian-petersen/natours",
     singlePage: {
       title: "tours-project",
+      aim: "",
       description:
         "The project does not use any framework e.g. React. The project was created in in my early stages as a developer to learn vanilla sematic HTML, CSS (with SCSS) and JavaScript.",
       images: "",
-      skills: ["html", "css", "javascript", "sass", "githubLink"],
+      challenges: "",
+      skills: ["html", "css", "javascript"],
     },
   },
   {
@@ -97,9 +105,11 @@ const projectsCardData: ProjectCardDataType[] = [
     githubLink: "https://githubLink.com/Fabian-Petersen/tea-shop-app",
     singlePage: {
       title: "tea-shop-project",
+      aim: "",
       description:
         "This is the first and most basic website I have build with React. All the data is stored within array objects and mapped over to display the different sections based on the hardgithubLinkd data. The css are done with styled components with fairly basic animations e.g. text movement in the X directions, object scaling and background image tranisioning over the product cards. The section id's was used to navigate bewteen the pages",
       images: "",
+      challenges: "",
       skills: ["html", "css", "javascript", "react"],
     },
   },
@@ -114,9 +124,11 @@ const projectsCardData: ProjectCardDataType[] = [
     githubLink: "",
     singlePage: {
       title: "comfy-sloth-project",
+      aim: "",
       description:
         "In this project i used the xxxxxxxx API to get the information of the cocktails. The app render the cocktail information with each cocktail making use of a dynamic single page information about the cocktail you selected.",
       images: "",
+      challenges: "",
       skills: ["html", "css", "javascript", "react", "githubLink"],
     },
   },
@@ -132,9 +144,11 @@ const projectsCardData: ProjectCardDataType[] = [
     githubLink: "",
     singlePage: {
       title: "uwc-logistics-project",
+      aim: "",
       description:
         "In this project i used the Supabase Backend API with a PostgresSQL Database",
       images: "",
+      challenges: "",
       skills: ["html", "css", "javascript", "react", "githubLink"],
     },
   },
@@ -150,9 +164,11 @@ const projectsCardData: ProjectCardDataType[] = [
     githubLink: "",
     singlePage: {
       title: "ai-web-scraping-project",
+      aim: "",
       description:
         "In this project i used the Python with the BeautifulSoup4 and Selenium libraries to scrape the web for the latest news and updates. The app uses a simple AI to get the latest news and updates.",
       images: "",
+      challenges: "",
       skills: ["streamlit", "python", "githubLink"],
     },
   },
@@ -167,9 +183,11 @@ const projectsCardData: ProjectCardDataType[] = [
     githubLink: "",
     singlePage: {
       title: "Burger Fast Foods",
+      aim: "",
       description:
         "In this project the best practices of devOps were used. The Front-End is build with HTML, CSS and JavaScript. The Back-End is build with Python and the app is deployed on AWS with the use of Terraform. The Front End is the work of a third party front-end developer from Youtube.",
       skills: ["terraform", "python", "aws", "githubLink"],
+      challenges: "",
     },
   },
 ];

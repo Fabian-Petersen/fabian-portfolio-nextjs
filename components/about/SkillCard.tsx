@@ -1,11 +1,10 @@
 // $ This component only renders the skills icons from the skillsdata.ts file
 // $ The props are destructured from the "MySkills.tsx" file
 
-import Link from "next/link";
-
 interface SkillCardProps {
-  image: string | undefined;
-  name: string | undefined;
+  image?: string | undefined;
+  name?: string | undefined;
+  language?: string | undefined;
 }
 
 const SkillCard = ({ image, name }: SkillCardProps) => {
@@ -17,7 +16,7 @@ const SkillCard = ({ image, name }: SkillCardProps) => {
           src={image}
           alt="html"
         />
-        <p className="capitalize tracking-wider">{name}</p>
+        <p className="uppercase tracking-wider">{name}</p>
       </div>
     </div>
   );

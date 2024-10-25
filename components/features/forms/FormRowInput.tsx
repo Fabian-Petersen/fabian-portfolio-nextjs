@@ -41,9 +41,10 @@ const FormRowInput = ({
       {labelText && (
         <label
           htmlFor={name}
-          className="absolute text-sm -top-5 left-0 transition-all duration-400 text-gray-400
+          className="absolute text-sm -top-5 left-0 transition-all duration-400 text-gray-300
             peer-placeholder-shown:top-3 px-2 mb-0 peer-placeholder-shown:text-gray-600
             peer-focus:-top-5 peer-focus:text-gray-600 peer-focus:text-sm tracking-wider
+            dark:peer-focus:text-gray-200 dark:peer-placeholder-shown:text-gray-400
             "
         >
           {labelText}

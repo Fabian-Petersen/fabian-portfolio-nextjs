@@ -15,7 +15,7 @@ const Gallery = () => {
   // const { projectType, setProjectType } = useGlobalContext();
 
   // const { projectType, setProjectType } = useGlobalContext();
-  console.log("projectType:", projectType);
+  // console.log("projectType:", projectType);
 
   return (
     <section className="grid gap-6 grid-cols-gallery p-6">

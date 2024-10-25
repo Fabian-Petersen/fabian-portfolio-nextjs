@@ -28,7 +28,7 @@ function ProjectFilterButton({ title, value }: Props) {
   return (
     <Button
       onClick={handleClick}
-      className="hover:bg-gray-500 flex-1"
+      className="hover:bg-blue-400 flex-1"
       variant={"default"}
       size={"lg"}
       value={value}

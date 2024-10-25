@@ -59,6 +59,7 @@ const config: Config = {
       colors: {
         primaryColor: "#e43f5a",
         bgDark: "#050f1a",
+        bgDarkFooter: "#050f1a",
         bgLight: "#eff5f5",
         facebookGray: "#eff2f5",
         fontLight: "#ededed",

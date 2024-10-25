@@ -2,7 +2,15 @@
 import navIcons from "../icons/navIcons";
 const { house, user, clipboard, phone } = navIcons;
 
-const links = [
+export type PageLinksTypes = {
+  id: number;
+  sectionId: string;
+  name: string;
+  icon: string;
+  tooltip_content: string;
+};
+
+const pageLinkData = [
   {
     id: 1,
     sectionId: "landing",
@@ -33,4 +41,4 @@ const links = [
   },
 ];
 
-export default links;
+export default pageLinkData;

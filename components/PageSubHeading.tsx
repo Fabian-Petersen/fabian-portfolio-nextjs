@@ -3,16 +3,21 @@
 import * as React from "react";
 
 interface SubHeadingProps {
-  title: string;
+  title: string | undefined;
   size?: "h2" | "h3";
+  variant?: "mainPage" | "variantSubHeading";
 }
 
 // modify the code to accept different heading sizes by passing a type prop
-const PageSubHeading = ({ title, size }: SubHeadingProps) => {
+const PageSubHeading = ({ title, size, variant }: SubHeadingProps) => {
+  const isProjectPage = variant === "variantSubHeading";
+
   // $ Use if statements to check for different heading sizes
   if (size === "h2") {
     return (
-      <h2 className="dark:text-white text-center text-[1.8rem] uppercase p-8">
+      <h2
+        className={`${isProjectPage ? "tracking-wider text-red-500" : "dark:text-white tracking-wider text-center text-[1.8rem] uppercase p-8"}`}
+      >
         {title}
       </h2>
     );

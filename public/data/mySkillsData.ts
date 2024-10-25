@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 
 type MySkillsDataType = {
   id: string;
-  language?: string;
+  language: string;
   iconImage?: string | undefined;
   category?: string;
   className?: string;
@@ -47,7 +47,7 @@ const mySkillsData: MySkillsDataType[] = [
   },
   {
     id: uuidv4(),
-    language: "CSS",
+    language: "css",
     iconImage: css,
     category: "frontEnd",
     className: "css",
@@ -68,7 +68,7 @@ const mySkillsData: MySkillsDataType[] = [
   },
   {
     id: uuidv4(),
-    language: "Python",
+    language: "python",
     iconImage: python,
     category: "backend",
     className: "api",

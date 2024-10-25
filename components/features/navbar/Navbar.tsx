@@ -1,23 +1,11 @@
 "use client";
 
-// import BurgerMenuButton from "../features/BurgerMenuButton";
 import ThemeToggleButton from "@/components/features/navbar/ThemeToggleMenu";
-import { useState, useEffect } from "react";
 import Logo from "./Logo";
+import useIsScrolled from "@/app/customHooks/useIsScrolled";
 
 const Navbar = () => {
-  // Change the Navbar bg to white when scrolled
-  const [isScrolled, setIsScrolled] = useState(false);
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    });
-  }, []);
-
+  const { isScrolled } = useIsScrolled();
   return (
     <div
       className={`${
@@ -26,7 +14,7 @@ const Navbar = () => {
           : "fixed bg-opacity-0 top-0 left-0 w-full z-[100] py-2 md:flex md:items-center hidden transition-all"
       }`}
     >
-      <Logo isScrolled={isScrolled} />
+      <Logo isScrolled={isScrolled} variant="navbar" />
       <div className="flex ml-auto gap-[2rem] mr-[0.5rem] md:mr-[3.5rem] items-center">
         <ThemeToggleButton />
       </div>

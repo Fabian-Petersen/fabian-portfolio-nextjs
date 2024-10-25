@@ -2,7 +2,6 @@ import * as React from "react";
 import AboutPage from "@/components/about/AboutPage";
 import ProjectsPage from "@/components/projects/ProjectPage";
 import ContactPage from "../components/contact/ContactPage";
-import Footer from "@/components/features/Footer";
 import LandingPage from "@/components/home/LandingPage";
 
 export default function HomePage() {
@@ -12,7 +11,6 @@ export default function HomePage() {
       <AboutPage />
       <ProjectsPage />
       <ContactPage />
-      <Footer />
     </main>
   );
 }

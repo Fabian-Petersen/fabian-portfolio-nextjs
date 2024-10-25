@@ -3,9 +3,10 @@ import facebook from "@/public/icons/icons8-facebook.svg";
 import twitter from "@/public/icons/icons8-twitter.svg";
 import linkedin from "@/public/icons/icons8-linkedin.svg";
 import github from "@/public/icons/icons8-github.svg";
+// import githubIcon from "../icons/githubIcon";
 const socialLinks = [
   {
-    id: 1,
+    id: "facebook",
     href: "facebook",
     tooltip: "facebook",
     iconImage: facebook,
@@ -16,7 +17,7 @@ const socialLinks = [
     className: "",
   },
   {
-    id: 2,
+    id: "twitter",
     href: "/twitter",
     tooltip: "twitter",
     iconImage: twitter,
@@ -27,7 +28,7 @@ const socialLinks = [
     className: "",
   },
   {
-    id: 3,
+    id: "linkedin",
     href: "/linkedin",
     tooltip: "linkedin",
     iconImage: linkedin,
@@ -38,7 +39,7 @@ const socialLinks = [
     className: "",
   },
   {
-    id: 4,
+    id: "github",
     href: "/github",
     tooltip: "github",
     iconImage: github,
@@ -47,7 +48,7 @@ const socialLinks = [
     animationClass: "animate-gitHubOpenAnimation",
     animationCloseClass: "animate-gitHubCloseAnimation socialIconStyles",
     className:
-      "before:content-[''] absolute top-0 left-0 w-full h-full bg-white z-10",
+      "relative before:content-[''] before:absolute before:inset-0 before:dark:bg-white before:rounded-full dark:before:block",
   },
 ];
 

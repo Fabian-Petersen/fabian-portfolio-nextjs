@@ -14,7 +14,7 @@ import Image from "next/image";
 const SocialsLinkIcons = () => {
   // const [parentContainer, childContainer] = iconSocialLinksVariants;
   return (
-    <div className="hidden md:block mt-6">
+    <div>
       <ul
         className="flex gap-4"
         // variants={parentContainer}
@@ -22,7 +22,8 @@ const SocialsLinkIcons = () => {
         // animate="animateState"
       >
         {socialLinks.map((link) => {
-          const { id, iconImage, href, tooltip, colorClass } = link;
+          const { id, iconImage, href, tooltip, colorClass, className } = link;
+          const isGithub = id === "github";
 
           return (
             <Tooltip
@@ -31,12 +32,8 @@ const SocialsLinkIcons = () => {
               placement="bottom"
               className={`capitalize ${colorClass}`}
             >
-              <Link href={href} className="dark:text-white">
-                <li
-                  // variants={childContainer}
-                  // 'Old Styles similart to the pagelinks ' className={`pageLinkIcons ${iconColor}`}
-                  className="pageLinkIcons"
-                >
+              <Link href={href} className="">
+                <li className={`pageLinkIcons relative ${isGithub ? "" : ""}`}>
                   <Image
                     className={`w-[1.8rem] h-[1.8rem] md:w-[2.1rem] md:h-[2.1rem]`}
                     src={iconImage}

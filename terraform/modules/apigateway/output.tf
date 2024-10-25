@@ -1,3 +1,7 @@
 output "api_url" {
-  value = aws_api_gateway_rest_api.contacts_api.execution_arn
+  value = aws_apigatewayv2_api.fabian_portfolio_api.execution_arn
+}
+
+output "api_gateway_url" {
+  value = aws_apigatewayv2_api.fabian_portfolio_api.api_endpoint
 }

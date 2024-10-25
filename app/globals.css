@@ -7,6 +7,8 @@
 @tailwind utilities;
 
 :root {
+  --github-svg-color: #333;
+  --footer-dark-background: "rgba(05, 16, 23, 0.9)";
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -16,14 +18,15 @@
 
 /* 
 $ ========================================== Dark Mode Styles as per user preference ==========================================
+*/
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-} 
-*/
+}
 
 html {
   margin: 0;
@@ -66,12 +69,31 @@ html {
     @apply sm:before:absolute sm:before:content-[''] sm:before:inset-0 sm:before:w-full sm:before:h-full sm:before:rounded-full sm:before:z-[-1];
   }
 
-  /* .pageLinkIcons:has(.isActive) {
-    @apply border-[2px] border-yellow-400 sm:before:bg-primaryColor dark:text-white;
-  } */
-
   .iconSize {
     @apply text-[0.8rem] md:text-[1rem] lg:text-[1.05rem];
+  }
+
+  /* $ ========================================== Scroll Progress Animation on Navbar ========================================== */
+
+  .scroll-watcher {
+    height: 2px;
+    z-index: 1000;
+    position: fixed;
+    background-color: blue;
+    width: 100%;
+    scale: 0 1;
+    transform-origin: left;
+    animation: scroll-watcher linear infinite;
+    animation-timeline: scroll(y);
+  }
+
+  @keyframes scroll-watcher {
+    0% {
+      scale: 0 1;
+    }
+    100% {
+      scale: 1 1;
+    }
   }
 
   :root {
@@ -165,7 +187,9 @@ html {
     background-image: radial-gradient(#1b64f1 2.5px, transparent 2.5px),
       radial-gradient(#1b64f1 2.5px, transparent 2.5px);
     background-size: 35px 35px;
-    background-position: 0 0, 17.5px 17.5px;
+    background-position:
+      0 0,
+      17.5px 17.5px;
     background-color: #ffffff;
   }
 }
