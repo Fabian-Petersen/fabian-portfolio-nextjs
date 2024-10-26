@@ -11,7 +11,7 @@ const QuickLinks: React.FC<QuickLinksProps> = ({ className }) => {
       <ul className={`${className} hover:cursor-pointer`}>
         {pageLinkData.map((link) => (
           <li key={link.id}>
-            <a href={`#${link.sectionId}`}>{link.name}</a>
+            <a href={`/#${link.sectionId}`}>{link.name}</a>
           </li>
         ))}
       </ul>

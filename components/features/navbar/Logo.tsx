@@ -21,9 +21,9 @@ const Logo = ({ isScrolled, variant }: LogoProps) => {
             isScrolled && "text-[2rem]"
           } md:text-[2.5rem]`}
         >
-          F
+          P
         </span>
-        abian
+        ortfolio
         <span className="text-primaryColor">.</span>
         <span>.</span>
         <span>.</span>

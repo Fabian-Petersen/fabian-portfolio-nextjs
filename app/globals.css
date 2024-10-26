@@ -36,6 +36,10 @@ html {
   scroll-behavior: smooth;
 }
 
+input:focus {
+  border-color: transparent;
+}
+
 @layer base {
   /* $ ========================================== Home Page Styles ========================================== */
 

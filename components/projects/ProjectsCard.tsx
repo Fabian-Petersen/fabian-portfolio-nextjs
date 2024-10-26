@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { ProjectCardDataType } from "@/public/data/projectData";
 import CardButtons from "./CardButtons";
@@ -21,7 +19,6 @@ const ProjectsCard = ({
           src={image ?? ""}
           alt={projectTitle ?? ""}
           fill
-          objectFit="cover"
         />
         <div className="group-hover:opacity-10 absolute inset-0"></div>
         <div className="absolute inset-0 flex flex-col justify-evenly items-center bg-gradient-to-b from-black/50 to-black/50 px-4 text-center translate-y-[100%] group-hover:translate-y-0 transition-all duration-700 text-white/90">

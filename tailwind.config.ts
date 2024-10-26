@@ -58,6 +58,7 @@ const config: Config = {
       },
       colors: {
         primaryColor: "#e43f5a",
+        buttonBlueColor: "#3a7ff9",
         bgDark: "#050f1a",
         bgDarkFooter: "#050f1a",
         bgLight: "#eff5f5",
