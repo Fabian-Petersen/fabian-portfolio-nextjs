@@ -8,7 +8,7 @@ import LoginButton from "./LoginButton";
 const Navbar = () => {
   const { isScrolled } = useIsScrolled();
   return (
-    <div
+    <nav
       className={`${
         isScrolled
           ? "fixed top-0 h-[65px] left-0 w-full z-[100] py-4 md:flex md:items-center border-opacity-50 dark:border-opacity-5 bg-white dark:bg-gray-900 shadow-md bg-opacity-100 transition-all duration-300 ease-in"
@@ -20,7 +20,7 @@ const Navbar = () => {
         <LoginButton />
         <ThemeToggleButton />
       </div>
-    </div>
+    </nav>
   );
 };
 export default Navbar;

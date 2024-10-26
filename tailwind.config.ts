@@ -64,6 +64,7 @@ const config: Config = {
         bgLight: "#eff5f5",
         facebookGray: "#eff2f5",
         fontLight: "#ededed",
+        fontDark: "rgb(24, 49, 83)",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

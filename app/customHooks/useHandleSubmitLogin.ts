@@ -1,3 +1,6 @@
+// $ import test cookie to test functionality, to be removed when cognito is setup.
+import Cookies from "js-cookie";
+
 import { useState, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import { z } from "zod";
@@ -32,6 +35,7 @@ const useHandleSubmitLogin = () => {
 
   // $ Start the transition to the pending state
   const handleSubmit = (values: { email: string; password: string }) => {
+    Cookies.set("auth=true", "true");
     setError("");
     setSuccess("");
     startTransition(() => {

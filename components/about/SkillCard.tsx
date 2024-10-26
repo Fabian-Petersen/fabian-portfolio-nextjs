@@ -9,14 +9,14 @@ interface SkillCardProps {
 
 const SkillCard = ({ image, name }: SkillCardProps) => {
   return (
-    <div className="flex gap-8">
+    <div className="flex gap-8 align-middle justify-start">
       <div className="flex flex-col gap-4 items-center justify-center">
         <img
-          className="w-16 h-16 hover:scale-105 hover:cursor-pointer"
+          className="w-10 h-10 sm:w-16 sm:h-16 hover:scale-105 hover:cursor-pointer"
           src={image}
           alt="html"
         />
-        <p className="uppercase tracking-wider">{name}</p>
+        <p className="uppercase tracking-widest text-sm md:text-md">{name}</p>
       </div>
     </div>
   );

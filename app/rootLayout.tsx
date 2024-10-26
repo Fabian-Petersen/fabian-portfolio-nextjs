@@ -11,6 +11,8 @@ import Navbar from "@/components/features/navbar/Navbar";
 import PageScrollIconsMenu from "@/components/features/PageScrollIconsMenu";
 import ScrollToTopButton from "@/components/features/ScrollToTopButton";
 import Footer from "@/components/features/footer/Footer";
+import MobileNavbar from "@/components/features/navbar/MobileNavbar";
+import MobileMenuLinks from "@/components/features/navbar/MobileMenuLinks";
 // import MobileMenuFullWidth from "@/components/features/mobileNavbar/MobileMenuFullWidth";
 
 // $ Context Providers
@@ -18,21 +20,23 @@ import Providers from "./providers";
 import NavbarProgressBar from "@/components/features/navbar/NavbarProgressBar";
 // import { Footer } from "flowbite-react";
 
-// ? Add props to the children without explicitly defining them
-// import { PropsWithChildren } from "react";
+// $ Import custom hook to check if the size is mobile or not to change Navbar components
+import useIsMobile from "@/customHooks/useScreenSize";
 
 type Props = {
   children: React.ReactNode;
 };
 
 export default function RootLayout({ children }: Props) {
+  const isMobile = useIsMobile();
   const pathname = usePathname();
   const isLoginPage = pathname === "/login";
   return (
     <html lang="en" className="font-poppins">
       <body className="bg-white dark:bg-bgDark">
         <Providers>
-          <Navbar />
+          {/* <MobileMenuLinks /> */}
+          {isMobile ? <MobileNavbar /> : <Navbar />}
           <NavbarProgressBar />
           {/* <MobileMenuFullWidth /> */}
           {children}

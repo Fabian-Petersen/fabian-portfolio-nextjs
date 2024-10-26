@@ -3,6 +3,7 @@ import PageSubHeading from "../PageSubHeading";
 import AboutSkillsHeading from "./AboutSkillsHeading";
 import mySkillsData from "@/public/data/mySkillsData";
 import SkillCard from "./SkillCard";
+import HorizontalRule from "../features/HorizontalRule";
 
 // $ Hook which returns the unique list of categories in the mySkillsData array
 import useCategoriesHeadingsHook from "./useCategoriesHeadingsHook";
@@ -16,9 +17,9 @@ const MySkills = () => {
       <PageSubHeading title="my skills" size="h3" />
       <div className="flex flex-col flex-wrap gap-6 lg:gap-12">
         {uniqueCategories.map((category, index) => (
-          <div className="" key={index}>
+          <div className="h-auto" key={index}>
             <AboutSkillsHeading category={category} />
-            <div className="flex gap-[4rem]">
+            <div className="grid grid-cols-3 md:grid-cols-6 gap-6">
               {mySkillsData
                 .filter((item) => item.category === category)
                 .map(({ id, language, iconImage }) => (
@@ -30,9 +31,7 @@ const MySkills = () => {
                 ))}
             </div>
             {/* Conditionally render the <hr> based on the index */}
-            {index !== uniqueCategories.length - 1 && (
-              <hr className="mt-8 border-gray-700 opacity-20 w-full shadow-lg" />
-            )}
+            {index !== uniqueCategories.length - 1 && <HorizontalRule />}
           </div>
         ))}
       </div>

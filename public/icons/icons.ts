@@ -10,6 +10,8 @@ import {
   faLocationDot,
   faXmark,
   faEllipsis,
+  faBarsStaggered,
+  faBars,
 } from "@fortawesome/free-solid-svg-icons";
 
 // import { BsFillSunFill, BsFillMoonFill } from "react-icons/bs";
@@ -23,6 +25,7 @@ const Icons = {
   faShareNodes,
   faEnvelope,
   faLocationDot,
+  faBarsStaggered,
   xmark: faXmark,
   ellipses: faEllipsis,
 };

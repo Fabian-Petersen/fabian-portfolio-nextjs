@@ -7,7 +7,7 @@ function LoginFormContainer() {
     <CardWrapper
       headerLabel="🔐 Admin Login..."
       backButtonLabel="Dont have an account? "
-      backButtonHref="/register"
+      backButtonHref=""
       showSocial
     >
       <LoginForm />
