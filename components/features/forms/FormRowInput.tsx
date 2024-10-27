@@ -1,15 +1,17 @@
+"use client";
+
 // $ Note: Form Row Input Flowbite component
 // $ For the peer element to work, the label element must be a sibling of the input element after the input element.
 
 type FormRowInputProps = {
   type: string;
   name: string;
-  id: string;
+  id?: string;
   labelText: string;
   placeholderText: string;
-  className: string;
+  className?: string;
   defaultValues?: string;
-  onChange: () => void;
+  onChange?: () => void;
   required?: boolean;
 };
 
@@ -31,8 +33,8 @@ const FormRowInput = ({
         type={type}
         name={name}
         className={`${className} text-sm py-3 px-2 peer
-          outline-none border-none focus:border-b-rose-600 text-gray-700 rounded-md
-          w-full placeholder-transparent dark:text-white`}
+          outline-none border-none focus:border-b-rose-600 text-fontDark rounded-md
+          w-full placeholder-transparent`}
         defaultValue={defaultValues}
         onChange={onChange}
         required={required}
@@ -44,7 +46,7 @@ const FormRowInput = ({
           className="absolute text-sm -top-5 left-0 transition-all duration-400 text-gray-300
             peer-placeholder-shown:top-3 px-2 mb-0 peer-placeholder-shown:text-gray-600
             peer-focus:-top-5 peer-focus:text-gray-600 peer-focus:text-sm tracking-wider
-            dark:peer-focus:text-gray-200 dark:peer-placeholder-shown:text-gray-400
+            dark:peer-focus:text-gray-400 dark:peer-placeholder-shown:text-gray-400
             "
         >
           {labelText}

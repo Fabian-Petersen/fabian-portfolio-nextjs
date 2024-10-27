@@ -3,12 +3,12 @@
 
 type FormRowTextAreaProps = {
   name: string;
-  id: string;
-  labelText: string | null;
-  placeholderText: string;
-  className: string;
+  id?: string;
+  labelText: string;
+  placeholderText?: string;
+  className?: string;
   defaultValues?: string;
-  onChange: () => void;
+  onChange?: () => void;
   row?: number;
 };
 
@@ -23,13 +23,13 @@ const FormRowTextArea = ({
   onChange,
 }: FormRowTextAreaProps) => {
   return (
-    <div className="relative col-span-full mb-5 group">
+    <div className="relative col-span-full group">
       <textarea
         id={id}
         rows={row}
         name={name}
-        className={`${className} py-3 px-2 peer rounded-sm border-none focus:border-b-2 outline-transparent text-gray-800 text-sm
-        w-full placeholder-transparent dark:text-white`}
+        className={`${className} py-3 px-2 peer rounded-sm border-none focus:border-b-2 outline-transparent text-sm
+        w-full placeholder-transparent text-fontDark`}
         placeholder={placeholderText}
         defaultValue={defaultValues}
         onChange={onChange}

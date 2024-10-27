@@ -1,13 +1,14 @@
 import axios from "axios";
+import { contactFormSchema } from "../schemas/index";
 import { z } from "zod";
 
 const useHandleSubmitContacts = () => {
   // $ Define the Zod schema for validation
-  const contactFormSchema = z.object({
-    username: z.string().min(1, { message: "Name is required" }), // Must be a non-empty string
-    email: z.string().email({ message: "Invalid email address" }), // Must be a valid email
-    message: z.string().min(1, { message: "Message is required" }), // Must be non-empty
-  });
+  // const contactFormSchema = z.object({
+  //   username: z.string().min(1, { message: "Name is required" }),
+  //   email: z.string().email({ message: "Invalid email address" }),
+  //   message: z.string().min(1, { message: "Message is required" }),
+  // });
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

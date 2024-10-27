@@ -22,8 +22,6 @@ export type ProjectCardDataType = {
   };
 };
 
-const { html, css, javascript, react, figma } = skillsIconImages;
-
 const {
   teaProject,
   toursProject,

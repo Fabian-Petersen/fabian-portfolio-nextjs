@@ -59,6 +59,9 @@ const config: Config = {
       colors: {
         primaryColor: "#e43f5a",
         buttonBlueColor: "#3a7ff9",
+        formPageBgColor: "##eaecf0",
+        formPageBgColorDark: "rgb(43, 39, 56)",
+        formColorDark: "#101828",
         bgDark: "#050f1a",
         bgDarkFooter: "#050f1a",
         bgLight: "#eff5f5",

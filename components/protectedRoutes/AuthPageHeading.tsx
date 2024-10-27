@@ -8,7 +8,7 @@ type PageHeadingProps = {
 
 const AuthPageHeading = ({ title }: PageHeadingProps) => {
   return (
-    <div className="w-full h-auto grid gap-2 border border-red-500">
+    <div className="w-full h-auto grid gap-2">
       {/* <HorizontalRule variant="auth-pages" /> */}
       <h2 className="block text-clamp_h2 tracking-widest font-semibold dark:text-white text-blue-600">
         {title}

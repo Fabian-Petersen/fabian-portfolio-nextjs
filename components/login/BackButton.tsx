@@ -16,7 +16,7 @@ const BackButton = ({ href, label }: BackButtonProps) => {
       asChild
     >
       <div className="flex gap-1 hover:no-underline w-1">
-        Dont have access?
+        Don't have access?
         <span>Return</span>
         <Link href="/">
           <span className="hover:text-red-500">Home.</span>
