@@ -12,12 +12,14 @@ const LoginButton = () => {
   };
 
   return (
-    <Button
-      buttonLabel="Admin"
-      type="button"
-      onClick={handleLogin}
-      className="bg-buttonBlueColor hover:bg-blue-400 text-sm text-white py-2 px-6 rounded-full"
-    />
+    <>
+      <Button
+        buttonLabel="Admin"
+        type="button"
+        onClick={handleLogin}
+        className="hover:bg-buttonBlueColor transition-all duration-100 text-md text-fontDark dark:text-fontLight py-2 px-6 rounded-full"
+      />
+    </>
   );
 };
 

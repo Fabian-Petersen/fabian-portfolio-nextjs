@@ -32,7 +32,7 @@ const ProjectUploadForm = () => {
           labelText="Project Title"
           onChange={() => {}}
         />
-        {/* <FormRowInput
+        <FormRowInput
           name="description"
           onChange={() => {}}
           type="text"
@@ -52,10 +52,10 @@ const ProjectUploadForm = () => {
           options={["Front End", "Back End", "Cloud Engineering"]}
           labelText="Project Type"
           onChange={() => {}}
-        /> */}
+        />
         {/* Change multiple to true once the data received from database */}
 
-        {/* <FormRowSelect
+        <FormRowSelect
           name="projectStack"
           multiple={true}
           options={skills}
@@ -63,9 +63,9 @@ const ProjectUploadForm = () => {
             console.log(selectedValues);
           }}
           labelText="Project Stack"
-        /> */}
+        />
 
-        {/* <FormRowInput
+        <FormRowInput
           name="websiteLink"
           onChange={() => {}}
           type="text"
@@ -102,7 +102,7 @@ const ProjectUploadForm = () => {
           placeholderText="image"
           className="col-span-full border border-gray-800"
           onChange={() => {}}
-        /> */}
+        />
       </div>
 
       <Button

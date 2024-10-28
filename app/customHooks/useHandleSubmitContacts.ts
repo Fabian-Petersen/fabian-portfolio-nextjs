@@ -18,9 +18,6 @@ const useHandleSubmitContacts = () => {
       message: e.currentTarget.message.value,
     };
 
-    const api_gateway_url =
-      "https://jac532g7he.execute-api.af-south-1.amazonaws.com/dev/contacts";
-
     // Validate form data with Zod
     const validationResult = contactFormSchema.safeParse(formData);
     if (!validationResult.success) {
@@ -30,12 +27,12 @@ const useHandleSubmitContacts = () => {
 
     try {
       // POST request to AWS API Gateway
-      const response = await axios.post(api_gateway_url, formData, {
+      const response = await axios.post("api/contacts", formData, {
         headers: {
           "Content-Type": "application/json",
         },
       });
-      console.log("Message sent successfully:", response.data);
+      console.log("data from client sent successfully:", response.data);
     } catch (error) {
       console.error("Error sending message:", error);
     }

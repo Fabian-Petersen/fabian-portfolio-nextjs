@@ -4,10 +4,13 @@
     "flowbite",
     "fontawesome",
     "fortawesome",
+    "greatvibes",
     "hookform",
     "lucide",
     "nextjs",
+    "ortfolio",
     "reduxjs",
     "tailwindcss"
-  ]
+  ],
+  "cSpell.ignoreWords": ["httpbin"]
 }

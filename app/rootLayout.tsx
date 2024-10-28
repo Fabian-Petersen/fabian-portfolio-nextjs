@@ -40,7 +40,7 @@ export default function RootLayout({ children }: Props) {
           <NavbarProgressBar />
           {/* <MobileMenuFullWidth /> */}
           {children}
-          {isLoginPage ? null : <PageScrollIconsMenu />}
+          {/* {isLoginPage ? null : <PageScrollIconsMenu />} */}
           {isLoginPage ? null : <ScrollToTopButton />}
           <Footer />
         </Providers>
