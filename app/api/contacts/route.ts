@@ -2,17 +2,15 @@ import { NextResponse } from "next/server";
 import axios from "axios";
 
 export async function POST(request: Request) {
-  const url = process.env.API_GATEWAY_URL as string; // Secure URL in .env
-  //   "https://httpbin.org/post", // Test endpoint for verifying POST request
+  const url = process.env.API_CONTACTS_ROUTE as string;
 
   try {
     // Parse incoming client data
     const clientData = await request.json();
-    console.log("Received data on server:", clientData);
 
     // Make a POST request to AWS API Gateway
     const awsResponse = await axios.post(
-      "https://3fay7enw02.execute-api.af-south-1.amazonaws.com/dev/contacts", // Test endpoint for verifying POST request
+      url, // Test endpoint for verifying POST request
       clientData,
       {
         headers: {

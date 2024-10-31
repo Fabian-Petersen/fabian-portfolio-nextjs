@@ -35,7 +35,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "projects/[id]/projects/projects",
-    ".next/types/app/api/projects/page.tsx"
+    ".next/types/app/api/projects/page.tsx",
+    "app/tests/lambda.js"
   ],
   "exclude": ["node_modules", "dist", "lib"]
 }

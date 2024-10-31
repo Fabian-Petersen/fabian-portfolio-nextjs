@@ -9,7 +9,7 @@ export function useHandleSubmitTest() {
     };
 
     try {
-      const response = await fetch("/api/test", {
+      const response = await fetch("/api/projects", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

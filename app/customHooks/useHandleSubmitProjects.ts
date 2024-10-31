@@ -21,24 +21,21 @@ const useHandleSubmitProjects = () => {
       image: e.currentTarget.image.value,
     };
 
-    const api_gateway_url = "api/projects";
+    const api_server_url = "api/projects";
 
     // Validate form data with Zod
     const validationResult = projectsFormSchema.safeParse(formData);
     if (!validationResult.success) {
       console.error(validationResult.error.errors);
-      console.log("Form data is invalid");
       return;
     }
     try {
-      // POST request to AWS API Gateway
-      const response = await axios.post(api_gateway_url, formData, {
+      // POST request to Nextjs API
+      const response = await axios.post(api_server_url, formData, {
         headers: {
           "Content-Type": "application/json",
         },
       });
-      console.log("Project send to sever successfully:");
-      console.log(response.data);
     } catch (error) {
       console.error("Error sending project:", error);
     }

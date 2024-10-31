@@ -23,7 +23,7 @@ const ContactForm = () => {
         name="username"
         type="text"
         placeholderText="name"
-        className="bg-gray-200 dark:bg-gray-700"
+        className="bg-gray-200 dark:bg-gray-700 dark:text-fontLight text-fontDark dark:caret-fontLight caret-fontDark"
         onChange={() => {}}
       />
       <FormRowInput
@@ -32,7 +32,7 @@ const ContactForm = () => {
         name="email"
         type="email"
         placeholderText="email"
-        className="bg-gray-200 dark:bg-gray-700"
+        className="bg-gray-200 dark:bg-gray-700 dark:text-fontLight text-fontDark dark:caret-fontLight caret-fontDark"
         onChange={() => {}}
       />
       <FormRowTextArea
@@ -41,12 +41,12 @@ const ContactForm = () => {
         row={4}
         name="message"
         placeholderText="message"
-        className="bg-gray-200 dark:bg-gray-700"
+        className="bg-gray-200 dark:bg-gray-700 dark:text-fontLight text-fontDark dark:caret-fontLight caret-fontDark"
         onChange={() => {}}
       />
       <Button
         type="submit"
-        className="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded tracking-wider uppercase"
+        className="bg-blue-500 hover:bg-blue-700 py-2 px-4 rounded tracking-wider uppercase dark:text-fontLight text-fontDark"
         buttonLabel="Submit Message"
       />
     </form>

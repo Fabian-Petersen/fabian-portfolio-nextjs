@@ -1,6 +1,6 @@
 import axios from "axios";
 import { contactFormSchema } from "../schemas/index";
-import { z } from "zod";
+import { toast } from "react-toastify";
 
 const useHandleSubmitContacts = () => {
   // $ Define the Zod schema for validation
@@ -32,9 +32,15 @@ const useHandleSubmitContacts = () => {
           "Content-Type": "application/json",
         },
       });
-      console.log("data from client sent successfully:", response.data);
+
+      // Check if response status is success
+      if (response.status === 200) {
+        toast.success("Form submitted successfully!");
+        // Clear the form
+        const formData = { username: "", email: "", message: "" };
+      }
     } catch (error) {
-      console.error("Error sending message:", error);
+      toast.error("Failed to submit the form.");
     }
   };
 
