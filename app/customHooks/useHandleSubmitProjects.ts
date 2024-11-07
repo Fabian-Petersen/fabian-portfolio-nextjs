@@ -31,7 +31,7 @@ const useHandleSubmitProjects = () => {
     }
     try {
       // POST request to Nextjs API
-      const response = await axios.post(api_server_url, formData, {
+      const response = await axios.post("https://httpbin.org/post", formData, {
         headers: {
           "Content-Type": "application/json",
         },

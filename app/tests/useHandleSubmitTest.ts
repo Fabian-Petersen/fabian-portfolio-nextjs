@@ -1,28 +1,19 @@
+// const url = process.env.API_PROJECTS_ROUTE as string;
 import React from "react";
+import axios from "axios";
 
 export function useHandleSubmitTest() {
   const handleTestSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const testFormData = {
-      title: e.currentTarget.test.value,
-    };
+    // Create a FormData object to hold form data
+    const formData = new FormData(e.currentTarget);
+
+    const api_route = "http://localhost:3000/api/projects";
 
     try {
-      const response = await fetch("/api/projects", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(testFormData),
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to create test");
-      }
-
-      const result = await response.json();
-      console.log("Test created:", result);
+      const { data } = await axios.post(api_route, formData);
+      console.log("Response from AWS:", data);
     } catch (error) {
       console.error("Error creating test:", error);
     }

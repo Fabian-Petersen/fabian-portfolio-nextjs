@@ -9,6 +9,7 @@ import useHandleSubmitTest from "@/app/tests/useHandleSubmitTest";
 
 const TestForm = () => {
   const { handleTestSubmit } = useHandleSubmitTest();
+
   return (
     <form
       onSubmit={handleTestSubmit}
@@ -17,11 +18,19 @@ const TestForm = () => {
       <AuthPageHeading title="Test Form for AWS GATEWAY" />
       <div className="grid sm:grid-cols-2 gap-6">
         <FormRowInput
-          name="test"
+          name="projectTitle"
           type="text"
           placeholderText="project Title"
           labelText="Project Title"
           onChange={() => {}}
+        />
+        <FormRowInput
+          name="image"
+          type="file"
+          placeholderText="project image"
+          labelText="Upload Project Image"
+          onChange={() => {}}
+          accept="image/*"
         />
       </div>
 

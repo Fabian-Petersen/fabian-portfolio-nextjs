@@ -13,6 +13,7 @@ type FormRowInputProps = {
   defaultValues?: string;
   onChange?: () => void;
   required?: boolean;
+  accept?: string;
 };
 
 const FormRowInput = ({
@@ -25,6 +26,7 @@ const FormRowInput = ({
   defaultValues,
   onChange,
   required,
+  accept,
 }: FormRowInputProps) => {
   return (
     <div className="relative w-full mb-2 group">
@@ -38,15 +40,16 @@ const FormRowInput = ({
         defaultValue={defaultValues}
         onChange={onChange}
         required={required}
+        accept={accept}
         placeholder={placeholderText}
       ></input>
       {labelText && (
         <label
           htmlFor={name}
-          className="absolute text-sm -top-5 left-0 transition-all duration-400 text-gray-300
+          className="absolute text-sm -top-5 left-0 transition-all duration-400 text-gray-400
             peer-placeholder-shown:top-3 px-2 mb-0 peer-placeholder-shown:text-gray-600
             peer-focus:-top-5 peer-focus:text-gray-600 peer-focus:text-sm tracking-wider
-            dark:peer-focus:text-gray-400 dark:peer-placeholder-shown:text-gray-400
+            dark:peer-focus:text-gray-400 dark:peer-placeholder-shown:text-fontLight
             "
         >
           {labelText}

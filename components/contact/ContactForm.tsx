@@ -46,7 +46,7 @@ const ContactForm = () => {
       />
       <Button
         type="submit"
-        className="bg-blue-500 hover:bg-blue-700 py-2 px-4 rounded tracking-wider uppercase dark:text-fontLight text-fontDark"
+        className="bg-blue-500 hover:bg-blue-700 py-2 px-4 rounded tracking-wider uppercase dark:text-fontLight text-white"
         buttonLabel="Submit Message"
       />
     </form>

@@ -2,7 +2,8 @@ import { NextResponse } from "next/server";
 import axios from "axios";
 
 export async function POST(request: Request) {
-  const url = process.env.API_CONTACTS_ROUTE as string;
+  const url = process.env.REST_API_DEV_CONTACTS as string;
+  // const test_url = "https://httpbin.org/post";
 
   try {
     // Parse incoming client data
@@ -12,13 +13,9 @@ export async function POST(request: Request) {
     const awsResponse = await axios.post(
       url, // Test endpoint for verifying POST request
       clientData,
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
+      { headers: { "Content-Type": "application/json" } }
     );
-    console.log("AWS (httpbin) response data:", awsResponse.data); // Confirm response
+    console.log("AWS response data:", awsResponse.data); // Confirm response
     // Return success response to the client
     return NextResponse.json(
       { message: "Data successfully sent to AWS", data: awsResponse.data },

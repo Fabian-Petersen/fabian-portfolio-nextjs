@@ -18,7 +18,6 @@ import MobileMenuLinks from "@/components/features/navbar/MobileMenuLinks";
 // $ Context Providers
 import Providers from "./providers";
 import NavbarProgressBar from "@/components/features/navbar/NavbarProgressBar";
-import { ToastContainer } from "react-toastify";
 
 // $ Import custom hook to check if the size is mobile or not to change Navbar components
 import useIsMobile from "@/customHooks/useScreenSize";
@@ -35,7 +34,6 @@ export default function RootLayout({ children }: Props) {
     <html lang="en" className="font-poppins">
       <body className="bg-white dark:bg-bgDark">
         <Providers>
-          <ToastContainer position="top-right" theme="light" />
           {/* <MobileMenuLinks /> */}
           {isMobile ? <MobileNavbar /> : <Navbar />}
           <NavbarProgressBar />

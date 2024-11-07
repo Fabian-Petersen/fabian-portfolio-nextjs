@@ -2,36 +2,28 @@ import { NextResponse } from "next/server";
 import axios from "axios";
 
 export async function POST(request: Request) {
-  const url = process.env.API_PROJECTS_ROUTE as string;
-
+  const url = process.env.REST_API_DEV_PROJECTS as string;
+  // const test_url = "https://httpbin.org/post";
   try {
     // Parse incoming client data
-    const clientData = await request.json();
-    console.log("Client data:", clientData);
+    const clientData = await request.formData(); // Ensure input name is 'file'
 
-    // Make a POST request to AWS API Gateway
-    const awsResponse = await axios.post(
-      url, // Test endpoint for verifying POST request
-      clientData,
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const formData = new FormData();
+    formData.append("file", clientData.get("image") as File);
+    formData.append("projectTitle", clientData.get("projectTitle") as string);
 
-    // Return success response to the client
+    const { data } = await axios.post(url, formData, {
+      headers: { "Content-Type": "multipart/form-data" },
+    });
+    console.log("Response from AWS:", data);
+
     return NextResponse.json(
-      {
-        message: "project data successfully sent to AWS",
-        data: awsResponse.data,
-      },
+      { message: "server response successfull" },
       { status: 200 }
     );
   } catch (error) {
-    console.error("Error processing request:", error);
-
     // Return error response to the client
+    console.error("Error processing request:", error);
     return NextResponse.json(
       { message: "Failed to create test", error: error },
       { status: 500 }

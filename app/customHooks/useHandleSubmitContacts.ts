@@ -1,6 +1,7 @@
 import axios from "axios";
 import { contactFormSchema } from "../schemas/index";
 import { toast } from "react-toastify";
+import { revalidatePath } from "next/cache";
 
 const useHandleSubmitContacts = () => {
   // $ Define the Zod schema for validation
@@ -12,14 +13,13 @@ const useHandleSubmitContacts = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = {
-      username: e.currentTarget.username.value,
-      email: e.currentTarget.email.value,
-      message: e.currentTarget.message.value,
-    };
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const formDataObject = Object.fromEntries(formData);
+    console.log(Object.fromEntries(formData));
 
     // Validate form data with Zod
-    const validationResult = contactFormSchema.safeParse(formData);
+    const validationResult = contactFormSchema.safeParse(formDataObject);
     if (!validationResult.success) {
       console.error(validationResult.error.errors);
       return;
@@ -27,20 +27,19 @@ const useHandleSubmitContacts = () => {
 
     try {
       // POST request to AWS API Gateway
-      const response = await axios.post("api/contacts", formData, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await axios.post("api/contacts", formDataObject);
 
-      // Check if response status is success
       if (response.status === 200) {
         toast.success("Form submitted successfully!");
-        // Clear the form
-        const formData = { username: "", email: "", message: "" };
+      } else {
+        toast.error("Unexpected response from server.");
       }
     } catch (error) {
       toast.error("Failed to submit the form.");
+    } finally {
+      // Safely reset the form regardless of success or failure
+      // revalidatePath("/contacts");
+      form.reset();
     }
   };
 
