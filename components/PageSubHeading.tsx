@@ -6,17 +6,23 @@ interface SubHeadingProps {
   title: string | undefined;
   size?: "h2" | "h3";
   variant?: "mainPage" | "variantSubHeading";
+  className?: string;
 }
 
 // modify the code to accept different heading sizes by passing a type prop
-const PageSubHeading = ({ title, size, variant }: SubHeadingProps) => {
+const PageSubHeading = ({
+  title,
+  size,
+  variant,
+  className,
+}: SubHeadingProps) => {
   const isProjectPage = variant === "variantSubHeading";
 
   // $ Use if statements to check for different heading sizes
   if (size === "h2") {
     return (
       <h2
-        className={`${isProjectPage ? "tracking-wider text-red-500" : "dark:text-white tracking-wider text-center text-[1.8rem] uppercase p-8"}`}
+        className={`${isProjectPage ? className : "dark:text-white tracking-wider text-center text-[2rem]"}`}
       >
         {title}
       </h2>
@@ -25,7 +31,9 @@ const PageSubHeading = ({ title, size, variant }: SubHeadingProps) => {
 
   if (size === "h3") {
     return (
-      <h2 className="dark:text-white text-center text-[1.4rem] uppercase p-8">
+      <h2
+        className={`${isProjectPage ? "pt-2 text-[1.5rem]" : "dark:text-white text-center text-[1.4rem]"}`}
+      >
         {title}
       </h2>
     );

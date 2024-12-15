@@ -1,21 +1,25 @@
 "use client";
 
-import Button from "@/components/features/Button";
+import { Button } from "@/components/ui/button";
+import { Mail } from "lucide-react";
 
-const CTAButton = () => {
+type ButtonProps = {
+  className: string;
+};
+
+const CTAButton = ({ className }: ButtonProps) => {
   const handleClick = () => {
-    const element = document.getElementById("/projects");
+    const element = document.getElementById("contact");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <Button
-      className="flex-1 text-[0.8rem] p-2 md:p-3 bg-blue-500 hover:bg-blue-600 hover:shadow-lg hover:translate-y-[1px] rounded-full text-gray-200 uppercase tracking-widest"
-      buttonLabel="Projects"
-      onClick={handleClick}
-    />
+    <Button variant="contact" className={className} onClick={handleClick}>
+      <Mail className="mr-2" />
+      Contact Me
+    </Button>
   );
 };
 

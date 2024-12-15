@@ -6,7 +6,7 @@ const HeaderLinks: React.FC = () => {
   return (
     // $ The mobile menu links for the portfolio section of the site.
     <div className="dark:text-fontLight text-fontDark">
-      <ul className="flex justify-evenly gap-4 items-center h-full">
+      <ul className="flex justify-evenly gap-12 items-center h-full">
         {pageLinkData.map((link) => (
           <li key={link.id}>
             <a

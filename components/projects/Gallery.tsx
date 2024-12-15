@@ -4,26 +4,38 @@
 // $ The data is imported from a separate file.
 // $ The data is mapped to the ProjectsCard component.
 
-import projectsCardData from "@/public/data/projectData";
+import projectsCardData, {
+  ProjectCardDataType,
+} from "@/public/data/projectData";
 import ProjectsCard from "./ProjectsCard";
-import useGlobalContext from "@/useGlobalContext";
-import { useState } from "react";
+import { useFetchItem } from "@/lib/reactQueryCutomHooks";
+import LoadingSpinner from "../features/LoadingSpinner";
 
-const Gallery = () => {
-  const [projectType, setProjectType] = useState<string>("all");
-  // import the projectType and setProjectType from the useGlobalContext hook
-  // const { projectType, setProjectType } = useGlobalContext();
+type GalleryProps = {
+  items: ProjectCardDataType[];
+};
 
-  // const { projectType, setProjectType } = useGlobalContext();
-  // console.log("projectType:", projectType);
+const Gallery = ({ items }: GalleryProps) => {
+  console.log("items", items);
 
   return (
-    <section className="grid gap-6 grid-cols-gallery p-6">
-      {projectsCardData.map((projectProps) => (
-        <ProjectsCard key={projectProps.id} {...projectProps} />
-      ))}
-    </section>
+    <>
+      {/* {isPending ? (
+        <LoadingSpinner />
+        ) : ( */}
+      <section className="grid gap-6 grid-cols-gallery p-6 border border-red-500">
+        {items.map((item: ProjectCardDataType) => (
+          <ProjectsCard key={item.id} {...item} />
+        ))}
+      </section>
+      {/* )} */}
+    </>
   );
 };
 
 export default Gallery;
+// const { data, isError, isPending } = useFetchItem("projects");
+// const projects = data ? JSON.parse(data.body) : [];
+// if (isError) {
+//   return <p style={{ marginTop: "1rem " }}>There was an error...</p>;
+// }

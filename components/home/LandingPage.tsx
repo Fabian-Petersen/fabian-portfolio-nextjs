@@ -6,7 +6,7 @@ const LandingPage = () => {
   return (
     <main
       id="landing"
-      className="grid grid-cols-2 items-start justify-center text-gray-600 dark:text-white tracking-wider h-screen"
+      className="mt-[8rem] sm:mt-0 grid grid-flow-row sm:grid-flow-col grid-cols-[1fr, auto] px-4 gap-4 items-start justify-center text-gray-600 dark:text-white tracking-wider sm:mt-none h-auto sm:min-h-screen"
     >
       <HeroInfo />
       <HeroImage />

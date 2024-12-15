@@ -1,13 +1,23 @@
 import type { Config } from "tailwindcss";
+import fluid, { extract, screens, fontSize } from "fluid-tailwind";
 
 const config: Config = {
   darkMode: ["class"],
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/flowbite-react/**/*.js",
-  ],
+  // content: [
+  //   "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+  //   "./components/**/*.{js,ts,jsx,tsx,mdx}",
+  //   "./app/**/*.{js,ts,jsx,tsx,mdx}",
+  //   "./node_modules/flowbite-react/**/*.js",
+  // ],
+  content: {
+    files: [
+      "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+      "./components/**/*.{js,ts,jsx,tsx,mdx}",
+      "./app/**/*.{js,ts,jsx,tsx,mdx}",
+      "./node_modules/flowbite-react/**/*.js",
+    ],
+    extract,
+  },
   theme: {
     extend: {
       darkMode: "class",
@@ -63,8 +73,9 @@ const config: Config = {
         formPageBgColorDark: "rgb(43, 39, 56)",
         formColorDark: "#101828",
         bgDark: "#050f1a",
+        // bgLight: "#eff5f5",
+        bgLight: "#f1f5f9",
         bgDarkFooter: "#050f1a",
-        bgLight: "#eff5f5",
         facebookGray: "#eff2f5",
         fontLight: "#ededed",
         fontDark: "rgb(24, 49, 83)",
@@ -131,7 +142,9 @@ const config: Config = {
       greatvibes: ["Great Vibes", "cursive"],
       poppins: ["Poppins", "sans-serif"],
     },
+    screens,
+    fontSize,
   },
-  plugins: [require("flowbite/plugin"), require("tailwindcss-animate")],
+  plugins: [require("flowbite/plugin"), require("tailwindcss-animate"), fluid],
 };
 export default config;

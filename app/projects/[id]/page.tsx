@@ -14,37 +14,62 @@ const SingleProject = () => {
     (project) => project.singlePage?.title === id
   );
 
+  console.log(project?.singlePage);
+
   // Filter out only the skills relevant to this single page
   const relevantSkills = mySkillsData.filter((skill) =>
     project?.singlePage?.skills?.includes(skill.language)
   );
 
   return (
-    <main className="w-full flex flex-col gap-8 mt-2 md:max-w-5xl mx-auto min-h-screen border border-red-500">
-      <PageHeading title={project?.singlePage?.title} variant="projectPage" />
-      <div className="border border-red-500 mr-auto">
-        <PageSubHeading
-          title="Aim of the Project"
-          size="h3"
-          variant="variantSubHeading"
-        />
+    <main className="w-full flex flex-col gap-8 mt-2 md:max-w-5xl mx-auto min-h-screen">
+      <PageHeading
+        title={project?.singlePage?.title}
+        variant="projectPage"
+        className="mt-[8rem] mb-[3rem]"
+      />
+      <div className="flex flex-col gap-4 items-start">
         <div>
-          <p className="tracking-wider leading-5">
+          <PageSubHeading
+            title="Aim of the Project"
+            size="h3"
+            variant="variantSubHeading"
+          />
+          <p className="text-md tracking-wider leading-5">
+            {project?.singlePage?.aim}
+          </p>
+        </div>
+        <div>
+          <PageSubHeading
+            title="Description of the Project"
+            size="h3"
+            variant="variantSubHeading"
+          />
+          <p className="text-md tracking-wider leading-5">
             {project?.singlePage?.description}
           </p>
         </div>
-        <PageSubHeading title="Stack Used to Build the Project" size="h3" />
-        <div className="flex flex-wrap gap-6 justify-center">
-          {relevantSkills.map(({ id, language, iconImage }) => (
-            <SkillCard
-              key={id}
-              name={language}
-              image={iconImage?.toString() ?? ""}
-            />
-          ))}
+        <div className="flex flex-col gap-4">
+          <PageSubHeading title="Stack Used to Build the Project" size="h3" />
+          <div className="flex flex-wrap justify-start items-center gap-4">
+            {relevantSkills.map(({ id, language, iconImage }) => (
+              <SkillCard
+                key={id}
+                name={language}
+                image={iconImage?.toString() ?? ""}
+              />
+            ))}
+          </div>
         </div>
         <div>
-          <PageSubHeading title={project?.singlePage?.challenges} size="h3" />
+          <PageSubHeading
+            title="Challenges"
+            size="h3"
+            variant="variantSubHeading"
+          />
+          <p className="text-md tracking-wider leading-5">
+            {project?.singlePage?.challenges}
+          </p>
         </div>
       </div>
     </main>

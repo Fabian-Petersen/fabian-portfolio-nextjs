@@ -11,9 +11,12 @@ type FormRowInputProps = {
   placeholderText: string;
   className?: string;
   defaultValues?: string;
-  onChange?: () => void;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   required?: boolean;
   accept?: string;
+  value?: string;
+  error?: { message: string };
+  disabled?: boolean;
 };
 
 const FormRowInput = ({
@@ -27,6 +30,8 @@ const FormRowInput = ({
   onChange,
   required,
   accept,
+  error,
+  disabled,
 }: FormRowInputProps) => {
   return (
     <div className="relative w-full mb-2 group">
@@ -42,6 +47,7 @@ const FormRowInput = ({
         required={required}
         accept={accept}
         placeholder={placeholderText}
+        disabled={disabled}
       ></input>
       {labelText && (
         <label
@@ -54,6 +60,10 @@ const FormRowInput = ({
         >
           {labelText}
         </label>
+      )}
+      {/* Show error message if validation fails */}
+      {error && (
+        <span className="text-xs text-red-600 mt-1">{error.message}</span>
       )}
     </div>
   );

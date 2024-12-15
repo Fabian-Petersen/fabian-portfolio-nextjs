@@ -1,10 +1,44 @@
-// $ The hook useFilterProjects.ts is used to filter the projects by projectType to display the unique projects in the gallery component.
+import { useState, useEffect } from "react";
 
-// $ Import the type ProjectCardDataType from "@/public/data/projectData";
-import { ProjectCardDataType } from "@/public/data/projectData";
-import { useGlobalContext } from "@/useGlobalContext";
+const useFilterItems = <T, K extends keyof T>(itemsArray: T[], key: K) => {
+  const [items, setItems] = useState<T[]>([]);
+  const [uniqueItems, setAllUniqueItems] = useState<(T[K] | "all")[]>([]);
 
-const useFilterProjects = () => {
-  const { projectType } = useGlobalContext();
-  console.log("projectType", projectType);
+  useEffect(() => {
+    // Only set initial items once on first render
+    if (itemsArray.length > 0 && items.length === 0) {
+      setItems(itemsArray); // Only set initial items when `items` is empty
+    }
+
+    const allUniqueValues = [
+      "all",
+      ...new Set(
+        itemsArray
+          .map((item) => item[key])
+          .filter((value) => value !== undefined)
+      ),
+    ] as (T[K] | "all")[];
+
+    // setAllUniqueItems(allUniqueValues);
+    // Only update unique items if they are different from the current state
+    if (JSON.stringify(allUniqueValues) !== JSON.stringify(uniqueItems)) {
+      setAllUniqueItems(allUniqueValues);
+    }
+  }, [itemsArray, key, items.length, uniqueItems]);
+
+  // $ Filter Items based on category selection
+  const filterByValue = (value: T[K] | "all") => {
+    // $ Reset to original array
+    if (value === "all") {
+      setItems(itemsArray);
+    } else {
+      const filteredItems = itemsArray.filter((item) => item[key] === value);
+      setItems(filteredItems);
+      console.log("filteredItems", filteredItems);
+    }
+  };
+
+  return { items, uniqueItems, filterByValue };
 };
+
+export default useFilterItems;

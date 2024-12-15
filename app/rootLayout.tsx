@@ -32,7 +32,7 @@ export default function RootLayout({ children }: Props) {
   const isLoginPage = pathname === "/login";
   return (
     <html lang="en" className="font-poppins">
-      <body className="bg-white dark:bg-bgDark">
+      <body className="bg-bgLight dark:bg-bgDark">
         <Providers>
           {/* <MobileMenuLinks /> */}
           {isMobile ? <MobileNavbar /> : <Navbar />}
@@ -43,6 +43,7 @@ export default function RootLayout({ children }: Props) {
           {isLoginPage ? null : <ScrollToTopButton />}
           <Footer />
         </Providers>
+        {/* <ReactQueryDevtools initialIsOpen={false} /> */}
       </body>
     </html>
   );

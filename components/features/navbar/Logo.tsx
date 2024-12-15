@@ -17,7 +17,7 @@ const Logo = ({ isScrolled, variant }: LogoProps) => {
     >
       <p className="dark:text-white text-gray-700 font-greatvibes tracking-wider text-[2.5rem] md:text-[1.8rem]">
         <span
-          className={`font-bold text-primaryColor ${
+          className={`font-extrabold text-primaryColor ${
             isScrolled && "text-[2rem]"
           } md:text-[2.5rem]`}
         >

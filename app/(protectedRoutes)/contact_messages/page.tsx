@@ -1,8 +1,8 @@
 import PageHeading from "@/components/PageHeading";
-import ContactMessagesTable from "@/components/Table";
+import ContactMessagesTable from "@/components/ContactsMessagesTable";
 import AuthPageHeading from "@/components/protectedRoutes/AuthPageHeading";
 
-const Messages = () => {
+const ContactMessages = () => {
   return (
     <main className="relative w-full flex flex-col gap-8 px-6 md:max-w-6xl mx-auto min-h-screen capitalize">
       <AuthPageHeading title="Contact Messages" />
@@ -11,4 +11,4 @@ const Messages = () => {
   );
 };
 
-export default Messages;
+export default ContactMessages;

@@ -56,3 +56,20 @@ export const projectsFormSchema = z.object({
   // image: z.string().min(1, { message: "Please enter a valid image" }),
   // }),
 });
+
+// $ CV MultiStep Form Schemas
+
+// # Personal Info Schema
+export const personalInfoSchema = z.object({
+  firstName: z.string().min(1, { message: "First Name is required" }),
+  lastName: z.string().min(1, { message: "Last Name is required" }),
+  email: z.string().email({ message: "Invalid email address" }),
+  phone: z
+    .string()
+    .min(1, { message: "Phone number is required" })
+    .regex(/^\d{10}$/, {
+      message: "Invalid phone number format. It should be 10 digits.",
+    }),
+  location: z.string().min(1, { message: "Location is required" }),
+  summary: z.string().min(1, { message: "Summary is required" }),
+});

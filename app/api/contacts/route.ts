@@ -1,3 +1,5 @@
+// $ Route for POST request of Contacts Page Form Data
+
 import { NextResponse } from "next/server";
 import axios from "axios";
 
@@ -11,9 +13,8 @@ export async function POST(request: Request) {
 
     // Make a POST request to AWS API Gateway
     const awsResponse = await axios.post(
-      url, // Test endpoint for verifying POST request
-      clientData,
-      { headers: { "Content-Type": "application/json" } }
+      "https://fabian-portfolio.net/contacts",
+      clientData
     );
     console.log("AWS response data:", awsResponse.data); // Confirm response
     // Return success response to the client

@@ -1,37 +1,23 @@
 "use client";
 
 import { Button } from "../ui/button";
+import useFilterItems from "@/app/customHooks/useFilterProjects";
 import { useGlobalContext } from "@/useGlobalContext";
 import projectsCardData from "@/public/data/projectData";
 // import useFilterProjects from "@/app/customHooks/useFilterProjects";
 
 type Props = {
   title: string;
-  value: "all" | "front-end" | "cloud";
+  filterByValue: (value: string) => void;
 };
 
-function ProjectFilterButton({ title, value }: Props) {
-  const { setProjectType, projectType } = useGlobalContext();
-
-  // $ const filteredProjects = useFilterProjects(projectsCardData, title);
-
-  const handleClick = () => {
-    // $ Clear the projectType before setting the new value
-    setProjectType("");
-
-    // Use a slight delay to ensure the state is cleared before updating it
-    setTimeout(() => {
-      setProjectType(projectType);
-    }, 0);
-  };
-
+function ProjectFilterButton({ title, filterByValue }: Props) {
   return (
     <Button
-      onClick={handleClick}
-      className="hover:bg-blue-400 flex-1"
+      onClick={() => filterByValue(title)}
+      className="hover:bg-blue-400 capitalize"
       variant={"default"}
       size={"lg"}
-      value={value}
     >
       {title}
     </Button>
