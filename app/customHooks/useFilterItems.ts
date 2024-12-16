@@ -34,7 +34,6 @@ const useFilterItems = <T, K extends keyof T>(itemsArray: T[], key: K) => {
     } else {
       const filteredItems = itemsArray.filter((item) => item[key] === value);
       setItems(filteredItems);
-      console.log("filteredItems", filteredItems);
     }
   };
 

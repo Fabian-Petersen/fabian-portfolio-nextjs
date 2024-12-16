@@ -5,25 +5,22 @@ import Gallery from "@/components/projects/Gallery";
 import ProjectFilterButtons from "./ProjectFilterButtons";
 import projectsCardData from "@/public/data/projectData";
 import { ProjectCardDataType } from "@/public/data/projectData";
-import useFilterItems from "@/app/customHooks/useFilterProjects";
+import useFilterItems from "@/app/customHooks/useFilterItems";
 import { useFetchItem } from "@/lib/reactQueryCutomHooks";
 
 // $ The relative positioning is set on the layout componet to apply to all the pages.
 
 const ProjectsPage = () => {
-  // Data from the database is fetched using the useFetchItem hook.
+  // $ Data from the database is fetched using the useFetchItem hook.
   const { data } = useFetchItem("projects");
   const projects = data ? JSON.parse(data.body) : [];
-  // console.log("projects", projects);
 
-  if (projects.lenght === 0) {
-    return;
-  }
-
+  // $ Pass the array to be filtered with the filter key "category".
   const { items, uniqueItems, filterByValue } = useFilterItems<
     ProjectCardDataType,
     "category"
   >(projects, "category");
+
   return (
     <main
       id="projects"

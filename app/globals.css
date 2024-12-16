@@ -256,6 +256,9 @@ input:focus {
     background-size: cover;
     position: absolute;
   }
+  .active {
+    @apply bg-blue-400;
+  }
 
   .clip-path-about {
     clip-path: polygon(0 0, 100% 74%, 100% 100%, 0 150%);

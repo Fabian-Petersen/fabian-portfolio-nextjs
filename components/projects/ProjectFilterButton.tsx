@@ -1,10 +1,6 @@
 "use client";
 
 import { Button } from "../ui/button";
-import useFilterItems from "@/app/customHooks/useFilterProjects";
-import { useGlobalContext } from "@/useGlobalContext";
-import projectsCardData from "@/public/data/projectData";
-// import useFilterProjects from "@/app/customHooks/useFilterProjects";
 
 type Props = {
   title: string;
@@ -12,11 +8,28 @@ type Props = {
 };
 
 function ProjectFilterButton({ title, filterByValue }: Props) {
+  // $ Function to handle the filter by value
+
+  const handleFilterByValue = (title: string) => {
+    // $ Filter the items based on the category using the custom hook useFilter
+    filterByValue(title);
+
+    // $ Add active class to the clicked button
+    const btnElementList = document.querySelectorAll(".btn");
+    btnElementList.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelector(".active")?.classList.remove("active");
+        btn.classList.add("active");
+        console.log("btnElement", btn);
+      });
+    });
+  };
+
   return (
     <Button
-      onClick={() => filterByValue(title)}
-      className="hover:bg-blue-400 capitalize"
+      onClick={() => handleFilterByValue(title)}
       variant={"default"}
+      className="btn hover:bg-blue-400 capitalize"
       size={"lg"}
     >
       {title}

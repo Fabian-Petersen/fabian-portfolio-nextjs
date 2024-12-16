@@ -1,5 +1,8 @@
+"use client";
+
 import * as React from "react";
-import projectCardDataType, { ProjectCardDataType } from "@/data/projectData";
+import headingVariants from "@/animations/pageHeadingAnimate";
+import { motion } from "framer-motion";
 
 type PageHeadingProps = {
   title: string | undefined;
@@ -8,18 +11,31 @@ type PageHeadingProps = {
 };
 
 const PageHeading = ({
-  title,
+  title = "",
   variant,
-  className,
-}: PageHeadingProps & ProjectCardDataType) => {
-  const isProjectPage = variant === "projectPage";
+  className = "",
+}: PageHeadingProps & React.ComponentProps<typeof motion.h1>) => {
+  // $ Animations
+  const [parentContainerHeading, childContainerHeading, ContainerHeadingTwo] =
+    headingVariants;
+
+  // $ Select animation variant based on the `variant` prop
+  const headingAnimation =
+    variant === "projectPage" ? ContainerHeadingTwo : parentContainerHeading;
 
   return (
-    <h1
-      className={` ${isProjectPage && className} pageHeadingLines relative text-clamp mt-[5rem] w-[70%] mx-auto tracking-wider font-semibold dark:text-white text-blue-600 text-center`}
+    <motion.h1
+      className={`${variant === "projectPage" ? className : ""} pageHeadingLines relative text-clamp mt-[5rem] w-[70%] mx-auto tracking-wider font-semibold dark:text-white text-blue-600 text-center`}
+      initial={headingAnimation.initialState}
+      animate={headingAnimation.animateState}
     >
-      <span className="sm:bg-white dark:bg-bgDark p-2">{title}</span>
-    </h1>
+      <motion.span
+        className="sm:bg-white dark:bg-bgDark p-2"
+        variants={childContainerHeading}
+      >
+        {title}
+      </motion.span>
+    </motion.h1>
   );
 };
 

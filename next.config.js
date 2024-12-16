@@ -2,7 +2,13 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["fabian-portfolio-project-images.s3.af-south-1.amazonaws.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "abian-portfolio-project-images.s3.af-south-1.amazonaws.com",
+        pathname: "/**",
+      },
+    ],
   },
 };
 
