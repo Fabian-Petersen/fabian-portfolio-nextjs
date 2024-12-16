@@ -3,6 +3,7 @@
 import * as React from "react";
 import headingVariants from "@/animations/pageHeadingAnimate";
 import { motion } from "framer-motion";
+import ScrollAnimation from "@/app/animations/ScrollAnimation";
 
 type PageHeadingProps = {
   title: string | undefined;
@@ -24,18 +25,28 @@ const PageHeading = ({
     variant === "projectPage" ? ContainerHeadingTwo : parentContainerHeading;
 
   return (
-    <motion.h1
-      className={`${variant === "projectPage" ? className : ""} pageHeadingLines relative text-clamp mt-[5rem] w-[70%] mx-auto tracking-wider font-semibold dark:text-white text-blue-600 text-center`}
-      initial={headingAnimation.initialState}
-      animate={headingAnimation.animateState}
+    <ScrollAnimation
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        y: { duration: 0.5 },
+        opacity: { duration: 1.5, delay: 0.3 },
+      }}
     >
-      <motion.span
-        className="sm:bg-white dark:bg-bgDark p-2"
-        variants={childContainerHeading}
+      <motion.h1
+        className={`${variant === "projectPage" ? className : ""} pageHeadingLines relative text-clamp mt-[5rem] w-[70%] mx-auto tracking-wider font-semibold dark:text-white text-blue-600 text-center`}
+        initial={headingAnimation.initialState}
+        animate={headingAnimation.animateState}
       >
-        {title}
-      </motion.span>
-    </motion.h1>
+        <motion.span
+          className="sm:bg-white dark:bg-bgDark p-2"
+          initial={childContainerHeading.initialState}
+          animate={childContainerHeading.animateState}
+        >
+          {title}
+        </motion.span>
+      </motion.h1>
+    </ScrollAnimation>
   );
 };
 

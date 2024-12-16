@@ -5,7 +5,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "abian-portfolio-project-images.s3.af-south-1.amazonaws.com",
+        hostname: "fabian-portfolio-project-images.s3.af-south-1.amazonaws.com",
         pathname: "/**",
       },
     ],

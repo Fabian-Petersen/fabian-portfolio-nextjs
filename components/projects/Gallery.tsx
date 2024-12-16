@@ -5,6 +5,8 @@
 // $ The data is mapped to the ProjectsCard component.
 
 import { ProjectCardDataType } from "@/public/data/projectData";
+import FramerAnimatePresence from "@/app/animations/AnimatePresence";
+import { motion, stagger } from "framer-motion";
 import ProjectsCard from "./ProjectsCard";
 
 type GalleryProps = {
@@ -13,11 +15,21 @@ type GalleryProps = {
 
 const Gallery = ({ items }: GalleryProps) => {
   return (
-    <section className="grid gap-6 grid-cols-gallery p-6">
+    <motion.section
+      initial
+      animate
+      layout
+      transition={{ duration: 0.5, staggerChildren: 0.3 }}
+      className="grid gap-6 grid-cols-gallery p-6"
+    >
       {items.map((item: ProjectCardDataType) => (
-        <ProjectsCard key={item.id} {...item} />
+        <FramerAnimatePresence key={item.id}>
+          <div>
+            <ProjectsCard key={item.id} {...item} />
+          </div>
+        </FramerAnimatePresence>
       ))}
-    </section>
+    </motion.section>
   );
 };
 

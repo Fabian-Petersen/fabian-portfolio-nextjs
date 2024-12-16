@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "../ui/button";
+import { motion } from "framer-motion";
 
 type Props = {
   title: string;
@@ -26,14 +27,16 @@ function ProjectFilterButton({ title, filterByValue }: Props) {
   };
 
   return (
-    <Button
-      onClick={() => handleFilterByValue(title)}
-      variant={"default"}
-      className="btn hover:bg-blue-400 capitalize"
-      size={"lg"}
-    >
-      {title}
-    </Button>
+    <motion.div whileTap={{ scale: 0.98 }} whileHover={{ scale: 1.02 }}>
+      <Button
+        onClick={() => handleFilterByValue(title)}
+        variant={"default"}
+        className="btn hover:bg-blue-400 capitalize"
+        size={"lg"}
+      >
+        {title}
+      </Button>
+    </motion.div>
   );
 }
 

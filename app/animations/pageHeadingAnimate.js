@@ -1,6 +1,9 @@
+// $ Animation for the Main Section Headings "About, Projects, Contact"
+
 const parentContainerHeading = {
   initialState: {
     opacity: 0,
+    top: 0,
     scale: 0,
   },
 
@@ -15,10 +18,12 @@ const parentContainerHeading = {
   },
 };
 
+// $ Animation for the heading child elements e.g. span element in PageHeading Component.
 const childContainerHeading = {
   initialState: {
     scale: 0,
     opacity: 0,
+    top: 0,
   },
 
   animateState: {
@@ -26,7 +31,7 @@ const childContainerHeading = {
     opacity: 1,
 
     transition: {
-      duration: 0.8,
+      duration: 3,
     },
   },
 };
