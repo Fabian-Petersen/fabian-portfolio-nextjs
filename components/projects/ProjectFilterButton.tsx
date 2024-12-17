@@ -2,6 +2,7 @@
 
 import { Button } from "../ui/button";
 import { motion } from "framer-motion";
+import useIsMobile from "@/customHooks/useScreenSize";
 
 type Props = {
   title: string;
@@ -9,6 +10,7 @@ type Props = {
 };
 
 function ProjectFilterButton({ title, filterByValue }: Props) {
+  const isMobile = useIsMobile(640);
   // $ Function to handle the filter by value
 
   const handleFilterByValue = (title: string) => {
@@ -32,7 +34,7 @@ function ProjectFilterButton({ title, filterByValue }: Props) {
         onClick={() => handleFilterByValue(title)}
         variant={"default"}
         className="btn hover:bg-blue-400 capitalize"
-        size={"lg"}
+        size={isMobile ? "sm" : "md"}
       >
         {title}
       </Button>

@@ -24,6 +24,10 @@ const config: Config = {
       fontSize: {
         clamp: "clamp(1rem, 5vw + 0.5rem, 3rem)",
         clamp_h2: "clamp(0.8rem, 5vw + 0.5rem, 1.5rem)",
+        clampLogo: "clamp(1.5rem, 3vw, 2rem)",
+        clampNavLinks: "clamp(0.8rem, 3vw, 1rem)",
+        clampHeroImage: "clamp(15rem, 5vw + 0.5rem, 25rem)",
+        clampPageHeading: "clamp(1.3rem, 5vw + 0.5rem, 3rem)",
       },
       keyframes: {
         buttonPing: {

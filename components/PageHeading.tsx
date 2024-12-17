@@ -34,7 +34,7 @@ const PageHeading = ({
       }}
     >
       <motion.h1
-        className={`${variant === "projectPage" ? className : ""} pageHeadingLines relative text-clamp mt-[5rem] w-[70%] mx-auto tracking-wider font-semibold dark:text-white text-blue-600 text-center`}
+        className={`${variant === "projectPage" ? className : ""} pageHeadingLines relative text-clampPageHeading mt-[3rem] w-[70%] mx-auto tracking-wider font-semibold dark:text-white text-blue-600 text-center`}
         initial={headingAnimation.initialState}
         animate={headingAnimation.animateState}
       >

@@ -1,7 +1,6 @@
 "use client";
 import ProjectFilterButton from "./ProjectFilterButton";
 import { motion } from "framer-motion";
-import FramerAnimatePresence from "@/app/animations/AnimatePresence";
 import ScrollAnimation from "@/app/animations/ScrollAnimation";
 type Props = {
   uniqueItems: (string | "all")[];
@@ -35,7 +34,7 @@ const ProjectFilterButtons = ({ uniqueItems, filterByValue }: Props) => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.5 }}
-      className="flex gap-2 mx-auto w-[40%]"
+      className="flex sm:gap-2 gap-1 justify-center w-full"
     >
       {uniqueItems.map((item, index) => (
         <motion.div key={index} variants={childVariants}>

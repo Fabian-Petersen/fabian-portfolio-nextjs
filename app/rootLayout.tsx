@@ -8,12 +8,9 @@ import { usePathname } from "next/navigation";
 
 // $ Components
 import Navbar from "@/components/features/navbar/Navbar";
-import PageScrollIconsMenu from "@/components/features/PageScrollIconsMenu";
 import ScrollToTopButton from "@/components/features/ScrollToTopButton";
 import Footer from "@/components/features/footer/Footer";
-import MobileSidebar from "@/components/features/navbar/MobileSidebar";
 import Header from "@/components/header/Header";
-// import MobileMenuFullWidth from "@/components/features/mobileNavbar/MobileMenuFullWidth";
 
 // $ Context Providers
 import Providers from "./providers";
@@ -27,7 +24,7 @@ type Props = {
 };
 
 export default function RootLayout({ children }: Props) {
-  const isMobile = useIsMobile();
+  const isMobile = useIsMobile(640);
   const pathname = usePathname();
   const isLoginPage = pathname === "/login";
   return (
@@ -37,13 +34,10 @@ export default function RootLayout({ children }: Props) {
           {/* <MobileMenuLinks /> */}
           {isMobile ? <Header /> : <Navbar />}
           <NavbarProgressBar />
-          {/* <MobileMenuFullWidth /> */}
           {children}
-          {/* {isLoginPage ? null : <PageScrollIconsMenu />} */}
           {isLoginPage ? null : <ScrollToTopButton />}
           <Footer />
         </Providers>
-        {/* <ReactQueryDevtools initialIsOpen={false} /> */}
       </body>
     </html>
   );

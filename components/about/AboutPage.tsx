@@ -9,10 +9,7 @@ import MySkills from "@/components/about/MySkills";
 
 const AboutPage = () => {
   return (
-    <main
-      id="about"
-      className="w-full px-6 md:max-w-6xl mx-auto h-min-screen mb-12"
-    >
+    <main id="about" className="w-full px-6 md:max-w-6xl mx-auto h-auto mb-8">
       <PageHeading title="About Me" />
       <div className="flex flex-col gap-4">
         <MyInfo />

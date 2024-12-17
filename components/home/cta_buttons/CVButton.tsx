@@ -4,12 +4,14 @@ import { Button } from "@/components/ui/button";
 import { Loader2, Download } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import axios from "axios";
+import useIsMobile from "@/customHooks/useScreenSize";
 
 type ButtonProps = {
   className: string;
 };
 
 const CVButton = ({ className }: ButtonProps) => {
+  const isMobile = useIsMobile(640);
   const { toast } = useToast();
   const [isPending, startTransition] = useTransition();
 
@@ -63,7 +65,12 @@ const CVButton = ({ className }: ButtonProps) => {
   return (
     <>
       {isPending ? (
-        <Button disabled={isPending} variant="default" className={className}>
+        <Button
+          disabled={isPending}
+          variant="default"
+          className={className}
+          size={isMobile ? "sm" : "md"}
+        >
           <Loader2 className="animate-spin mr-2" />
           Please Wait...
         </Button>
@@ -73,6 +80,7 @@ const CVButton = ({ className }: ButtonProps) => {
           disabled={isPending}
           className={className}
           onClick={() => startTransition(handleDownload)}
+          size={isMobile ? "sm" : "md"}
         >
           <Download className="mr-2" />
           Download CV

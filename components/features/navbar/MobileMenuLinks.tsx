@@ -6,7 +6,7 @@ const MobileMenuLinks = () => {
   return (
     // $ The mobile menu links for the portfolio section of the site.
     <div className="">
-      <ul className="flex flex-col gap-6 items-center justify-center h-full border border-red-500 pt-20">
+      <ul className="flex flex-col gap-6 items-center justify-center h-full pt-20">
         {pageLinkData.map((link) => (
           <li key={link.id}>
             <a

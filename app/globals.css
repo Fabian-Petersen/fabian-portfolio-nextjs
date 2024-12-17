@@ -14,7 +14,6 @@
   --background-end-rgb: 255, 255, 255;
   --navbarHeight: 4rem;
   --sectionHeight: calc(100dvh - var(--navbarHeight));
-
   --clr-primary: #1b64f1;
   --clr-primary-light: #1b64f1;
   --clr-primary-dark: #1b64f1;
@@ -129,11 +128,6 @@ input:focus {
 
 @layer base {
   /* $ ========================================== Home Page Styles ========================================== */
-
-  .socialIconStyles {
-    @apply text-[1.7rem] flex content-center items-center absolute p-1 rounded w-[2.5rem] h-[2.5rem] opacity-0 outline-[2.5px] outline-primaryColor;
-    @apply sm:before:absolute sm:before:content-[""] sm:before:w-full sm:before:h-full sm:before:rounded sm:before:z-[-1] p-1 filter blur-[1.5px];
-  }
 
   .facebookColor {
     @apply bg-[#3b5998];
@@ -250,42 +244,28 @@ input:focus {
 }
 
 @layer utilities {
-  .clip-path-home {
+  /* .clip-path-home {
     clip-path: polygon(0 70%, 100% 30%, 100% 100%, 0% 100%);
     background-color: #eff2f5;
     background-size: cover;
     position: absolute;
-  }
-  .active {
-    @apply bg-blue-400;
-  }
+  } */
 
-  .clip-path-about {
+  /* .clip-path-about {
     clip-path: polygon(0 0, 100% 74%, 100% 100%, 0 150%);
     background-color: #eff2f5;
     background-size: cover;
-  }
+  } */
 
-  .clip-path-projects {
+  /* .clip-path-projects {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 74%);
-  }
+  } */
 
-  .clip-path-contact {
+  /* .clip-path-contact {
     clip-path: polygon(100% 0%, 100% 50%, 50% 100%, 0% 100%, 0% 50%);
     background-color: #eff2f5;
     background-size: cover;
-  }
-
-  /* Clipped Part Patterns  */
-  .bg-pattern-contact {
-    background-image: radial-gradient(#1b64f1 2.5px, transparent 2.5px),
-      radial-gradient(#1b64f1 2.5px, transparent 2.5px);
-    background-size: 35px 35px;
-    background-position:
-      0 0,
-      17.5px 17.5px;
-    background-color: #ffffff;
-  }
+  } */
 }
 
 @layer base {
