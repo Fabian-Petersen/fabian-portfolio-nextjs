@@ -5,13 +5,13 @@ import React from "react";
 const MobileMenuLinks = () => {
   return (
     // $ The mobile menu links for the portfolio section of the site.
-    <div className="fixed bg-bgDark text-white hover:text-primaryColor top-0 w-full h-[15rem] p-2 z-[1000]">
-      <ul className="flex flex-col gap-4 items-center justify-center h-full">
+    <div className="">
+      <ul className="flex flex-col gap-6 items-center justify-center h-full border border-red-500 pt-20">
         {pageLinkData.map((link) => (
           <li key={link.id}>
             <a
               href={`#${link.sectionId}`}
-              className="text-xl font-semibold uppercase tracking-wider text-fontLight"
+              className="text-md uppercase tracking-wider text-fontLight hover:text-blue-500"
             >
               {link.name}
             </a>

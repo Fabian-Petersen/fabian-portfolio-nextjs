@@ -11,8 +11,8 @@ import Navbar from "@/components/features/navbar/Navbar";
 import PageScrollIconsMenu from "@/components/features/PageScrollIconsMenu";
 import ScrollToTopButton from "@/components/features/ScrollToTopButton";
 import Footer from "@/components/features/footer/Footer";
-import MobileNavbar from "@/components/features/navbar/MobileNavbar";
-import MobileMenuLinks from "@/components/features/navbar/MobileMenuLinks";
+import MobileSidebar from "@/components/features/navbar/MobileSidebar";
+import Header from "@/components/header/Header";
 // import MobileMenuFullWidth from "@/components/features/mobileNavbar/MobileMenuFullWidth";
 
 // $ Context Providers
@@ -35,7 +35,7 @@ export default function RootLayout({ children }: Props) {
       <body className="bg-bgLight dark:bg-bgDark">
         <Providers>
           {/* <MobileMenuLinks /> */}
-          {isMobile ? <MobileNavbar /> : <Navbar />}
+          {isMobile ? <Header /> : <Navbar />}
           <NavbarProgressBar />
           {/* <MobileMenuFullWidth /> */}
           {children}
