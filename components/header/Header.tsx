@@ -6,7 +6,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <main className="z-[2500]">
+    <main className="z-[2000]">
       <MobileSidebar isOpen={isOpen} setIsOpen={setIsOpen} />
       <MobileHeader isOpen={isOpen} setIsOpen={setIsOpen} />
     </main>

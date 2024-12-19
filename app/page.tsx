@@ -6,7 +6,7 @@ import LandingPage from "@/components/home/LandingPage";
 
 export default function HomePage() {
   return (
-    <main className="flex flex-col max-w-6xl items-start justify-center h-auto mx-auto overflow-hidden space-y-4">
+    <main className="flex flex-col gap-4 items-start justify-center h-auto mx-auto overflow-hidden">
       <LandingPage />
       <AboutPage />
       <ProjectsPage />

@@ -4,14 +4,14 @@ import { toast } from "react-toastify";
 
 // $ Function to Fetch Data from the Server with a GET request
 export const useFetchItem = (key: string) => {
-  const { isPending, data, isError } = useQuery({
+  const { isPending, data, isError, error } = useQuery({
     queryKey: [key],
     queryFn: async () => {
       const { data } = await customFetch.get(`/${key}`);
       return data;
     },
   });
-  return { isPending, isError, data };
+  return { isPending, isError, data, error };
 };
 
 // $ Function to Fetch Data from the Server with a POST request

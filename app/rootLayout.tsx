@@ -14,7 +14,6 @@ import Header from "@/components/header/Header";
 
 // $ Context Providers
 import Providers from "./providers";
-import NavbarProgressBar from "@/components/features/navbar/NavbarProgressBar";
 
 // $ Import custom hook to check if the size is mobile or not to change Navbar components
 import useIsMobile from "@/customHooks/useScreenSize";
@@ -33,7 +32,7 @@ export default function RootLayout({ children }: Props) {
         <Providers>
           {/* <MobileMenuLinks /> */}
           {isMobile ? <Header /> : <Navbar />}
-          <NavbarProgressBar />
+          {isMobile && <Header />}
           {children}
           {isLoginPage ? null : <ScrollToTopButton />}
           <Footer />

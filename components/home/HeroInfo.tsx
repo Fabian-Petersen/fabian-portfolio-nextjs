@@ -3,7 +3,7 @@ import CTAButtonsContainer from "./cta_buttons/CTAButtonsContainer";
 
 const HeroInfo = () => {
   return (
-    <div className="flex flex-col gap-4 justify-center h-full w-full border border-green-500 px-4 py-8">
+    <div className="flex flex-col gap-4 justify-center h-full w-full px-4 py-8">
       <h3 className="text-[1rem] md:text-[1.2rem] lg:text-[1.5rem] tracking-wide capitalize font-bold italic">
         Hello, It's me
       </h3>

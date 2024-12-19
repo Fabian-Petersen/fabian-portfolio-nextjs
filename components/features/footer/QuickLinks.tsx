@@ -1,17 +1,17 @@
 import React from "react";
-import pageLinkData from "@/data/pageLinkData";
+import pageLinkData, { PageLinksTypes } from "@/data/pageLinkData";
 
 type QuickLinksProps = {
-  className: string;
+  className?: string;
 };
 
-const QuickLinks: React.FC<QuickLinksProps> = ({ className }) => {
+const QuickLinks = ({ className = "" }: QuickLinksProps) => {
   return (
-    <article className={`dark:text-white`}>
+    <article className={`text-fontDark dark:text-fontLight`}>
       <ul className={`${className} hover:cursor-pointer`}>
         {pageLinkData.map((link) => (
           <li key={link.id}>
-            <a href={`/#${link.sectionId}`}>{link.name}</a>
+            <a href={`/#${link.url}`}>{link.name}</a>
           </li>
         ))}
       </ul>

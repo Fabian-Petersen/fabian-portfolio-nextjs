@@ -22,6 +22,7 @@ function ScrollAnimation({
   transition = {
     duration: 0.8,
     y: { duration: 0.8 },
+    x: { duration: 0.8 },
     opacity: { duration: 1.5, delay: 0.3 },
   }, // default duration
 }: ScrollAnimationProps) {

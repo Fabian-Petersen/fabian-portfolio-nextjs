@@ -1,79 +1,45 @@
 "use client";
-import PageHeading from "@/components/PageHeading";
-import projectsCardData from "@/public/data/projectData";
-import { useParams } from "next/navigation";
-import PageSubHeading from "@/components/PageSubHeading";
+
+import React from "react";
+import { useFetchItem } from "@/lib/reactQueryCutomHooks";
+import ProjectPage from "./ProjectPage";
+
+// $ Import Types
+import { SkillsDataType } from "@/public/data/mySkillsData";
+import { ProjectCardDataType } from "@/public/data/projectData";
+
+// $ import local data before fetching the data from the database
+import projectData from "@/public/data/projectData";
 import mySkillsData from "@/public/data/mySkillsData";
-import SkillCard from "@/components/about/SkillCard";
 
-const SingleProject = () => {
-  const params = useParams();
-  const id = params.id;
+import { useParams } from "next/navigation";
 
-  const project = projectsCardData.find(
-    (project) => project.singlePage?.title === id
-  );
+const page = () => {
+  // $ Get the Project ID from the URL
+  const { id } = useParams();
 
-  console.log(project?.singlePage);
+  // $ Get the local Data
+  const project = projectData?.find((item) => item?.singlePage?.title === id);
 
-  // Filter out only the skills relevant to this single page
-  const relevantSkills = mySkillsData.filter((skill) =>
-    project?.singlePage?.skills?.includes(skill.language)
-  );
+  // $ Array of Skills for each Project
+  const projectSkills = project?.singlePage?.skills;
 
+  const skillCards = projectSkills?.map((item) => {
+    const skill = mySkillsData?.find((skill) => skill?.language === item);
+    if (!skill) console.warn(`No match found for: ${item}`);
+    return skill;
+  });
+
+  console.log(skillCards);
+
+  // $ Get the Projects Data from the Server
+  // const { data } = useFetchItem("projects");
+  // const project: ProjectCardDataType[] = data ? JSON.parse(data.body) : [];
   return (
-    <main className="w-full flex flex-col gap-8 mt-2 md:max-w-5xl mx-auto min-h-screen">
-      <PageHeading
-        title={project?.singlePage?.title}
-        variant="projectPage"
-        className="mt-[8rem] mb-[3rem]"
-      />
-      <div className="flex flex-col gap-4 items-start">
-        <div>
-          <PageSubHeading
-            title="Aim of the Project"
-            size="h3"
-            variant="variantSubHeading"
-          />
-          <p className="text-md tracking-wider leading-5">
-            {project?.singlePage?.aim}
-          </p>
-        </div>
-        <div>
-          <PageSubHeading
-            title="Description of the Project"
-            size="h3"
-            variant="variantSubHeading"
-          />
-          <p className="text-md tracking-wider leading-5">
-            {project?.singlePage?.description}
-          </p>
-        </div>
-        <div className="flex flex-col gap-4">
-          <PageSubHeading title="Stack Used to Build the Project" size="h3" />
-          <div className="flex flex-wrap justify-start items-center gap-4">
-            {relevantSkills.map(({ id, language, iconImage }) => (
-              <SkillCard
-                key={id}
-                name={language}
-                image={iconImage?.toString() ?? ""}
-              />
-            ))}
-          </div>
-        </div>
-        <div>
-          <PageSubHeading
-            title="Challenges"
-            size="h3"
-            variant="variantSubHeading"
-          />
-          <p className="text-md tracking-wider leading-5">
-            {project?.singlePage?.challenges}
-          </p>
-        </div>
-      </div>
-    </main>
+    <div>
+      <ProjectPage project={project} projectSkills={projectSkills} />
+    </div>
   );
 };
 
-export default SingleProject;
+export default page;

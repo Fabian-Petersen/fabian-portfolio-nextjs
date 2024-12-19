@@ -21,9 +21,22 @@ const config: Config = {
   theme: {
     extend: {
       darkMode: "class",
+      screens: {
+        xs: "375px",
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1536px",
+        // Add custom breakpoints if needed:
+        "3xl": "1920px",
+        "4xl": "2560px",
+      },
       fontSize: {
-        clamp: "clamp(1rem, 5vw + 0.5rem, 3rem)",
-        clamp_h2: "clamp(0.8rem, 5vw + 0.5rem, 1.5rem)",
+        clampBodyText: "clamp(0.8rem, 0.75xvw, 1.125rem)",
+        clampH2: "clamp(1.5rem, 3vw, 1.75rem)",
+        clampH3: "clamp(1rem, 2vw, 1.3rem)",
+        clampFooterHeading: "clamp(1.2rem, 2vw, 1.5rem)",
         clampLogo: "clamp(1.5rem, 3vw, 2rem)",
         clampNavLinks: "clamp(0.8rem, 3vw, 1rem)",
         clampHeroImage: "clamp(15rem, 5vw + 0.5rem, 25rem)",
@@ -68,7 +81,8 @@ const config: Config = {
       },
       gridTemplateColumns: {
         gallery: "repeat(auto-fill, minmax(250px, 1fr))",
-        contact: "10rem, 1fr",
+        footer: "repeat(auto-fill, minmax(150px, 1fr))",
+        skillsGallery: "repeat(auto-fill, minmax(50px, 100px))",
       },
       colors: {
         primaryColor: "#e43f5a",
@@ -77,9 +91,11 @@ const config: Config = {
         formPageBgColorDark: "rgb(43, 39, 56)",
         formColorDark: "#101828",
         bgDark: "#050f1a",
+        footerDark: "#213555",
+        navbarLight: "",
+        navbarDark: "#000B58",
         // bgLight: "#eff5f5",
         bgLight: "#f1f5f9",
-        bgDarkFooter: "#050f1a",
         facebookGray: "#eff2f5",
         fontLight: "#ededed",
         fontDark: "rgb(24, 49, 83)",
@@ -113,7 +129,7 @@ const config: Config = {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
-        border: "hsl(var(--border))",
+        // border: "hsl(var(--border))", This border was added to the footer, dont know why
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         chart: {

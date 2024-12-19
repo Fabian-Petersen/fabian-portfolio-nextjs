@@ -22,18 +22,17 @@ const ProjectsPage = () => {
   >(projects, "category");
 
   return (
-    <main
-      id="projects"
-      className="w-full flex flex-col gap-8 px-6 md:max-w-6xl mx-auto min-h-screen"
-    >
-      <PageHeading title="Projects" />
-      <ProjectFilterButtons
-        uniqueItems={uniqueItems.filter(
-          (item): item is string => item !== undefined
-        )}
-        filterByValue={filterByValue}
-      />
-      <Gallery items={items} />
+    <main id="projects" className="w-full bg-bgLight dark:bg-bgDark p-4">
+      <div className="flex flex-col gap-6 sm:px-[var(--all-pages-spacing)] px-[var(--all-pages-spacing-small) md:max-w-6xl mx-auto min-h-screen w-full">
+        <PageHeading title="Projects" />
+        <ProjectFilterButtons
+          uniqueItems={uniqueItems.filter(
+            (item): item is string => item !== undefined
+          )}
+          filterByValue={filterByValue}
+        />
+        <Gallery items={items} />
+      </div>
     </main>
   );
 };

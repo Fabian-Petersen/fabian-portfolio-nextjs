@@ -14,9 +14,13 @@
   --background-end-rgb: 255, 255, 255;
   --navbarHeight: 4rem;
   --sectionHeight: calc(100dvh - var(--navbarHeight));
+  --progressBarHeight: 0.25rem;
+  --progressBarColor: #1b64f1;
   --clr-primary: #1b64f1;
   --clr-primary-light: #1b64f1;
   --clr-primary-dark: #1b64f1;
+  --all-pages-spacing: 1.5rem;
+  --all-pages-spacing-small: 1rem;
 }
 
 /*
@@ -25,7 +29,7 @@ Loading Spinner
 ===============
 */
 
-.loadingRing {
+/* .loadingRing {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -43,9 +47,9 @@ Loading Spinner
   text-shadow: 0 0 2px #fff000;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   color: var(--clr-primary);
-}
+} */
 
-.loadingRing:before {
+/* .loadingRing:before {
   content: "";
   position: absolute;
   top: -3px;
@@ -82,7 +86,7 @@ Loading Spinner
   top: -6px;
   right: -8px;
   box-shadow: 0 0 20px var(--clr-primary);
-}
+} */
 
 @keyframes animateCircle {
   0% {
@@ -106,7 +110,7 @@ Loading Spinner
 $ ========================================== Dark Mode Styles as per user preference ==========================================
 */
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
@@ -120,6 +124,15 @@ html {
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
   scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border-color: transparent;
+  box-sizing: border-box;
 }
 
 input:focus {
@@ -159,27 +172,6 @@ input:focus {
   }
 
   /* $ ========================================== Scroll Progress Animation on Navbar ========================================== */
-
-  .scroll-watcher {
-    height: 2px;
-    z-index: 1000;
-    position: fixed;
-    background-color: blue;
-    width: 100%;
-    scale: 0 1;
-    transform-origin: left;
-    animation: scroll-watcher linear infinite;
-    animation-timeline: scroll(y);
-  }
-
-  @keyframes scroll-watcher {
-    0% {
-      scale: 0 1;
-    }
-    100% {
-      scale: 1 1;
-    }
-  }
 
   :root {
     --background: 0 0% 100%;
@@ -237,42 +229,20 @@ input:focus {
 }
 
 @layer components {
-  .pageHeadingLines {
+  /* .pageHeadingLines {
     @apply sm:before:absolute sm:before:content-[''] sm:before:top-[50%] sm:before:left-[0] sm:sm:before:w-[70%] sm:before:h-[2px] sm:before:z-[-1] sm:before:bg-blue-500;
     @apply sm:after:absolute sm:after:content-[''] sm:after:top-[50%] sm:after:right-[0] sm:after:w-[70%] sm:after:h-[2px] sm:after:z-[-1] sm:after:bg-blue-500;
-  }
+  } */
 }
 
 @layer utilities {
-  /* .clip-path-home {
-    clip-path: polygon(0 70%, 100% 30%, 100% 100%, 0% 100%);
-    background-color: #eff2f5;
-    background-size: cover;
-    position: absolute;
-  } */
-
-  /* .clip-path-about {
-    clip-path: polygon(0 0, 100% 74%, 100% 100%, 0 150%);
-    background-color: #eff2f5;
-    background-size: cover;
-  } */
-
-  /* .clip-path-projects {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 74%);
-  } */
-
-  /* .clip-path-contact {
-    clip-path: polygon(100% 0%, 100% 50%, 50% 100%, 0% 100%, 0% 50%);
-    background-color: #eff2f5;
-    background-size: cover;
-  } */
 }
 
 @layer base {
-  * {
+  /*{
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
-  }
+  } */
 }

@@ -1,40 +1,43 @@
-// { id: "https://fabian-portfolio.netlify.app/", name: "Home" }
+// { id: uuidv4()https://fabian-portfolio.netlify.app/", name: "Home" }
+import { IconBaseProps } from "react-icons/lib";
 import navIcons from "../icons/navIcons";
+import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
 const { house, user, clipboard, phone } = navIcons;
+import { v4 as uuidv4 } from "uuid";
 
 export type PageLinksTypes = {
-  id: number;
-  sectionId: string;
+  id: string;
+  url: string;
   name: string;
-  icon: string;
+  icon: IconDefinition;
   tooltip_content: string;
 };
 
-const pageLinkData = [
+const pageLinkData: PageLinksTypes[] = [
   {
-    id: 1,
-    sectionId: "landing",
+    id: uuidv4(),
+    url: "/#landing",
     name: "home",
     icon: house,
     tooltip_content: "home",
   },
   {
-    id: 2,
-    sectionId: "about",
+    id: uuidv4(),
+    url: "/#about",
     name: "about",
     icon: user,
     tooltip_content: "about",
   },
   {
-    id: 3,
-    sectionId: "projects",
+    id: uuidv4(),
+    url: "/#projects",
     name: "projects",
     icon: clipboard,
     tooltip_content: "projects",
   },
   {
-    id: 4,
-    sectionId: "contact",
+    id: uuidv4(),
+    url: "/#contact",
     name: "contact",
     icon: phone,
     tooltip_content: "contact",

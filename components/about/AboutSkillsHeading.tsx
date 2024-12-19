@@ -12,7 +12,7 @@ const AboutSkillsHeading = (props: AboutSkillsHeadingProps) => {
   return (
     <div className="py-4 tracking-wider">
       <h3
-        className="uppercase"
+        className="uppercase text-clampH3 dark:text-fontLight text-fontDark"
         // custom={id}
         // variants={skillsHeading}
         // initial="initialState"

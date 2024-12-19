@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 // $ The Skills Icons Images comes from the index.ts file in the skill-icons folder
 // $ The image links are imported from the index.ts file in the skill-icons folder and then used in the mySkillsData.ts file
 
-type MySkillsDataType = {
+export type SkillsDataType = {
   id: string;
   language: string;
   iconImage?: string | undefined;
@@ -30,7 +30,7 @@ const {
   redux,
 } = skillsIconImages;
 
-const mySkillsData: MySkillsDataType[] = [
+const mySkillsData: SkillsDataType[] = [
   {
     id: uuidv4(),
     language: "figma",
@@ -84,7 +84,7 @@ const mySkillsData: MySkillsDataType[] = [
     id: uuidv4(),
     language: "AWS",
     iconImage: aws,
-    category: "cloud computing",
+    category: "backend",
     className: "aws",
   },
   {
@@ -100,27 +100,6 @@ const mySkillsData: MySkillsDataType[] = [
     iconImage: redux,
     category: "frontEnd",
     className: "api",
-  },
-  {
-    id: uuidv4(),
-    language: "github",
-    iconImage: github,
-    category: "other",
-    className: "github",
-  },
-  {
-    id: uuidv4(),
-    language: "bootstrap",
-    iconImage: bootstrap,
-    category: "other",
-    className: "bootstrap",
-  },
-  {
-    id: uuidv4(),
-    language: "visual studio code",
-    iconImage: visualstudiocode,
-    category: "other",
-    className: "vsc",
   },
   {
     id: uuidv4(),

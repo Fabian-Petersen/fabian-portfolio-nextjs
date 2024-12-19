@@ -1,22 +1,26 @@
 // $ This component only renders the skills icons from the skillsdata.ts file
 // $ The props are destructured from the "MySkills.tsx" file
 
-interface SkillCardProps {
+type SkillCardProps = {
   image?: string | undefined;
   name?: string | undefined;
   language?: string | undefined;
-}
+};
 
 const SkillCard = ({ image, name }: SkillCardProps) => {
   return (
-    <div className="flex gap-8 align-middle justify-start">
-      <div className="flex flex-col gap-4 items-center justify-center">
+    <div className="flex gap-8 justify-center items-center w-full p-4 bg-slate-100 rounded-[1rem] shadow-md shadow-slate-300 dark:text-fontDark dark:shadow-fontDark">
+      <div className="flex flex-col gap-4 justify-center items-center">
         <img
-          className="w-10 h-10 sm:w-16 sm:h-16 hover:scale-105 hover:cursor-pointer"
+          className="size-10 sm:size-16 hover:scale-105 hover:cursor-pointer"
           src={image}
           alt="html"
         />
-        <p className="uppercase tracking-widest text-sm md:text-md">{name}</p>
+        <p
+          className={`${name == "html" || name == "css" ? "uppercase" : "capitalize"} text-clampBodyText`}
+        >
+          {name}
+        </p>
       </div>
     </div>
   );

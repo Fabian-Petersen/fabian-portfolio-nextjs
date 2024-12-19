@@ -1,16 +1,41 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import useIsScrolled from "@/app/customHooks/useIsScrolled";
 
-const NavbarProgressBar = () => {
+type Props = {
+  className?: string;
+};
+
+const NavbarProgressBar = ({ className = "" }: Props) => {
   const { isScrolled } = useIsScrolled();
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (window.scrollY / totalHeight) * 100;
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div
       className={
-        isScrolled ? "w-full fixed top-[3rem] z-[1000] bg-blue-500" : "hidden"
+        isScrolled
+          ? `{${className} w-full fixed top-[calc(var(--navbarHeight)-var(--progressBarHeight))] z-[1000]}`
+          : "hidden"
       }
-    ></div>
+    >
+      <div
+        className="h-[var(--progressBarHeight)] bg-green-400 transition-transform duration-150"
+        style={{ transform: `translateX(${scrollProgress - 100}%)` }}
+      />
+    </div>
   );
 };
 

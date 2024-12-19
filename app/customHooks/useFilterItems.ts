@@ -1,3 +1,6 @@
+// $ Custom hook to filter items based on a key value pair for the project filter buttons.
+// $ The hook returns the filtered items, the unique items, and the filter function from the data array passed to it.
+
 import { useState, useEffect } from "react";
 
 const useFilterItems = <T, K extends keyof T>(itemsArray: T[], key: K) => {

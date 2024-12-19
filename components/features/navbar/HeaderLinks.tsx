@@ -35,7 +35,7 @@ const HeaderLinks: React.FC = () => {
         {pageLinkData.map((link) => (
           <motion.li key={link.id} variants={childVariants}>
             <a
-              href={`#${link.sectionId}`}
+              href={`${link.url}`}
               className="text-clampNavLinks uppercase tracking-wider hover:text-buttonBlueColor transition-all duration-100"
             >
               {link.name}

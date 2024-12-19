@@ -5,7 +5,7 @@
 
 const MyInfo = () => {
   return (
-    <div className="text-gray-600 font-medium dark:text-white text-[0.8rem] md:text-[1rem] leading-[1.7rem] tracking-wide py-4">
+    <div className="text-gray-600 font-medium dark:text-white text-clampBodyText leading-[1.7rem] tracking-wide py-4">
       <p
       // variants={aboutInfo}
       // initial="initialState"

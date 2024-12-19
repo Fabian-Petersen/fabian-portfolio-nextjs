@@ -8,6 +8,11 @@ const nextConfig = {
         hostname: "fabian-portfolio-project-images.s3.af-south-1.amazonaws.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "img.icons8.com",
+        pathname: "/**",
+      },
     ],
   },
 };

@@ -1,38 +1,52 @@
-import React from "react";
+// $ Data for the Footer Links
+import pageLinkData from "@/data/pageLinkData";
+import FooterLogo from "./FooterLogo";
+import { useFetchItem } from "@/lib/reactQueryCutomHooks";
+
+// $ Types
+import { ProjectCardDataType } from "@/public/data/projectData";
+
+// $ Components
 import SocialsLinkIcons from "../SocialsLinkIcons";
 import FooterHeadings from "./FooterHeadings";
-import QuickLinks from "./QuickLinks";
-import Logo from "../navbar/Logo";
+// import QuickLinks from "./QuickLinks";
+// import ProjectFooterLinks from "./ProjectFooterLinks";
+import FooterLinks from "./FooterLinks";
 
 function Footer() {
+  // $ Get the Projects Data from the Server
+  const { data } = useFetchItem("projects");
+  const projectsLinks: ProjectCardDataType[] = data
+    ? JSON.parse(data.body)
+    : [];
+
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="absolute z-[100] border border-t-gray-800/30 shadow-border bg-bgDarkFooter/80 text-white mx-auto h-auto w-full text-sm p-4 mt-20">
-      <main className="grid sm:grid-cols-4 gap-2 sm:justify-between h-auto px-10 pb-12">
-        <div className="md:flex justify-center hidden">
-          <a
-            href="/#landing"
-            className="text-xl my-1 font-semibold tracking-widest"
-          >
-            Portfolio
-            <span className="text-2xl text-primaryColor">.</span>
-          </a>
-        </div>
-        <div className="flex flex-col gap-2 capitalize">
+    <footer className="absolute z-[100] border border-t-gray-800/30 shadow-border bg-footerDark text-white mx-auto h-auto w-full text-sm p-4">
+      <main className="w-full grid grid-cols-footer md:flex md:justify-evenly gap-6 justify-between h-auto px-4 pb-12">
+        <FooterLogo />
+        <div className="flex flex-col gap-2 capitalize justify-start">
           <FooterHeadings heading="Quick Links" />
-          <QuickLinks className="flex flex-col gap-2" />
+          <FooterLinks
+            data={pageLinkData}
+            numberOfItems={pageLinkData.length}
+            className="flex flex-col sm:gap-4"
+          />
         </div>
-        <div className="flex flex-col gap-2 capitalize">
-          <FooterHeadings heading="Recent Projects" />
-          <ul className="space-y-3">
-            <li className="capitalize">Project 1</li>
-            <li>Project 2</li>
-            <li>Project 3</li>
-            <li>Project 4</li>
-          </ul>
+        <div className="flex flex-col gap-2 capitalize justify-start">
+          <FooterHeadings heading="Latest Projects" />
+          <FooterLinks
+            data={projectsLinks.map((link) => ({
+              name: link.projectTitle, // Rename `projectTitle` to `name`
+              url: link.websiteLink, // Rename `websiteLink` to `url`
+              id: link.id, // Keep `id` as-is
+            }))}
+            numberOfItems={projectsLinks.length}
+            className="flex flex-col sm:gap-4"
+          />
         </div>
-        <div className="space-y-3">
+        <div className="sm:space-y-4 space-y-6">
           <FooterHeadings heading="Socials" />
           <SocialsLinkIcons />
         </div>
