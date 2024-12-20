@@ -37,5 +37,27 @@ yarn-error.log*
 next-env.d.ts
 
 # terraform
-/terraform/.terraform
+# Ignore the Terraform hidden directory and its contents
+/terraform/.terraform/
+
+# Ignore modules or directories
 /terraform/modules/lambdaContacts/pythonContacts
+
+# Ignore Terraform state files (best practice)
+/terraform/*.tfstate
+/terraform/*.tfstate.*
+
+# Ignore Terraform backup files
+/terraform/*.backup
+
+# Ignore crash logs
+/terraform/crash.log
+
+# Ignore Terraform lock file
+/terraform/.terraform.lock.hcl
+
+# Ignore provider overrides
+/terraform/override.tf
+/terraform/override.tf.json
+/terraform/*.override.tf
+/terraform/*.override.tf.json
