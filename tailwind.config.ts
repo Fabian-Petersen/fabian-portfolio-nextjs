@@ -36,7 +36,7 @@ const config: Config = {
         clampBodyText: "clamp(0.8rem, 0.75xvw, 1.125rem)",
         clampH2: "clamp(1.5rem, 3vw, 1.75rem)",
         clampH3: "clamp(1rem, 2vw, 1.3rem)",
-        clampFooterHeading: "clamp(1.2rem, 2vw, 1.5rem)",
+        clampFooterHeading: "clamp(1rem, 1vw, 1.5rem)",
         clampLogo: "clamp(1.5rem, 3vw, 2rem)",
         clampNavLinks: "clamp(0.8rem, 3vw, 1rem)",
         clampHeroImage: "clamp(15rem, 5vw + 0.5rem, 25rem)",

@@ -20,7 +20,7 @@ const Gallery = ({ items }: GalleryProps) => {
       animate
       layout
       transition={{ duration: 0.5, staggerChildren: 0.3 }}
-      className="grid gap-6 grid-cols-gallery"
+      className="grid gap-6 grid-cols-gallery space-y-2"
     >
       {items.map((item: ProjectCardDataType) => (
         <FramerAnimatePresence key={item.id}>

@@ -22,16 +22,6 @@ const SkillCardGallery = () => {
                 <SkillCard key={id} name={language} image={iconImage} />
               ))}
           </div>
-          {/* {
-
-            <p>{uniqueCategories.language}</p>
-
-          } */}
-
-          {/* Conditionally render the <hr> if it is not the last child component. The child component will have no <hr /> after it */}
-          {/* {index !== uniqueCategories.length - 1 && (
-            <HorizontalRule classname="w-[75%] mx-auto opacity-15" />
-          )} */}
         </div>
       ))}
     </div>

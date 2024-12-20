@@ -6,7 +6,7 @@ type Props = {
 
 const FooterHeadings = ({ heading }: Props) => {
   return (
-    <h3 className="text-clampFooterHeading my-1 font-bold tracking-wider">
+    <h3 className="text-clampFooterHeading font-bold tracking-wider">
       {heading}
     </h3>
   );

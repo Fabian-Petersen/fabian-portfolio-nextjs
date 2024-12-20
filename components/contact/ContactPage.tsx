@@ -6,8 +6,8 @@ import SocialsLinkIcons from "@/components/features/SocialsLinkIcons";
 
 const ContactPage: React.FC = () => {
   return (
-    <main id="contact" className="flex w-full dark:bg-bgDark bg-slate-200 p-4">
-      <div className="flex flex-col w-full gap-6 sm:px-[var(--all-pages-spacing)] px-[var(--all-pages-specing-small) md:max-w-6xl mx-auto min-h-auto md:min-h-screen">
+    <main id="contact" className="flex w-full dark:bg-bgDark bg-slate-200 px-4">
+      <div className="flex flex-col w-full gap-6 sm:px-[var(--all-pages-spacing)] px-[var(--all-pages-specing-small) md:max-w-6xl mx-auto h-auto mb-8 md:my-[var(--navbarHeight)]">
         <PageHeading title="Let's Get in Touch" />
         <ScrollAnimation
           initial={{ opacity: 0, x: -100 }}

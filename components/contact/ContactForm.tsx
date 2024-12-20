@@ -36,7 +36,7 @@ const ContactForm = () => {
 
     createItem(formDataObject, {
       onSuccess: () => {
-        // form.reset();
+        form.reset();
       },
     });
   };
@@ -44,10 +44,10 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-[35rem] w-full flex flex-col mx-auto p-4 gap-3 sm:gap-6 outline-none rounded-md shadow-md shadow-gray-400 dark:shadow-gray-800 bg-gray-100 dark:bg-gray-800"
+      className="max-w-[35rem] w-full flex flex-col mx-auto p-4 gap-3 outline-none rounded-md shadow-md shadow-gray-400 dark:shadow-gray-800 bg-gray-100 dark:bg-gray-800"
     >
-      <h2 className="py-2 font-semibold text-gray-600 dark:text-white tracking-[2px] capitalize text-clamp_h2">
-        Send Message...
+      <h2 className="py-2 font-semibold text-gray-600 dark:text-white tracking-[2px] capitalize text-clampH3">
+        Send Me a Message...
       </h2>
       <FormRowInput
         id="name"

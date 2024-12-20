@@ -23,6 +23,18 @@
   --all-pages-spacing-small: 1rem;
 }
 
+main {
+  /* border: 1px solid red; */
+}
+
+/* Add the margin of the navbar to the section to be below the navbar when scrolled to using navlinks */
+#about,
+#projects,
+#testimonials,
+#contact {
+  /* border: 1px solid red; */
+  margin-top: var(--navbarHeight);
+}
 /*
 =============== 
 Loading Spinner

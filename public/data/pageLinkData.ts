@@ -2,7 +2,7 @@
 import { IconBaseProps } from "react-icons/lib";
 import navIcons from "../icons/navIcons";
 import { IconDefinition } from "@fortawesome/free-solid-svg-icons";
-const { house, user, clipboard, phone } = navIcons;
+const { house, user, clipboard, phone, comment } = navIcons;
 import { v4 as uuidv4 } from "uuid";
 
 export type PageLinksTypes = {
@@ -34,6 +34,13 @@ const pageLinkData: PageLinksTypes[] = [
     name: "projects",
     icon: clipboard,
     tooltip_content: "projects",
+  },
+  {
+    id: uuidv4(),
+    url: "/#testimonials",
+    name: "testimonials",
+    icon: comment,
+    tooltip_content: "testimonials",
   },
   {
     id: uuidv4(),

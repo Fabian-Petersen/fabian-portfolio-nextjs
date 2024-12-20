@@ -1,6 +1,7 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import customFetch from "./customFetch";
 import { toast } from "react-toastify";
+import { useToast } from "@/hooks/use-toast";
 
 // $ Function to Fetch Data from the Server with a GET request
 export const useFetchItem = (key: string) => {
@@ -14,8 +15,11 @@ export const useFetchItem = (key: string) => {
   return { isPending, isError, data, error };
 };
 
+// customFetch.post(`/${key}`, Item, {
 // $ Function to Fetch Data from the Server with a POST request
 export const useCreateItem = (key: string) => {
+  const { toast } = useToast();
+  const test_url = "https://httpbin.org/post";
   const queryClient = useQueryClient();
   const {
     mutate: createItem,
@@ -30,11 +34,21 @@ export const useCreateItem = (key: string) => {
       }),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: [key] });
-      toast.success("item successfully added");
+      // console.log(response.data)
+      toast({
+        title: "Thank you for your review, much appreciated!",
+        description: "item has been added successfully",
+        duration: 3000,
+      });
     },
     onError: (error) => {
       console.log(error);
-      toast.error(error.message);
+      toast({
+        variant: "destructive",
+        title: "Uh oh! Something went wrong.",
+        description: "There was a problem submitting your review!!",
+        duration: 3000,
+      });
     },
   });
   return { createItem, isPending, isError };

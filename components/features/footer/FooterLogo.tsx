@@ -7,10 +7,10 @@ const FooterLogo = (props: Props) => {
     <div className="md:flex justify-center">
       <a
         href="/#landing"
-        className="text-xl my-1 font-semibold tracking-widest"
+        className="hidden sm:block text-clampFooterHeading font-semibold tracking-widest"
       >
         Portfolio
-        <span className="text-2xl text-primaryColor">.</span>
+        <span className="text-primaryColor">.</span>
       </a>
     </div>
   );

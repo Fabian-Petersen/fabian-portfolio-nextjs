@@ -9,10 +9,10 @@ type SkillCardProps = {
 
 const SkillCard = ({ image, name }: SkillCardProps) => {
   return (
-    <div className="flex gap-8 justify-center items-center w-full p-4 bg-slate-100 rounded-[1rem] shadow-md shadow-slate-300 dark:text-fontDark dark:shadow-fontDark">
+    <div className="flex gap-8 justify-center items-center w-full p-4 bg-slate-100 rounded-[1rem] shadow-md shadow-slate-300 dark:text-fontDark dark:shadow-fontDark hover:scale-[102%] hover:cursor-pointer">
       <div className="flex flex-col gap-4 justify-center items-center">
         <img
-          className="size-10 sm:size-16 hover:scale-105 hover:cursor-pointer"
+          className="size-8 sm:size-8 lg:size-10 xl:size-12"
           src={image}
           alt="html"
         />

@@ -4,6 +4,7 @@ import {
   faPhone,
   faClipboard,
   faMoon,
+  faComment,
 } from "@fortawesome/free-solid-svg-icons";
 
 const navIcons = {
@@ -12,6 +13,7 @@ const navIcons = {
   phone: faPhone,
   clipboard: faClipboard,
   moon: faMoon,
+  comment: faComment,
 };
 
 export default navIcons;
