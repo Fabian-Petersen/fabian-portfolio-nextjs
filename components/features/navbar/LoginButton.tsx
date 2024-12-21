@@ -33,7 +33,7 @@ const LoginButton = () => {
         buttonLabel="Admin"
         type="button"
         onClick={handleLogin}
-        className="hover:bg-buttonBlueColor hover:text-white transition-all duration-100 text-md text-fontDark dark:text-fontLight py-2 px-6 rounded-full"
+        className="hover:bg-buttonBlueColor hover:text-white transition-all duration-300 text-md text-fontDark dark:text-fontLight py-2 px-4 rounded-full"
       />
     </motion.div>
   );

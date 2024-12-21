@@ -45,7 +45,7 @@ const TestimonialForm = () => {
       className="max-w-[30rem] w-full flex flex-col mx-auto p-4 gap-2 outline-none rounded-md shadow-md shadow-gray-400 dark:shadow-gray-800 bg-gray-100 dark:bg-gray-800"
     >
       <h2 className="py-4 font-semibold text-gray-600 dark:text-white tracking-[2px] capitalize text-clampH3">
-        Thank you for your review...
+        Add your review...
       </h2>
       <FormRowInput
         id="name"
