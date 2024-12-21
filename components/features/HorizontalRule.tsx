@@ -11,7 +11,7 @@ const HorizontalRule = ({ variant, classname = "" }: HorizontalRuleProps) => {
   return (
     <div>
       <hr
-        className={`${isAuthPage ? "h-1 mt-[1rem] border-gray-600 opacity-20 w-full shadow-lg" : `${classname} mt-8 border-gray-700 opacity-50 w-full shadow-lg`}`}
+        className={`${isAuthPage ? "h-4 border-gray-600 opacity-20 shadow-lg" : `${classname} opacity-50 shadow-lg`}`}
       />
     </div>
   );

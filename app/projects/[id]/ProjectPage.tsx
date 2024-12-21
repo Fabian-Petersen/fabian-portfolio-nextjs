@@ -1,152 +1,95 @@
 "use client";
 
 import React from "react";
-import { useRouter } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import PageHeading from "@/components/PageHeading";
 import PageSubHeading from "@/components/PageSubHeading";
-import Header from "@/components/header/Header";
-import ScrollAnimation from "@/app/animations/ScrollAnimation";
 import SkillCard from "@/components/about/SkillCard";
-import { ProjectCardDataType } from "@/public/data/projectData";
+import mySkillsData from "@/public/data/mySkillsData";
+
+import { useParams } from "next/navigation";
 import { SkillsDataType } from "@/public/data/mySkillsData";
+import { useFetchItem } from "@/lib/reactQueryCutomHooks";
 
 // $ import local data before fetching the data from the database
-import projectData from "@/public/data/projectData";
+import projectData, { ProjectCardDataType } from "@/public/data/projectData";
+import HorizontalRule from "@/components/features/HorizontalRule";
 
-type ProjectPageProps = {
-  project: ProjectCardDataType;
-  projectSkills: SkillsDataType[] | [];
-};
+interface ProjectPageProps {
+  projectsData: ProjectCardDataType[];
+}
 
-const ProjectPage = ({ project, projectSkills }: ProjectPageProps) => {
-  const router = useRouter();
+const ProjectPage: React.FC<ProjectPageProps> = ({ projectsData }) => {
+  // $ Filter out the project data from the projectData file based on the title of the project in the url using the title of the project.
+  const { id } = useParams();
+
+  const project: ProjectCardDataType[] = projectsData.filter(
+    (singleProject) => singleProject.id === id
+  );
+
+  // $ Array of Skills for each Project
+  const projectSkills = project[0]?.singlePage.skills;
+  const skillCards: SkillsDataType[] =
+    projectSkills
+      ?.map((item) => {
+        const skill = mySkillsData.find((skill) => skill?.language === item);
+        if (!skill) {
+          console.warn(`No match found for: ${item}`);
+          return null;
+        }
+        return skill;
+      })
+      .filter((skill): skill is SkillsDataType => skill !== null) || [];
 
   return (
-    <main className="min-h-screen w-full bg-white  dark:bg-gray-900">
-      <Header />
-      <div className="pt-24 px-6 max-w-6xl mx-auto">
-        {/* Back Button */}
-        <Button
-          onClick={() => router.push("/")}
-          variant="ghost"
-          className="mb-8 hover:bg-gray-100 dark:hover:bg-gray-800"
-        >
-          <ArrowLeft className="mr-2 h-4 w-4" />
-          Back to Projects
-        </Button>
-
-        {/* Main Content */}
-        <div className="space-y-12">
-          {/* Title Section */}
-          {/* <ScrollAnimation
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          > */}
-          <PageHeading title={project?.projectTitle} variant="projectPage" />
-          {/* </ScrollAnimation> */}
-
-          {/* Aim Section */}
-          <section className="space-y-4">
-            <PageSubHeading title="Project Aim" size="h3" />
-            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-              {project?.singlePage?.aim}
-            </p>
-          </section>
-
-          {/* Description Section */}
-          <section className="space-y-4">
-            <PageSubHeading title="Project Description" size="h3" />
-            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-              {project?.description}
-            </p>
-          </section>
-
-          {/* Challenges Section */}
-          <section className="space-y-4">
-            <PageSubHeading title="Challenges & Solutions" size="h3" />
-            <div className="space-y-4">
-              {project?.singlePage?.challenges.map((challenge, index) => (
-                <div
-                  key={index}
-                  className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg"
-                >
-                  <p className="text-gray-600 dark:text-gray-300">
-                    {challenge}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Project Stack Section */}
-          <section className="space-y-6">
-            <PageSubHeading title="Project Stack" size="h3" />
-            <div className="grid grid-cols-3 md:grid-cols-6 gap-6">
-              {projectSkills.map((tech) => (
-                <SkillCard
-                  key={tech.id}
-                  name={tech.language}
-                  image={tech.iconImage}
-                />
-              ))}
-            </div>
-          </section>
-
-          {/* Backend Section */}
-          <section className="space-y-8">
-            <PageSubHeading title="Backend Architecture" size="h3" />
-
-            {/* Security Section */}
-            <div className="space-y-4">
-              <h4 className="text-xl font-semibold text-gray-800 dark:text-white">
-                Security Features
-              </h4>
-              {/* <div className="grid gap-4 md:grid-cols-2">
-                {project.security.map((feature) => (
-                  <div
-                    key={feature.id}
-                    className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg"
-                  >
-                    <h5 className="font-medium text-gray-700 dark:text-gray-200 mb-2">
-                      {feature.title}
-                    </h5>
-                    <p className="text-gray-600 dark:text-gray-300">
-                      {feature.description}
-                    </p>
-                  </div>
-                ))}
-              </div> */}
-            </div>
-
-            {/* Database Section */}
-            {/* <div className="space-y-4">
-              <h4 className="text-xl font-semibold text-gray-800 dark:text-white">
-                Database Architecture
-              </h4>
-              <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                <h5 className="font-medium text-gray-700 dark:text-gray-200 mb-2">
-                  {project.database.type}
-                </h5>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">
-                  {project.database.description}
+    <main
+      id="project"
+      className="w-full bg-bgLight dark:bg-bgDark px-4 min-h-screen"
+    >
+      <div className="flex flex-col gap-6 items-start sm:px-[var(--all-pages-spacing)] px-[var(--all-pages-spacing-small) md:max-w-6xl mx-auto h-auto mt-[10rem] w-full">
+        {project.map((section) => {
+          const { title, aim, description, challenges, skills } =
+            section.singlePage;
+          return (
+            <div
+              key={section.id}
+              className="flex flex-col items-start space-y-4 w-full"
+            >
+              <PageSubHeading
+                title={`Project Title: ${title}`}
+                size="h2"
+                className="mb-2"
+              />
+              <HorizontalRule classname="border border-red-500 w-full" />
+              <section className="flex flex-col space-y-2 items-start">
+                <PageSubHeading title="Aim" size="h3" />
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {aim}
                 </p>
-                <ul className="list-disc list-inside space-y-2">
-                  {project.database.features.map((feature, index) => (
-                    <li
-                      key={index}
-                      className="text-gray-600 dark:text-gray-300"
-                    >
-                      {feature}
-                    </li>
+              </section>
+              <section className="flex flex-col space-y-2 items-start">
+                <PageSubHeading title="description" size="h3" />
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {description}
+                </p>
+              </section>
+              <section className="flex flex-col space-y-2 items-start">
+                <PageSubHeading title="Challenges" size="h3" />
+                <div className="flex flex-col gap-4 text-gray-600 dark:text-gray-300 leading-relaxed"></div>
+              </section>
+              <section className="flex flex-col space-y-2 items-start w-full">
+                <PageSubHeading title="Stack Used" size="h3" />
+                <div className="grid grid-cols-skillsGallery gap-4 place-items-start w-full">
+                  {skillCards.map((item) => (
+                    <SkillCard
+                      key={item.id}
+                      name={item.language}
+                      image={item.iconImage}
+                    />
                   ))}
-                </ul>
-              </div>
-            </div> */}
-          </section>
-        </div>
+                </div>
+              </section>
+            </div>
+          );
+        })}
       </div>
     </main>
   );

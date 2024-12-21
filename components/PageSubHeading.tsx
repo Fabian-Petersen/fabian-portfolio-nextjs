@@ -22,7 +22,7 @@ const PageSubHeading = ({
   if (size === "h2") {
     return (
       <h2
-        className={`${isProjectPage ? className : `${className} dark:text-white tracking-wider text-clampH2`}`}
+        className={`${isProjectPage ? `${className}` : `${className} dark:text-white tracking-wider text-clampH2`}`}
       >
         {title}
       </h2>
@@ -32,7 +32,7 @@ const PageSubHeading = ({
   if (size === "h3") {
     return (
       <h2
-        className={`${isProjectPage ? "pt-2 text-[1.5rem]" : "capitalize dark:text-white text-center text-[1.4rem]"}`}
+        className={`${isProjectPage ? `${className} "pt-2 text-[1.5rem]` : "capitalize dark:text-white text-center text-clampH3"}`}
       >
         {title}
       </h2>

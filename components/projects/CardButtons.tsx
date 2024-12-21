@@ -4,7 +4,11 @@ import { ProjectCardDataType } from "@/public/data/projectData";
 import Link from "next/link";
 import { Tooltip } from "flowbite-react";
 
-const CardButtons = ({ githubLink, websiteLink }: ProjectCardDataType) => {
+type Props = {
+  githubLink: string;
+  websiteLink: string;
+};
+const CardButtons = ({ githubLink, websiteLink }: Props) => {
   return (
     <div className="flex gap-4 mx-auto">
       <Tooltip

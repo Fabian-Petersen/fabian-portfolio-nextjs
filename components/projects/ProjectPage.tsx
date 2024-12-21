@@ -12,7 +12,7 @@ import { useFetchItem } from "@/lib/reactQueryCutomHooks";
 
 const ProjectsPage = () => {
   // $ Data from the database is fetched using the useFetchItem hook.
-  const { data } = useFetchItem("projects");
+  const { data, isPending, isError } = useFetchItem("projects");
   const projects = data ? JSON.parse(data.body) : [];
 
   // $ Pass the array to be filtered with the filter key "category".
@@ -22,8 +22,8 @@ const ProjectsPage = () => {
   >(projects, "category");
 
   return (
-    <main id="projects" className="w-full bg-bgLight dark:bg-bgDark px-4">
-      <div className="flex flex-col gap-6 sm:px-[var(--all-pages-spacing)] px-[var(--all-pages-spacing-small) md:max-w-6xl mx-auto h-auto md:mt-[var(--navbarHeight)] w-full">
+    <main id="projects" className="w-full bg-bgLight dark:bg-bgDark p-4">
+      <div className="flex flex-col gap-6 sm:px-[var(--all-pages-spacing)] px-[var(--all-pages-spacing-small) md:max-w-6xl mx-auto h-auto w-full">
         <PageHeading title="Projects" />
         <ProjectFilterButtons
           uniqueItems={uniqueItems.filter(
@@ -31,7 +31,7 @@ const ProjectsPage = () => {
           )}
           filterByValue={filterByValue}
         />
-        <Gallery items={items} />
+        <Gallery items={items} isPending={isPending} />
       </div>
     </main>
   );

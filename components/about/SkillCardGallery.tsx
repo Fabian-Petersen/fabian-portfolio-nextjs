@@ -2,7 +2,6 @@ import React from "react";
 import AboutSkillsHeading from "./AboutSkillsHeading";
 import mySkillsData from "@/public/data/mySkillsData";
 import SkillCard from "./SkillCard";
-import HorizontalRule from "../features/HorizontalRule";
 
 // $ Hook which returns the unique list of categories in the mySkillsData array
 import useCategoriesHeadingsHook from "./useCategoriesHeadingsHook";

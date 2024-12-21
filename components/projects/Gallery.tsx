@@ -11,6 +11,7 @@ import ProjectsCard from "./ProjectsCard";
 
 type GalleryProps = {
   items: ProjectCardDataType[];
+  isPending: boolean;
 };
 
 const Gallery = ({ items }: GalleryProps) => {

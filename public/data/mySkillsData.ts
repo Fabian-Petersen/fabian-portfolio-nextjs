@@ -10,7 +10,6 @@ export type SkillsDataType = {
   iconImage?: string | undefined;
   category?: string;
   className?: string;
-  uuid?: string;
 };
 
 const {
