@@ -27,7 +27,7 @@ export default function RootLayout({ children }: Props) {
   const pathname = usePathname();
   const isLoginPage = pathname === "/login";
   return (
-    <html lang="en" className="font-poppins">
+    <html lang="en" className="font-poppins light">
       <body className="bg-bgLight dark:bg-bgDark">
         <Providers>
           {/* <MobileMenuLinks /> */}

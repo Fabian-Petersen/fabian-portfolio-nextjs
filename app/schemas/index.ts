@@ -58,7 +58,6 @@ export const projectsFormSchema = z.object({
 });
 
 // $ CV MultiStep Form Schemas
-
 // # Personal Info Schema
 export const personalInfoSchema = z.object({
   firstName: z.string().min(1, { message: "First Name is required" }),
@@ -72,4 +71,14 @@ export const personalInfoSchema = z.object({
     }),
   location: z.string().min(1, { message: "Location is required" }),
   summary: z.string().min(1, { message: "Summary is required" }),
+});
+
+// $ Testimonial Form Schema
+export const testimonialFormSchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  email: z.string().email("Invalid email address"),
+  position: z.string().min(2, "Position must be at least 2 characters"),
+  company: z.string().min(2, "Company must be at least 2 characters"),
+  message: z.string().min(10, "Message must be at least 10 characters"),
+  image: z.string().optional(),
 });

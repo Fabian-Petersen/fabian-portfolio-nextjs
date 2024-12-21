@@ -20,20 +20,20 @@ const ThemeToggleMenu = () => {
   return (
     <div
       className="text-buttonBlueColor w-[2rem] h-[2rem]
-        flex items-center justify-center rounded-full border-2 border-blue-500 bg-black dark:bg-white hover:cursor-pointer"
+        flex items-center justify-center rounded-full border-2 border-blue-500 bg-white dark:bg-white hover:cursor-pointer relative"
     >
       {isDarkTheme ? (
         <ThemeToggleIcon
           handleClick={handleClick}
-          icon={faSun}
+          icon={faMoon}
           placement="bottom"
-          content="Light Theme"
+          content="Dark"
         />
       ) : (
         <ThemeToggleIcon
           handleClick={handleClick}
-          icon={faMoon}
-          content="Dark Theme"
+          icon={faSun}
+          content="Light"
           placement="bottom"
         />
       )}

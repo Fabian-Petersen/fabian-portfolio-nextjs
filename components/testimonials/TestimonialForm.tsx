@@ -7,17 +7,9 @@ import { Button } from "@/components/ui/button";
 import { useCreateItem } from "@/lib/reactQueryCutomHooks";
 import { z } from "zod";
 import { useRouter } from "next/navigation";
+import { testimonialFormSchema } from "@/app/schemas";
 
-// $ Create testimonial schema
-const testimonialFormSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Invalid email address"),
-  position: z.string().min(2, "Position must be at least 2 characters"),
-  company: z.string().min(2, "Company must be at least 2 characters"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
-  image: z.string().optional(),
-});
-
+// $ Type for the Testimonial Form
 export type TestimonialFormProps = z.infer<typeof testimonialFormSchema>;
 
 const TestimonialForm = () => {

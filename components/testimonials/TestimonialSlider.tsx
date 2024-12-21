@@ -5,19 +5,14 @@ import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import PageHeading from "../PageHeading";
 import { useFetchItem } from "@/lib/reactQueryCutomHooks";
-
-type Testimonial = {
-  id: number;
-  name: string;
-  position: string;
-  message: string;
-  image?: string | undefined;
-};
+import { TestimonialFormProps } from "@/components/testimonials/TestimonialForm";
 
 const TestimonialSlider = () => {
   // $ Data from the database is fetched using the useFetchItem hook.
   const { data } = useFetchItem("testimonials");
-  const testimonials: Testimonial[] = data ? JSON.parse(data.body) : [];
+  const testimonials: TestimonialFormProps[] = data
+    ? JSON.parse(data.body)
+    : [];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextTestimonial = () => {

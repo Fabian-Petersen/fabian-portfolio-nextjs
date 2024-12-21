@@ -17,19 +17,12 @@ const ThemeToggleIcon = ({
   placement,
 }: ThemeToggleIconProps) => {
   return (
-    <Tooltip
-      className="text-blue-500 capitalize tracking-wider"
-      content={content}
-      placement={placement}
-      id="tooltip-animation"
-    >
-      <FontAwesomeIcon
-        data-tooltip-target="tooltip-animation"
-        icon={icon}
-        className="text-blue-500"
-        onClick={handleClick}
-      />
-    </Tooltip>
+    <FontAwesomeIcon
+      data-tooltip-target="tooltip-animation"
+      icon={icon}
+      className="text-blue-500"
+      onClick={handleClick}
+    />
   );
 };
 

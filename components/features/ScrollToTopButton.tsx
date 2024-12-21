@@ -3,9 +3,7 @@
 import { IoIosArrowDropupCircle } from "react-icons/io";
 import { useEffect, useState } from "react";
 
-type Props = {};
-
-const ScrollToTopButton = (props: Props) => {
+const ScrollToTopButton = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -26,14 +24,14 @@ const ScrollToTopButton = (props: Props) => {
   return (
     <div
       className={`${
-        isScrolled && "opacity-100"
-      } fixed md:right-[5%] xl:right-[5%] top-[90%] -translate-y-[25%] z-[1000] opacity-0 md:block transition-opacity duration-200 hover:cursor-pointer"`}
+        isScrolled && "opacity-60"
+      } fixed left-[50%] top-[90%] -translate-x-[50%] z-[1000] opacity-0 md:block transition-opacity duration-200 hover:cursor-pointer"`}
     >
       <button
-        className="text-blue-500 flex items-center justify-center rounded-full border-2 border-blue-500 bg-black dark:bg-white hover:scale-110 transform transition-transform duration-200"
+        className="text-white flex items-center justify-center rounded-full dark:bg-white dark:text-blue-500 bg-blue-500 hover:scale-105 transform transition-transform duration-200"
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       >
-        <IoIosArrowDropupCircle className="text-5xl dark:text-black w-10 h-10" />
+        <IoIosArrowDropupCircle className="text-5xl w-10 h-10" />
       </button>
     </div>
   );
