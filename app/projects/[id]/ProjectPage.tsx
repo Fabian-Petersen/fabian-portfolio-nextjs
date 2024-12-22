@@ -7,15 +7,14 @@ import mySkillsData from "@/public/data/mySkillsData";
 
 import { useParams } from "next/navigation";
 import { SkillsDataType } from "@/public/data/mySkillsData";
-import { useFetchItem } from "@/lib/reactQueryCutomHooks";
 
 // $ import local data before fetching the data from the database
-import projectData, { ProjectCardDataType } from "@/public/data/projectData";
+import { ProjectCardDataType } from "@/public/data/projectData";
 import HorizontalRule from "@/components/features/HorizontalRule";
 
-interface ProjectPageProps {
+type ProjectPageProps = {
   projectsData: ProjectCardDataType[];
-}
+};
 
 const ProjectPage: React.FC<ProjectPageProps> = ({ projectsData }) => {
   // $ Filter out the project data from the projectData file based on the title of the project in the url using the title of the project.
@@ -76,7 +75,7 @@ const ProjectPage: React.FC<ProjectPageProps> = ({ projectsData }) => {
                 <div className="flex flex-col gap-4 text-gray-600 dark:text-gray-300 leading-relaxed"></div>
               </section>
               <section className="flex flex-col space-y-2 items-start w-full">
-                <PageSubHeading title="Stack Used" size="h3" />
+                <PageSubHeading title="Stack used  in the Project" size="h3" />
                 <div className="grid grid-cols-skillsGallery gap-4 place-items-start w-full">
                   {skillCards.map((item) => (
                     <SkillCard

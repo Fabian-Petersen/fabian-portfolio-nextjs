@@ -13,13 +13,13 @@ const page = () => {
   const { data, isPending } = useFetchItem("projects");
   const projectsData: ProjectCardDataType[] = data ? JSON.parse(data.body) : [];
 
-  if (isPending) {
-    return (
-      <div className="grid grid-cols-1 w-full h-full place-content-center text-xl">
-        Loading...
-      </div>
-    );
-  }
+  // if (isPending) {
+  //   return (
+  //     <div className="grid grid-cols-1 w-full h-full place-content-center text-xl">
+  //       Loading...
+  //     </div>
+  //   );
+  // }
 
   return (
     <div>

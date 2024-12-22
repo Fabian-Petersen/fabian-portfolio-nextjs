@@ -1,117 +1,120 @@
 "use client";
-
+// $ import react hooks and animation
 import React, { useState } from "react";
-import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import PageHeading from "../PageHeading";
-import { useFetchItem } from "@/lib/reactQueryCutomHooks";
-import { TestimonialFormProps } from "@/components/testimonials/TestimonialForm";
 
-const TestimonialSlider = () => {
-  // $ Data from the database is fetched using the useFetchItem hook.
-  const { data } = useFetchItem("testimonials");
-  const testimonials: TestimonialFormProps[] = data
-    ? JSON.parse(data.body)
-    : [];
-  const [currentIndex, setCurrentIndex] = useState(0);
+// $ import components
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import TestimonialCard from "./TestimonialCard";
 
-  const nextTestimonial = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+// $ import types
+import { TestimonialCardProps } from "./TestimonialCard";
+
+type TestimonialsProps = {
+  testimonials: TestimonialCardProps[];
+};
+
+const TestimonialSlider = ({ testimonials }: TestimonialsProps) => {
+  const [currentPage, setCurrentPage] = useState(0);
+  const cardsPerPage = 3;
+  const totalPages = Math.ceil(testimonials.length / cardsPerPage);
+
+  const nextPage = () => {
+    setCurrentPage((prev) => (prev + 1) % totalPages);
   };
 
-  const prevTestimonial = () => {
-    setCurrentIndex(
-      (prev) => (prev - 1 + testimonials.length) % testimonials.length
-    );
+  const prevPage = () => {
+    setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
   };
 
-  // $ Function to generate initials from name
-  const getInitials = (name: string) => {
-    return name
-      .split(" ")
-      .map((word) => word[0])
-      .join("")
-      .toUpperCase();
+  // $ Get current visible cards
+  const getCurrentPageCards = () => {
+    const startIndex = currentPage * cardsPerPage;
+    return testimonials.slice(startIndex, startIndex + cardsPerPage);
   };
 
   return (
-    <main id="testimonials" className="w-full bg-bgLight dark:bg-bgDark px-4">
-      <PageHeading title="Testimonials" />
-      <div className="flex flex-col gap-6 px-[var(--all-pages-spacing-small) md:max-w-6xl mx-auto md:mt-[var(--navbarHeight)] w-full h-auto relative">
+    <div className="w-full max-w-6xl mx-auto relativeflex items-stretch">
+      <div className="relative w-full">
+        {/* Navigation Buttons for SM and larger screens - Positioned outside cards */}
+        <div className="hidden sm:block">
+          <button
+            onClick={prevPage}
+            className="absolute left-0 top-[50%] -translate-x-16 p-2 rounded-full bg-white dark:bg-gray-800 shadow-lg text-blue-500 hover:bg-gray-50 dark:hover:bg-gray-700 z-10"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+
+          <button
+            onClick={nextPage}
+            className="absolute right-0 top-[50%] translate-x-16 p-2 rounded-full bg-white dark:bg-gray-800 shadow-lg text-blue-500 hover:bg-gray-50 dark:hover:bg-gray-700 z-10"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+        </div>
         <AnimatePresence mode="wait">
-          {testimonials.length > 0 && (
-            <motion.div
-              key={currentIndex}
-              initial={{ opacity: 0, x: 100 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -100 }}
-              transition={{ duration: 0.5 }}
-              className="flex flex-col items-center p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg"
-            >
-              <Quote className="w-12 h-12 text-blue-500 mb-6" />
-
-              {testimonials[currentIndex].image ? (
-                <img
-                  src={testimonials[currentIndex].image}
-                  alt={testimonials[currentIndex].name}
-                  className="w-20 h-20 rounded-full mb-4 object-cover"
-                />
-              ) : (
-                <div className="w-20 h-20 rounded-full bg-blue-500 text-white flex items-center justify-center text-xl font-bold mb-4">
-                  {getInitials(testimonials[currentIndex].name)}
-                </div>
-              )}
-              <div className="flex-1 min-h-[150px] flex flex-col items-center justify-center">
-                <p className="text-gray-600 dark:text-gray-300 text-center mb-6 max-w-2xl">
-                  "{testimonials[currentIndex].message}"
-                </p>
-
-                <div className="text-center">
-                  <h4 className="font-semibold text-lg text-gray-800 dark:text-white">
-                    {testimonials[currentIndex].name}
-                  </h4>
-                  <p className="text-blue-500">
-                    {testimonials[currentIndex].position}
-                  </p>
-                </div>
+          <motion.div
+            key={currentPage}
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+            transition={{ duration: 0.3, delay: 0.2 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            {getCurrentPageCards().map((testimonial) => (
+              <div key={testimonial.id} className="flex flex-col h-full">
+                <TestimonialCard testimonial={testimonial} />
               </div>
-            </motion.div>
-          )}
+            ))}
+          </motion.div>
         </AnimatePresence>
 
-        {testimonials.length > 0 && (
-          <>
-            <button
-              onClick={prevTestimonial}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 p-2 rounded-full bg-white dark:bg-gray-800 shadow-lg text-blue-500 hover:bg-blue-50 dark:hover:bg-gray-700"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-
-            <button
-              onClick={nextTestimonial}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 p-2 rounded-full bg-white dark:bg-gray-800 shadow-lg text-blue-500 hover:bg-blue-50 dark:hover:bg-gray-700 z-[1000]"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
-
-            <div className="flex justify-center mt-6 gap-2">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    index === currentIndex
-                      ? "bg-blue-500 w-4"
-                      : "bg-gray-300 dark:bg-gray-600"
-                  }`}
-                />
-              ))}
-            </div>
-          </>
-        )}
+        {/* Mobile View - Single Card */}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={testimonials[currentPage].email}
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden col-span-1"
+          >
+            <TestimonialCard testimonial={testimonials[currentPage]} />
+          </motion.div>
+        </AnimatePresence>
       </div>
-    </main>
+
+      {/* Navigation Controls for mobile devices, hidden on larger screens */}
+      <div className="sm:hidden flex justify-between items-center mt-6">
+        <button
+          onClick={prevPage}
+          className="p-2 rounded-full bg-white dark:bg-gray-800 shadow-lg text-blue-500 hover:bg-gray-50 dark:hover:bg-gray-700"
+        >
+          <ChevronLeft className="w-6 h-6" />
+        </button>
+
+        <div className="flex gap-2">
+          {testimonials.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentPage(index)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                index === currentPage
+                  ? "w-6 bg-blue-500"
+                  : "w-2 bg-gray-300 dark:bg-gray-600"
+              }`}
+            />
+          ))}
+        </div>
+
+        <button
+          onClick={nextPage}
+          className="p-2 rounded-full bg-white dark:bg-gray-800 shadow-lg text-blue-500 hover:bg-gray-50 dark:hover:bg-gray-700"
+        >
+          <ChevronRight className="w-6 h-6" />
+        </button>
+      </div>
+    </div>
   );
 };
 

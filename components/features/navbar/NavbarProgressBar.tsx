@@ -32,7 +32,7 @@ const NavbarProgressBar = ({ className = "" }: Props) => {
       }
     >
       <div
-        className="h-[var(--progressBarHeight)] bg-green-400 transition-transform duration-150"
+        className={`h-[var(--progressBarHeight)] ${scrollProgress < 70 ? "bg-green-400" : scrollProgress > 70 && scrollProgress < 90 ? "bg-yellow-400" : "bg-red-500"} transition-colors duration-150`}
         style={{ transform: `translateX(${scrollProgress - 100}%)` }}
       />
     </div>

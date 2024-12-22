@@ -14,7 +14,7 @@ const ProjectsCard = ({
   websiteLink,
 }: ProjectCardDataType) => {
   return (
-    <div className="group overflow-hidden relative hover:bg-black/60 w-full h-[15rem] hover:border-gray-100 hover:border hover:translate-y-[-2px] mx-auto rounded-lg dark:bg-gray-800 dark:border-gray-700">
+    <div className="group overflow-hidden relative hover:bg-black/60 w-full h-[15rem] hover:border-gray-100 hover:border hover:translate-y-[-2px] mx-auto rounded-lg dark:bg-gray-800 dark:border-gray-700 border border-red-500">
       <Link href={`/projects/${id}`}>
         <Image
           className="rounded-lg h-full w-full group-hover:scale-[1.30] group-hover:opacity-40 transition-transform duration-700"

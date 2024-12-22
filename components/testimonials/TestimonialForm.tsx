@@ -1,26 +1,43 @@
 "use client";
+// $ import react hooks and animation
+import React, { FormEvent, useCallback } from "react";
+import { useRouter } from "next/navigation";
 
-import React, { FormEvent } from "react";
+// $ import components
 import FormRowInput from "@/components/features/forms/FormRowInput";
 import FormRowTextArea from "@/components/features/forms/FormRowTextArea";
 import { Button } from "@/components/ui/button";
-import { useCreateItem } from "@/lib/reactQueryCutomHooks";
+
+// $ import third party libraries
 import { z } from "zod";
-import { useRouter } from "next/navigation";
 import { testimonialFormSchema } from "@/app/schemas";
 
 // $ Type for the Testimonial Form
 export type TestimonialFormProps = z.infer<typeof testimonialFormSchema>;
 
+// $ import custom hooks
+import { useCreateItem } from "@/lib/reactQueryCutomHooks";
+
+// Test data for development
+const defaultTestData = {
+  username: "John Doe",
+  email: "john.doe@example.com",
+  position: "Senior Developer",
+  company: "Tech Corp",
+  image: "https://example.com/profile.jpg",
+  message:
+    "Working with this developer has been an amazing experience. Their technical skills and attention to detail are outstanding.",
+};
+
 const TestimonialForm = () => {
   const router = useRouter();
-  const { createItem, isPending } = useCreateItem("testimonials");
+  const isDevelopment = process.env.NODE_ENV === "development";
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("clicked");
 
     const form = e.currentTarget;
+    // const form = defaultFormValues;
     const formData = new FormData(form);
     const formDataObject = Object.fromEntries(formData);
 
@@ -31,14 +48,18 @@ const TestimonialForm = () => {
       return;
     }
 
-    createItem(formDataObject, {
-      onSuccess: () => {
-        form.reset();
-        router.push("/#testimonials");
-      },
-    });
-  };
+    // console.log(formDataObject);
+    router.push("/#testimonials");
 
+    // ! Fix the POST method to the database before using the createItem function (add the router function into onSuccess once complete)
+    // createItem(formDataObject, {
+    // onSuccess: () => {
+    // form.reset();
+    // },
+    // });
+    // };
+  };
+  const isPending = false;
   return (
     <form
       onSubmit={handleSubmit}
@@ -55,6 +76,7 @@ const TestimonialForm = () => {
         placeholderText="Your full name"
         className="bg-gray-200 dark:bg-gray-700 dark:text-fontLight text-fontDark dark:caret-fontLight caret-fontDark"
         onChange={() => {}}
+        defaultValues={isDevelopment ? defaultTestData.username : ""}
       />
       <p className="text-red-500 text-sm"></p>
 
@@ -66,6 +88,7 @@ const TestimonialForm = () => {
         placeholderText="Your email address"
         className="bg-gray-200 dark:bg-gray-700 dark:text-fontLight text-fontDark dark:caret-fontLight caret-fontDark"
         onChange={() => {}}
+        defaultValues={isDevelopment ? defaultTestData.email : ""}
       />
       <p className="text-red-500 text-sm"></p>
 
@@ -77,6 +100,7 @@ const TestimonialForm = () => {
         placeholderText="Your job title"
         className="bg-gray-200 dark:bg-gray-700 dark:text-fontLight text-fontDark dark:caret-fontLight caret-fontDark"
         onChange={() => {}}
+        defaultValues={isDevelopment ? defaultTestData.position : ""}
       />
       <p className="text-red-500 text-sm"></p>
 
@@ -88,6 +112,7 @@ const TestimonialForm = () => {
         placeholderText="Your company name"
         className="bg-gray-200 dark:bg-gray-700 dark:text-fontLight text-fontDark dark:caret-fontLight caret-fontDark"
         onChange={() => {}}
+        defaultValues={isDevelopment ? defaultTestData.company : ""}
       />
       <p className="text-red-500 text-sm"></p>
 
@@ -99,6 +124,7 @@ const TestimonialForm = () => {
         placeholderText="Link to your profile picture"
         className="bg-gray-200 dark:bg-gray-700 dark:text-fontLight text-fontDark dark:caret-fontLight caret-fontDark"
         onChange={() => {}}
+        defaultValues={isDevelopment ? defaultTestData.image : ""}
       />
       <p className="text-red-500 text-sm"></p>
 
@@ -110,6 +136,7 @@ const TestimonialForm = () => {
         placeholderText="Share your experience working with me..."
         className="bg-gray-200 dark:bg-gray-700 dark:text-fontLight text-fontDark dark:caret-fontLight caret-fontDark"
         onChange={() => {}}
+        defaultValues={isDevelopment ? defaultTestData.message : ""}
       />
       <p className="text-red-500 text-sm"></p>
 

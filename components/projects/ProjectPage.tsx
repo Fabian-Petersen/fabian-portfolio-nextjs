@@ -22,8 +22,8 @@ const ProjectsPage = () => {
   >(projects, "category");
 
   return (
-    <main id="projects" className="w-full bg-bgLight dark:bg-bgDark p-4">
-      <div className="flex flex-col gap-6 sm:px-[var(--all-pages-spacing)] px-[var(--all-pages-spacing-small) md:max-w-6xl mx-auto h-auto w-full">
+    <main id="projects" className="w-full bg-bgLight dark:bg-bgDark px-4">
+      <div className="flex flex-col gap-6 w-full sm:px-[var(--all-pages-spacing)] px-[var(--all-pages-spacing-small) md:max-w-6xl mx-auto h-auto md:mt-[var(--navbarHeight)]">
         <PageHeading title="Projects" />
         <ProjectFilterButtons
           uniqueItems={uniqueItems.filter(

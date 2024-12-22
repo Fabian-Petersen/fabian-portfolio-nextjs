@@ -17,12 +17,14 @@ import Providers from "./providers";
 
 // $ Import custom hook to check if the size is mobile or not to change Navbar components
 import useIsMobile from "@/customHooks/useScreenSize";
+import { useHashScroll } from "./customHooks/useHashScrollHandler";
 
 type Props = {
   children: React.ReactNode;
 };
 
 export default function RootLayout({ children }: Props) {
+  useHashScroll();
   const isMobile = useIsMobile(640);
   const pathname = usePathname();
   const isLoginPage = pathname === "/login";

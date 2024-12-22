@@ -6,11 +6,10 @@ import * as React from "react";
 import PageHeading from "@/components/PageHeading";
 import MyInfo from "@/components/about/MyInfo";
 import MySkills from "@/components/about/MySkills";
-import PageHeadingWithLines from "../PageHeadingWithLines";
 
 const AboutPage = () => {
   return (
-    <main id="about" className="w-full bg-slate-200 dark:bg-bgDark px-4">
+    <main id="about" className="w-full bg-slate-200 dark:bg-bgDark">
       <div className="flex flex-col gap-6 w-full sm:px-[var(--all-pages-spacing)] px-[var(--all-pages-spacing-small)] md:max-w-6xl mx-auto h-auto md:mt-[var(--navbarHeight)]">
         <PageHeading title="About Me" className="bg-slate-200" />
         <MyInfo />
