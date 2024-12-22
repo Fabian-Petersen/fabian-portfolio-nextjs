@@ -1,6 +1,5 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import customFetch from "./customFetch";
-import { toast } from "react-toastify";
 import { useToast } from "@/hooks/use-toast";
 
 // $ Function to Fetch Data from the Server with a GET request
@@ -18,8 +17,8 @@ export const useFetchItem = (key: string) => {
 // customFetch.post(`/${key}`, Item, {
 // $ Function to Fetch Data from the Server with a POST request
 export const useCreateItem = (key: string) => {
+  // const test_url = "https://httpbin.org/post";
   const { toast } = useToast();
-  const test_url = "https://httpbin.org/post";
   const queryClient = useQueryClient();
   const {
     mutate: createItem,
@@ -27,7 +26,7 @@ export const useCreateItem = (key: string) => {
     isError,
   } = useMutation({
     mutationFn: (Item: Object) =>
-      customFetch.post(`/${key}`, Item, {
+      customFetch.post(`${key}`, Item, {
         headers: {
           "Content-Type": "application/json", // or 'multipart/form-data' if required
         },

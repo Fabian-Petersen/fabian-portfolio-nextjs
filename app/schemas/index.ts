@@ -24,9 +24,15 @@ export const LoginSchema = z.object({
 
 // $ Contact Form Schema
 export const contactFormSchema = z.object({
-  username: z.string().min(1, { message: "Name is required" }),
-  email: z.string().email({ message: "Invalid email address" }),
-  message: z.string().min(1, { message: "Message is required" }),
+  username: z
+    .string()
+    .min(2, "Name must be at least 2 characters")
+    .max(20, "Name cannot exceed 50 characters"),
+  email: z.string().email("Please enter a valid email address"),
+  message: z
+    .string()
+    .min(10, "Message must be at least 10 characters")
+    .max(500, "Message cannot exceed 500 characters"),
 });
 
 // $ Schema for the Projects Upload Form

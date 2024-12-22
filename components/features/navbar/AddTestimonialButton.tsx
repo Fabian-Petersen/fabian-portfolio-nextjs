@@ -19,7 +19,7 @@ const AddTestimonialButton = () => {
   const router = useRouter();
 
   const handleLogin = () => {
-    router.push("/reviews");
+    router.push("/add-testimonial");
   };
 
   return (

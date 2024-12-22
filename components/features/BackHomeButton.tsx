@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/button";
 import { ChevronLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
 
-type Props = { title: string; className?: string };
+type Props = { title: string; className?: string; addCursorPointer?: boolean };
 
-function BackHomeButton({ title, className }: Props) {
+function BackHomeButton({ title, className, addCursorPointer = false }: Props) {
   const router = useRouter();
   return (
     <Button
@@ -15,7 +15,9 @@ function BackHomeButton({ title, className }: Props) {
       className={`group ${className}`}
       title={title}
     >
-      <ChevronLeft className="transition-transform group-hover:-translate-x-1 duration-200" />
+      {addCursorPointer && (
+        <ChevronLeft className="transition-transform group-hover:-translate-x-1 duration-200" />
+      )}
       {title}
     </Button>
   );

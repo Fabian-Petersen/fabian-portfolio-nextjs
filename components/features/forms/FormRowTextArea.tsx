@@ -8,7 +8,8 @@ type FormRowTextAreaProps = {
   placeholderText?: string;
   className?: string;
   defaultValues?: string;
-  onChange?: () => void;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
   row?: number;
 };
 

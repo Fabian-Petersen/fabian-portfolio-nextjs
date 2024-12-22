@@ -62,9 +62,7 @@ const FormRowInput = ({
         </label>
       )}
       {/* Show error message if validation fails */}
-      {error && (
-        <span className="text-xs text-red-600 mt-1">{error.message}</span>
-      )}
+      {error && <span className="text-xs text-red-600">{error.message}</span>}
     </div>
   );
 };
