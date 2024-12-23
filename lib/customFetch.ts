@@ -1,8 +1,12 @@
+// customFetch.ts
 import axios from "axios";
 
 const customFetch = axios.create({
   baseURL: "https://fabian-portfolio.net",
-  // baseURL: "https://httpbin.org",
+  withCredentials: false,
+  headers: {
+    "Content-Type": "application/json",
+  },
 });
 
 export default customFetch;

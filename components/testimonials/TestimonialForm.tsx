@@ -16,7 +16,7 @@ import { testimonialFormSchema } from "@/app/schemas";
 export type TestimonialFormProps = z.infer<typeof testimonialFormSchema>;
 
 // $ import custom hooks
-import { useCreateItem } from "@/lib/reactQueryCutomHooks";
+import { useCreateItem } from "@/lib/reactQueryPOST";
 import { useValidateFormZod } from "@/app/customHooks/useValidateFormData";
 import PageSubHeading from "../PageSubHeading";
 
@@ -30,8 +30,7 @@ const initialFormValues = {
 };
 
 const TestimonialForm = () => {
-  const test_url = "https://httpbin.org/post";
-  const { createItem, isPending } = useCreateItem(test_url);
+  const { createItem, isPending } = useCreateItem("testimonials");
 
   const router = useRouter();
   // const isDevelopment = process.env.NODE_ENV === "development";
@@ -52,13 +51,8 @@ const TestimonialForm = () => {
     if (!validateForm()) return;
 
     const form = e.currentTarget;
-    // const form = defaultFormValues;
-    // const formData = new FormData(form);
-    // const formDataObject = Object.fromEntries(formData);
 
-    // Validate form data with Zod
-    // const validationResult = testimonialFormSchema.safeParse(formDataObject);
-
+    console.log(formData);
     createItem(formData, {
       onSuccess: () => {
         setFormStatus("success");

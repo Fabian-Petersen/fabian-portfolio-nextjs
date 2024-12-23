@@ -5,7 +5,7 @@ import React, { FormEvent } from "react";
 import FormRowInput from "../features/forms/FormRowInput";
 import FormRowTextArea from "../features/forms/FormRowTextArea";
 import Button from "../features/Button";
-import { useCreateItem } from "@/lib/reactQueryCutomHooks";
+import { useCreateItem } from "@/lib/reactQueryPOST";
 import { contactFormSchema } from "@/schemas/index";
 
 export type ContactFormProps = {
@@ -20,8 +20,8 @@ type FormErrors = {
 };
 
 const ContactForm = () => {
-  const test_url = "https://httpbin.org/post";
-  const { createItem, isPending } = useCreateItem(test_url);
+  // const test_url = "https://httpbin.org/post";
+  const { createItem, isPending } = useCreateItem("contacts");
   const [formErrors, setFormErrors] = useState<FormErrors>({});
   const [formStatus, setFormStatus] = useState<"idle" | "error" | "success">(
     "idle"
