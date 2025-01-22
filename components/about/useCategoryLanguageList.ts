@@ -15,7 +15,7 @@ const useCategoryLanguageList = () => {
   const { uniqueCategories } = useSingleCategoriesHook();
 
   // Accumulate the filtered language lists
-  const languageLists = uniqueCategories.map((category: string) => {
+  const languageLists = uniqueCategories.map((category) => {
     return {
       category,
       filteredLanguageList: mySkillsData

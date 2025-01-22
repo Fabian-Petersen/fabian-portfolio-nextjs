@@ -23,7 +23,7 @@ function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="absolute z-[100] border border-t-gray-800/30 shadow-border bg-footerDark text-white mx-auto h-auto w-full text-sm">
+    <footer className="absolute z-[100] border border-t-gray-800/30 shadow-border bg-footerDark text-white mx-auto h-auto w-full text-sm pt-4">
       <main className="md:max-w-6xl mx-auto grid sm:grid-cols-footer md:flex gap-6 justify-between h-auto px-4 py-4 pb-12">
         <FooterLogo />
         <div className="flex flex-col gap-2 capitalize justify-start">

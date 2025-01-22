@@ -95,6 +95,8 @@ def lambda_handler(event, context):
         # Initialize DynamoDB
         dynamodb = boto3.resource('dynamodb', region_name='af-south-1')
         table = dynamodb.Table('fabian-portfolio-contacts')
+        # Lambda client for sending emails asynchronously to the emailsSES Lambda function
+        lambda_client = boto3.client('lambda', region_name='af-south-1')
 
         # Create item with South African time
         item = {
@@ -120,12 +122,25 @@ def lambda_handler(event, context):
 
         # Add item to DynamoDB
         table.put_item(Item=item)
+        
+        # Invoke email sending Lambda
+        try:
+            lambda_client.invoke(
+                print('Email Lambda invoked', item),
+                FunctionName='fabian-portfolio-contactFormEmail',
+                InvocationType='Event',  # Asynchronous invocation
+                Payload=json.dumps(item),
+            )
+        except Exception as e:
+            print(f"Error invoking email Lambda: {str(e)}")
+            # Continue execution - we don't want to fail the contact submission
+            # if email sending fails
 
         return {
             'statusCode': 200,
             'headers': CORS_HEADERS,
             'body': json.dumps({
-                'message': 'ContactMessage successfully send',
+                'message': 'ContactMessage successfully sent',
                 'item': item
             })
         }

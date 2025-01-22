@@ -3,12 +3,6 @@ import fluid, { extract, screens, fontSize } from "fluid-tailwind";
 
 const config: Config = {
   darkMode: ["class"],
-  // content: [
-  //   "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-  //   "./components/**/*.{js,ts,jsx,tsx,mdx}",
-  //   "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  //   "./node_modules/flowbite-react/**/*.js",
-  // ],
   content: {
     files: [
       "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -36,7 +30,8 @@ const config: Config = {
         clampBodyText: "clamp(0.8rem, 0.75xvw, 1.125rem)",
         clampH2: "clamp(1.5rem, 3vw, 1.75rem)",
         clampH3: "clamp(1rem, 2vw, 1.3rem)",
-        clampFooterHeading: "clamp(1rem, 1vw, 1.5rem)",
+        clampFooterHeading: "clamp(1.5rem, 1.5vw, 2rem)",
+        clampFooterLogoText: "clamp(2rem, 2vw, 2.5rem)",
         clampLogo: "clamp(1.5rem, 3vw, 2rem)",
         clampNavLinks: "clamp(0.8rem, 3vw, 1rem)",
         clampHeroImage: "clamp(15rem, 5vw + 0.5rem, 25rem)",
@@ -90,11 +85,13 @@ const config: Config = {
         buttonBlueColor: "#3a7ff9",
         formPageBgColor: "##eaecf0",
         formPageBgColorDark: "rgb(43, 39, 56)",
-        formColorDark: "#101828",
-        bgDark: "#050f1a",
+        bgformColor: "#d1d5db",
+        bgformColorDark: "",
+        formColorDark: "",
+        bgDark: "#0B192C",
         footerDark: "#213555",
         navbarLight: "",
-        navbarDark: "#000B58",
+        navbarDark: "#2D3250",
         // bgLight: "#eff5f5",
         bgLight: "#f1f5f9",
         facebookGray: "#eff2f5",

@@ -2,7 +2,6 @@ import axios from "axios";
 import { useCallback } from "react";
 import { projectsFormSchema } from "../schemas";
 // import projectsFormSubmit from "../api/projects/route";
-import useHandleSubmitTest from "../tests/useHandleSubmitTest";
 
 const useHandleSubmitProjects = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {

@@ -33,7 +33,7 @@ main {
 #testimonials,
 #contact {
   /* border: 1px solid red; */
-  margin-top: var(--navbarHeight);
+  scrollpadding-top: var(--navbarHeight);
 }
 /*
 =============== 

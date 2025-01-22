@@ -46,14 +46,19 @@ const LoginForm = () => {
             name="email"
             render={({ field }) => (
               <FormItem className="tracking-wider">
-                <FormLabel htmlFor="email">Email</FormLabel>
+                <FormLabel
+                  htmlFor="email"
+                  className="dark:text-gray-300 text-slate-500"
+                >
+                  Email
+                </FormLabel>
                 <FormControl>
                   <Input
                     {...field}
                     disabled={isPending}
                     type="email"
                     placeholder="john.doe@email.com"
-                    className="text-white dark:text-gray-600 placeholder:text-white dark:placeholder-gray-500"
+                    className="text-slate-500 dark:text-gray-300 placeholder:text-white dark:placeholder-gray-500 dark:border-gray-200"
                   />
                 </FormControl>
                 <FormMessage className="text-red-500 text-xs font-normal" />
@@ -67,7 +72,7 @@ const LoginForm = () => {
               <FormItem className="tracking-wider">
                 <FormLabel
                   htmlFor="password"
-                  className="placeholder:tracking-wider"
+                  className="placeholder:tracking-wider dark:text-gray-300 text-slate-500"
                 >
                   Password
                 </FormLabel>
@@ -77,7 +82,7 @@ const LoginForm = () => {
                     type="password"
                     disabled={isPending}
                     placeholder="********"
-                    className="text-white dark:text-gray-600 placeholder:text-white dark:placeholder-gray-500 focus:border-blue-300"
+                    className="text-slate-400 dark:text-gray-200 placeholder:text-white dark:placeholder-gray-500 focus:border-blue-300 dark:border-gray-200 border-slate-400/90"
                   />
                 </FormControl>
                 <FormMessage className="text-red-500 text-xs font-normal" />

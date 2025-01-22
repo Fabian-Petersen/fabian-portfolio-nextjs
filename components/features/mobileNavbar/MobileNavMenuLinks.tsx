@@ -20,15 +20,15 @@ const MobileNavMenuLinks = () => {
       }`}
     >
       <ul className="flex flex-col flex-1 gap-12 p-12 text-[1.5rem] w-[15rem] justify-evenly">
-        {pageLinkData.map((link: PageLink) => {
-          const { id, href, name } = link;
+        {pageLinkData.map((link) => {
+          const { id, url, name } = link;
           return (
             <li
               key={id}
-              className={pathname === href ? "text-blue-600" : "text-gray-400"}
+              className={pathname === url ? "text-blue-600" : "text-gray-400"}
             >
               <a
-                href={href}
+                href={url}
                 className="relative capitalize text-[1.3rem] sm:text-[1.6rem] block py-2 overflow-hidden group left-[50%] -translate-x-[25%]"
               >
                 {name}
